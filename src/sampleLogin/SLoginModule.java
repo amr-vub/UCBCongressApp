@@ -137,6 +137,7 @@ public class SLoginModule implements LoginModule {
         }
 
         // verify the username/password
+        /**This is where the Username-Password check really happens*/
         boolean usernameCorrect = false;
         boolean passwordCorrect = false;
         if (username.equals("testUser"))
