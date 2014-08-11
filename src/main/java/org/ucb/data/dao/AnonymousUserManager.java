@@ -50,11 +50,6 @@ public class AnonymousUserManager implements IAnonymousUserManager {
 
 	}
 
-	public HCP anonymousUserWithIniailInterests(){
-		
-		List remp = sessionFactory.openSession().createQuery("SELECT u FROM HCP u WHERE u.HCPID != :anonymousID").setParameter("anonymousID", null).list();
-	}
-
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}

@@ -58,9 +58,7 @@ public class HibernateMain {
 		
 		//System.out.print(anonymousUserManager.storeAnonymousUser(user));
 
-		//System.out.print(anonymousUserManager.anonymousUserExists(0));
-		
-		System.out.print(anonymousUserManager.)
+		System.out.print(anonymousUserManager.anonymousUserExists(0));
 	}
 	
 	private static Session connect2DB(){
