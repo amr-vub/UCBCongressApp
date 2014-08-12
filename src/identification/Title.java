@@ -1,4 +1,4 @@
-package Identification;
+package identification;
 
 public enum Title {
 	MR,

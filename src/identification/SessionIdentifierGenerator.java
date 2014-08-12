@@ -1,4 +1,4 @@
-package Identification;
+package identification;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
