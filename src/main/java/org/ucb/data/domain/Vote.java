@@ -28,6 +28,22 @@ public class Vote {
 	@JoinColumn(nullable=false)
 	private Session vote_session;
 
+	public int getChosenVoteChoice() {
+		return chosenVoteChoice;
+	}
+
+	public void setChosenVoteChoice(int chosenVoteChoice) {
+		this.chosenVoteChoice = chosenVoteChoice;
+	}
+
+	public Session getVote_session() {
+		return vote_session;
+	}
+
+	public void setVote_session(Session vote_session) {
+		this.vote_session = vote_session;
+	}
+
 	public int getVoteID() {
 		return voteID;
 	}

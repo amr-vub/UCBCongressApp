@@ -68,6 +68,32 @@ public class RegisteredHCP extends HCP{
 	@JoinTable(name="RegisteredHCP_RECPAPER")
 	private List<RecommendedPapers> registeredHCP_RecPeper;
 	
+	public List<Session> getRegisteredHCP_Session() {
+		return registeredHCP_Session;
+	}
+
+	public void setRegisteredHCP_Session(List<Session> registeredHCP_Session) {
+		this.registeredHCP_Session = registeredHCP_Session;
+	}
+
+	public List<MSLSession> getRegisteredHCP_MSLSession() {
+		return registeredHCP_MSLSession;
+	}
+
+	public void setRegisteredHCP_MSLSession(
+			List<MSLSession> registeredHCP_MSLSession) {
+		this.registeredHCP_MSLSession = registeredHCP_MSLSession;
+	}
+
+	public List<RecommendedPapers> getRegisteredHCP_RecPeper() {
+		return registeredHCP_RecPeper;
+	}
+
+	public void setRegisteredHCP_RecPeper(
+			List<RecommendedPapers> registeredHCP_RecPeper) {
+		this.registeredHCP_RecPeper = registeredHCP_RecPeper;
+	}
+
 	public Preferences getRegisteredHCP_preferences() {
 		return registeredHCP_preferences;
 	}

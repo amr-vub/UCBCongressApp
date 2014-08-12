@@ -37,6 +37,23 @@ public class MSL {
 	@JoinTable(name="MSL_LMRelatedWebinar")
 	private List<LMRelatedWebinars> MSL_LMRelatedWebinars;
 
+	public List<MSLSession> getMSL_MSLSesssion() {
+		return MSL_MSLSesssion;
+	}
+
+	public void setMSL_MSLSesssion(List<MSLSession> mSL_MSLSesssion) {
+		MSL_MSLSesssion = mSL_MSLSesssion;
+	}
+
+	public List<LMRelatedWebinars> getMSL_LMRelatedWebinars() {
+		return MSL_LMRelatedWebinars;
+	}
+
+	public void setMSL_LMRelatedWebinars(
+			List<LMRelatedWebinars> mSL_LMRelatedWebinars) {
+		MSL_LMRelatedWebinars = mSL_LMRelatedWebinars;
+	}
+
 	public int getMSLID() {
 		return MSLID;
 	}

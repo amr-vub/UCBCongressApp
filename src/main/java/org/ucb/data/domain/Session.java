@@ -85,6 +85,88 @@ public class Session {
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="docs_session")
 	private List<Docs> session_docs;
 
+	public List<HCP> getSessionHCP() {
+		return sessionHCP;
+	}
+
+	public void setSessionHCP(List<HCP> sessionHCP) {
+		this.sessionHCP = sessionHCP;
+	}
+
+	public List<RegisteredHCP> getSession_RegisteredHCP() {
+		return session_RegisteredHCP;
+	}
+
+	public void setSession_RegisteredHCP(List<RegisteredHCP> session_RegisteredHCP) {
+		this.session_RegisteredHCP = session_RegisteredHCP;
+	}
+
+	public List<Agenda> getSession_agenda() {
+		return session_agenda;
+	}
+
+	public void setSession_agenda(List<Agenda> session_agenda) {
+		this.session_agenda = session_agenda;
+	}
+
+	public List<Questions> getSession_qs() {
+		return session_qs;
+	}
+
+	public void setSession_qs(List<Questions> session_qs) {
+		this.session_qs = session_qs;
+	}
+
+	public List<LMRelatedWebsites> getSession_RelatedWebsites() {
+		return session_RelatedWebsites;
+	}
+
+	public void setSession_RelatedWebsites(
+			List<LMRelatedWebsites> session_RelatedWebsites) {
+		this.session_RelatedWebsites = session_RelatedWebsites;
+	}
+
+	public List<LMRelatedpapers> getSession_Relatedpapers() {
+		return session_Relatedpapers;
+	}
+
+	public void setSession_Relatedpapers(List<LMRelatedpapers> session_Relatedpapers) {
+		this.session_Relatedpapers = session_Relatedpapers;
+	}
+
+	public List<LMRelatedWebinars> getSession_RelatedWebinars() {
+		return session_RelatedWebinars;
+	}
+
+	public void setSession_RelatedWebinars(
+			List<LMRelatedWebinars> session_RelatedWebinars) {
+		this.session_RelatedWebinars = session_RelatedWebinars;
+	}
+
+	public List<Feedback> getSession_FB() {
+		return session_FB;
+	}
+
+	public void setSession_FB(List<Feedback> session_FB) {
+		this.session_FB = session_FB;
+	}
+
+	public List<Vote> getSession_vote() {
+		return session_vote;
+	}
+
+	public void setSession_vote(List<Vote> session_vote) {
+		this.session_vote = session_vote;
+	}
+
+	public List<Docs> getSession_docs() {
+		return session_docs;
+	}
+
+	public void setSession_docs(List<Docs> session_docs) {
+		this.session_docs = session_docs;
+	}
+
 	public int getSessionID() {
 		return sessionID;
 	}

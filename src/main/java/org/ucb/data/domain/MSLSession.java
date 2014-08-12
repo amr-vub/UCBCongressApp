@@ -40,6 +40,23 @@ public class MSLSession {
 	@ManyToMany(mappedBy="MSL_MSLSesssion")
 	private List<MSL> MSLSession_MSL;
 
+	public List<RegisteredHCP> getMSLSession_registeredHCP() {
+		return MSLSession_registeredHCP;
+	}
+
+	public void setMSLSession_registeredHCP(
+			List<RegisteredHCP> mSLSession_registeredHCP) {
+		MSLSession_registeredHCP = mSLSession_registeredHCP;
+	}
+
+	public List<MSL> getMSLSession_MSL() {
+		return MSLSession_MSL;
+	}
+
+	public void setMSLSession_MSL(List<MSL> mSLSession_MSL) {
+		MSLSession_MSL = mSLSession_MSL;
+	}
+
 	public int getMSLSessionID() {
 		return MSLSessionID;
 	}

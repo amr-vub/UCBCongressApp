@@ -35,6 +35,14 @@ public class LMRelatedpapers {
 	@ManyToMany(mappedBy="session_Relatedpapers")
 	private List<Session> Relatedpapers_session;
 
+	public List<Session> getRelatedpapers_session() {
+		return Relatedpapers_session;
+	}
+
+	public void setRelatedpapers_session(List<Session> relatedpapers_session) {
+		Relatedpapers_session = relatedpapers_session;
+	}
+
 	public int getLMRelatedpapersID() {
 		return LMRelatedpapersID;
 	}

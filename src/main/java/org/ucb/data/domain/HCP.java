@@ -75,6 +75,38 @@ public class HCP {
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="qs_HCP")
 	private List<Questions> HCP_qs;
 	
+	public List<Session> getHCPSession() {
+		return HCPSession;
+	}
+
+	public void setHCPSession(List<Session> hCPSession) {
+		HCPSession = hCPSession;
+	}
+
+	public FeedbackAnswer getHCP_FBAnswer() {
+		return HCP_FBAnswer;
+	}
+
+	public void setHCP_FBAnswer(FeedbackAnswer hCP_FBAnswer) {
+		HCP_FBAnswer = hCP_FBAnswer;
+	}
+
+	public VoteChoices getHCP_voteChoices() {
+		return HCP_voteChoices;
+	}
+
+	public void setHCP_voteChoices(VoteChoices hCP_voteChoices) {
+		HCP_voteChoices = hCP_voteChoices;
+	}
+
+	public List<Questions> getHCP_qs() {
+		return HCP_qs;
+	}
+
+	public void setHCP_qs(List<Questions> hCP_qs) {
+		HCP_qs = hCP_qs;
+	}
+
 	public int getHCPID() {
 		return HCPID;
 	}

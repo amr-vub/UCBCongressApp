@@ -29,6 +29,14 @@ public class Docs {
 	@ManyToOne
 	@JoinColumn(nullable=false)
 	private Session docs_session;
+	
+	public Session getDocs_session() {
+		return docs_session;
+	}
+
+	public void setDocs_session(Session docs_session) {
+		this.docs_session = docs_session;
+	}
 
 	public int getDocID() {
 		return docID;

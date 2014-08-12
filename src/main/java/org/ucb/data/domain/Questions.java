@@ -37,6 +37,22 @@ public class Questions {
 	@JoinColumn(nullable=false)
 	private Session qs_session;
 
+	public HCP getQs_HCP() {
+		return qs_HCP;
+	}
+
+	public void setQs_HCP(HCP qs_HCP) {
+		this.qs_HCP = qs_HCP;
+	}
+
+	public Session getQs_session() {
+		return qs_session;
+	}
+
+	public void setQs_session(Session qs_session) {
+		this.qs_session = qs_session;
+	}
+
 	public int getQsID() {
 		return QsID;
 	}

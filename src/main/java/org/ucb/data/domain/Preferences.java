@@ -48,7 +48,22 @@ public class Preferences {
 	@OneToMany(cascade = CascadeType.ALL,mappedBy="cat_pref")
 	private List<Category> pref_cat;
 
-	
+	public List<Domain_of_Contact> getPref_domain() {
+		return pref_domain;
+	}
+
+	public void setPref_domain(List<Domain_of_Contact> pref_domain) {
+		this.pref_domain = pref_domain;
+	}
+
+	public List<Category> getPref_cat() {
+		return pref_cat;
+	}
+
+	public void setPref_cat(List<Category> pref_cat) {
+		this.pref_cat = pref_cat;
+	}
+
 	public RegisteredHCP getPref_registeredHCP() {
 		return pref_registeredHCP;
 	}

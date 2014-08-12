@@ -29,6 +29,14 @@ public class FeedbackAnswer {
 	@JoinColumn(nullable=false)
 	private HCP FBAnswer_HCP;
 
+	public HCP getFBAnswer_HCP() {
+		return FBAnswer_HCP;
+	}
+
+	public void setFBAnswer_HCP(HCP fBAnswer_HCP) {
+		FBAnswer_HCP = fBAnswer_HCP;
+	}
+
 	public int getFbAnswerID() {
 		return fbAnswerID;
 	}

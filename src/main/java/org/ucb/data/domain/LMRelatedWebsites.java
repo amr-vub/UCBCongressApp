@@ -31,6 +31,14 @@ public class LMRelatedWebsites {
 	@ManyToMany(mappedBy="session_RelatedWebsites")
 	private List<Session> relatedWebsites_session;
 
+	public List<Session> getRelatedWebsites_session() {
+		return relatedWebsites_session;
+	}
+
+	public void setRelatedWebsites_session(List<Session> relatedWebsites_session) {
+		this.relatedWebsites_session = relatedWebsites_session;
+	}
+
 	public int getLMRelatedWebsitesID() {
 		return LMRelatedWebsitesID;
 	}

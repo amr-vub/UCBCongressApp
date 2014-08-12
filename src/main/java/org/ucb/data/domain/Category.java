@@ -23,7 +23,15 @@ public class Category {
 	private String category;
 	
 	@ManyToOne @JoinColumn(nullable=false)
-	private Preferences cat_pref;
+	private Preferences cat_pref;	
+	
+	public Preferences getCat_pref() {
+		return cat_pref;
+	}
+
+	public void setCat_pref(Preferences cat_pref) {
+		this.cat_pref = cat_pref;
+	}
 
 	public int getCatID() {
 		return catID;

@@ -28,6 +28,14 @@ public class VoteChoices {
 	@JoinColumn(nullable=false)
 	private HCP VChoice_HCP;
 
+	public HCP getVChoice_HCP() {
+		return VChoice_HCP;
+	}
+
+	public void setVChoice_HCP(HCP vChoice_HCP) {
+		VChoice_HCP = vChoice_HCP;
+	}
+
 	public int getVoteValue() {
 		return voteValue;
 	}

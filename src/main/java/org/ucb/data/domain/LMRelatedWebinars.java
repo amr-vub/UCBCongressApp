@@ -44,6 +44,22 @@ public class LMRelatedWebinars {
 	@ManyToMany(mappedBy="session_RelatedWebinars")
 	private List<Session> LMRelatedWebinars_Session;
 
+	public List<MSL> getLMRelatedWebinars_MSL() {
+		return LMRelatedWebinars_MSL;
+	}
+
+	public void setLMRelatedWebinars_MSL(List<MSL> lMRelatedWebinars_MSL) {
+		LMRelatedWebinars_MSL = lMRelatedWebinars_MSL;
+	}
+
+	public List<Session> getLMRelatedWebinars_Session() {
+		return LMRelatedWebinars_Session;
+	}
+
+	public void setLMRelatedWebinars_Session(List<Session> lMRelatedWebinars_Session) {
+		LMRelatedWebinars_Session = lMRelatedWebinars_Session;
+	}
+
 	public int getLMRelatedWebinarsID() {
 		return LMRelatedWebinarsID;
 	}

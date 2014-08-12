@@ -25,6 +25,16 @@ public class Domain_of_Contact {
 	@ManyToOne @JoinColumn(nullable=false)
 	private Preferences domain_preferences;
 
+	public Preferences getDomain_preferences() {
+		return domain_preferences;
+	}
+
+
+	public void setDomain_preferences(Preferences domain_preferences) {
+		this.domain_preferences = domain_preferences;
+	}
+
+
 	public int getContactID() {
 		return ContactID;
 	}

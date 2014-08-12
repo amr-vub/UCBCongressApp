@@ -33,6 +33,14 @@ public class Feedback {
 	@JoinColumn(nullable=false)
 	private Session fB_session;
 
+	public Session getfB_session() {
+		return fB_session;
+	}
+
+	public void setfB_session(Session fB_session) {
+		this.fB_session = fB_session;
+	}
+
 	public int getFbD() {
 		return fbD;
 	}

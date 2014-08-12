@@ -37,6 +37,15 @@ public class RecommendedPapers {
 	@ManyToMany(mappedBy="registeredHCP_RecPeper")
 	private List<RegisteredHCP> RecommendedPapers_RegHCP;
 
+	public List<RegisteredHCP> getRecommendedPapers_RegHCP() {
+		return RecommendedPapers_RegHCP;
+	}
+
+	public void setRecommendedPapers_RegHCP(
+			List<RegisteredHCP> recommendedPapers_RegHCP) {
+		RecommendedPapers_RegHCP = recommendedPapers_RegHCP;
+	}
+
 	public int getPaperID() {
 		return paperID;
 	}

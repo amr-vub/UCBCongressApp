@@ -26,9 +26,17 @@ public class Agenda {
 
 	@ManyToMany(cascade=CascadeType.ALL)
 	@JoinTable(name="AGENDA_SESSION")
-	private List<Session> agenda_Session;
+	private List<Session> agenda_Session;	
 	
 	
+	public List<Session> getAgenda_Session() {
+		return agenda_Session;
+	}
+
+	public void setAgenda_Session(List<Session> agenda_Session) {
+		this.agenda_Session = agenda_Session;
+	}
+
 	public HCP getAgenda_hcp() {
 		return agenda_hcp;
 	}
