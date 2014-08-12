@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /** 
  * This class reflects a session's Feedback Info
@@ -25,6 +27,11 @@ public class Feedback {
 		
 	@Column
 	private int FinalFBResult;
+	
+	// each feedback is related to one session
+	@ManyToOne
+	@JoinColumn(nullable=false)
+	private Session fB_session;
 
 	public int getFbD() {
 		return fbD;

@@ -1,9 +1,12 @@
 package org.ucb.data.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 /** 
  * Each session has a list of related websites that the App can
@@ -24,6 +27,9 @@ public class LMRelatedWebsites {
 	
 	@Column
 	private String LMRelatedWebsitesLink;
+	
+	@ManyToMany(mappedBy="session_RelatedWebsites")
+	private List<Session> relatedWebsites_session;
 
 	public int getLMRelatedWebsitesID() {
 		return LMRelatedWebsitesID;

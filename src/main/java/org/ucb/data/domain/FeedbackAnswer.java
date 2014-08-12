@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 /** 
  * This class reflects a session's Feedback Answers
@@ -22,6 +24,10 @@ public class FeedbackAnswer {
 	// if any
 	@Column
 	private String fbTextAnswer;
+	
+	@OneToOne
+	@JoinColumn(nullable=false)
+	private HCP FBAnswer_HCP;
 
 	public int getFbAnswerID() {
 		return fbAnswerID;

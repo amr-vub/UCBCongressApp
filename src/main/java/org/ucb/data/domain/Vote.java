@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /** 
  * This class reflects a session's vote info
@@ -21,6 +23,10 @@ public class Vote {
 	
 	@Column
 	private int chosenVoteChoice;
+	
+	@ManyToOne
+	@JoinColumn(nullable=false)
+	private Session vote_session;
 
 	public int getVoteID() {
 		return voteID;

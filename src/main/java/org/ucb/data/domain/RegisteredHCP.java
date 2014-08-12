@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -47,10 +50,24 @@ public class RegisteredHCP extends HCP{
 	@Column  @Temporal(TemporalType.DATE)
 	private Date RegisteredAt;
 	
-	@OneToMany(mappedBy="more_Interest_registeredHCP")
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="more_Interest_registeredHCP")
 	private List<HCP_More_Interest> more_Interest = new ArrayList<HCP_More_Interest>();
 
-
+	// each registered HCP, who is a speaker, can give sessions
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(name="RegisteredHCP_SESSION")
+	private List<Session> registeredHCP_Session;
+	
+	// each registered HCP can book zero or more MSL sessions
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(name="RegisteredHCP_MSLSESSION")
+	private List<MSLSession> registeredHCP_MSLSession;
+	
+	// each registered HCP can recommend up to 5 papers
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(name="RegisteredHCP_RECPAPER")
+	private List<RecommendedPapers> registeredHCP_RecPeper;
+	
 	public Preferences getRegisteredHCP_preferences() {
 		return registeredHCP_preferences;
 	}

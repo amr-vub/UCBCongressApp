@@ -1,9 +1,12 @@
 package org.ucb.data.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 /** 
  * This class reflects papers that HCP recommends for reading peers
@@ -29,6 +32,10 @@ public class RecommendedPapers {
 	
 	@Column
 	private int recPaperRanking;
+	
+	// each paper can be recommended by one or more reg hcp
+	@ManyToMany(mappedBy="registeredHCP_RecPeper")
+	private List<RegisteredHCP> RecommendedPapers_RegHCP;
 
 	public int getPaperID() {
 		return paperID;

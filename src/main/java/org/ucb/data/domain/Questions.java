@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -24,6 +26,16 @@ public class Questions {
 	
 	@Column @Temporal(TemporalType.TIME)
 	private Date QsSubmissionTime;
+	
+	// each qestion can be asked by one hcp
+	@ManyToOne
+	@JoinColumn(nullable=false)
+	private HCP qs_HCP;
+	
+	// each question can be related to one and only one session
+	@ManyToOne
+	@JoinColumn(nullable=false)
+	private Session qs_session;
 
 	public int getQsID() {
 		return QsID;

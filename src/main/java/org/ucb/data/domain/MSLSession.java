@@ -1,11 +1,14 @@
 package org.ucb.data.domain;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -28,6 +31,14 @@ public class MSLSession {
 	// Therapeutic area for this session
 	@Column
 	private String MSLSessionTopic;
+	
+	// each MSL session can be booked by one or more Registered HCP
+	@ManyToMany(mappedBy = "registeredHCP_MSLSession")
+	private List<RegisteredHCP> MSLSession_registeredHCP;
+	
+	// each MSL session is given by one o many MSL
+	@ManyToMany(mappedBy="MSL_MSLSesssion")
+	private List<MSL> MSLSession_MSL;
 
 	public int getMSLSessionID() {
 		return MSLSessionID;

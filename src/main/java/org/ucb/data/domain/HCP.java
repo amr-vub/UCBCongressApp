@@ -1,6 +1,7 @@
 package org.ucb.data.domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -8,10 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
-import org.hibernate.mapping.List;
 
 /** 
  * This class is the base class of HCP, it contains the details
@@ -50,12 +51,29 @@ public class HCP {
 	private boolean regesteredStatus;
 	
 	// each HCP can have only one Agenda
-	@OneToOne(mappedBy="agenda_hcp")
+	@OneToOne(cascade = CascadeType.ALL, mappedBy="agenda_hcp") 
 	private Agenda HCP_agenda;
 	
 	// each HCP have one or many interests
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "HCPInitialInterests_hcp")
-	private java.util.List<HCPInitialInterests> HCP_hcpInitialInterests = new ArrayList<HCPInitialInterests>();	
+	private List<HCPInitialInterests> HCP_hcpInitialInterests = new ArrayList<HCPInitialInterests>();
+	
+	//each HCP will attend m to n sessions
+	@ManyToMany(cascade=CascadeType.ALL) 
+	@JoinTable(name="HCP_SESSION")
+	private List<Session> HCPSession;
+	
+	// each HCP can give one answer per feedback question
+	@OneToOne(cascade=CascadeType.ALL, mappedBy="FBAnswer_HCP")
+	private FeedbackAnswer HCP_FBAnswer;
+	
+	// each HCP can give one choice per vote
+	@OneToOne(cascade=CascadeType.ALL, mappedBy="VChoice_HCP")
+	private VoteChoices HCP_voteChoices;
+	
+	// each HCP can post zero or more questions
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="qs_HCP")
+	private List<Questions> HCP_qs;
 	
 	public int getHCPID() {
 		return HCPID;

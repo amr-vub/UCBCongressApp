@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 /** 
@@ -19,6 +21,9 @@ public class Category {
 	// e.g. products info, publications,webinars etc.
 	@Column
 	private String category;
+	
+	@ManyToOne @JoinColumn(nullable=false)
+	private Preferences cat_pref;
 
 	public int getCatID() {
 		return catID;

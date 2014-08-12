@@ -1,10 +1,14 @@
 package org.ucb.data.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /** 
@@ -35,6 +39,14 @@ public class Preferences {
 	
 	@OneToOne @JoinColumn(nullable=false)
 	private RegisteredHCP pref_registeredHCP; 
+	
+	// each preferences has one or many domain of contact
+	@OneToMany(cascade = CascadeType.ALL,mappedBy="domain_preferences")
+	private List<Domain_of_Contact> pref_domain;
+	
+	// each preferences has one or many domain of contact
+	@OneToMany(cascade = CascadeType.ALL,mappedBy="cat_pref")
+	private List<Category> pref_cat;
 
 	
 	public RegisteredHCP getPref_registeredHCP() {

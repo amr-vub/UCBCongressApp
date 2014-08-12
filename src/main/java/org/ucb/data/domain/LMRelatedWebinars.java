@@ -1,11 +1,13 @@
 package org.ucb.data.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -35,6 +37,12 @@ public class LMRelatedWebinars {
 	
 	@Column
 	private String LMRelatedWebinarsDuration;
+	
+	@ManyToMany(mappedBy="MSL_LMRelatedWebinars")
+	private List<MSL> LMRelatedWebinars_MSL;
+	
+	@ManyToMany(mappedBy="session_RelatedWebinars")
+	private List<Session> LMRelatedWebinars_Session;
 
 	public int getLMRelatedWebinarsID() {
 		return LMRelatedWebinarsID;

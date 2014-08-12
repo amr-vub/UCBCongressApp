@@ -1,8 +1,13 @@
 package org.ucb.data.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
 /** 
@@ -19,6 +24,9 @@ public class Agenda {
 	@OneToOne @JoinColumn(nullable=false)
 	private HCP agenda_hcp;
 
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(name="AGENDA_SESSION")
+	private List<Session> agenda_Session;
 	
 	
 	public HCP getAgenda_hcp() {

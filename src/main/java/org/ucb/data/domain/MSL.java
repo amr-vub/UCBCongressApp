@@ -1,8 +1,13 @@
 package org.ucb.data.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 /** 
  * This class contains MSL basic information
@@ -23,6 +28,14 @@ public class MSL {
 	// MSL might be categorized by which disease they are specialized in
 	@Column
 	private String MSLtherapeuticArea;
+	
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(name="MSL_MSLSesssion")
+	private List<MSLSession> MSL_MSLSesssion;
+	
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(name="MSL_LMRelatedWebinar")
+	private List<LMRelatedWebinars> MSL_LMRelatedWebinars;
 
 	public int getMSLID() {
 		return MSLID;

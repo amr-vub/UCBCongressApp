@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /** 
  * This class reflects a session's Content
@@ -23,6 +25,10 @@ public class Docs {
 	
 	@Column
 	private String docLink;
+	
+	@ManyToOne
+	@JoinColumn(nullable=false)
+	private Session docs_session;
 
 	public int getDocID() {
 		return docID;

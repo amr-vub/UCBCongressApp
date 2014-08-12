@@ -1,9 +1,12 @@
 package org.ucb.data.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 /** 
  * Each session has a list of related papers that the App can
@@ -28,6 +31,9 @@ public class LMRelatedpapers {
 	
 	@Column
 	private String LMRelatedpapersLinks;
+	
+	@ManyToMany(mappedBy="session_Relatedpapers")
+	private List<Session> Relatedpapers_session;
 
 	public int getLMRelatedpapersID() {
 		return LMRelatedpapersID;
