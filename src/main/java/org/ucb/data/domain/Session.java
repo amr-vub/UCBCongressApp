@@ -42,9 +42,11 @@ public class Session {
 	@Column
 	private String SessionAbstract;
 	
+	/*
 	// each session can be attended by m to n users
 	@ManyToMany(mappedBy="HCPSession")
 	private List<HCP> sessionHCP;
+	*/
 	
 	//each session can be given by one or many speakers
 	@ManyToMany(mappedBy = "registeredHCP_Session")
@@ -84,14 +86,6 @@ public class Session {
 	// each session have one or more docs
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="docs_session")
 	private List<Docs> session_docs;
-
-	public List<HCP> getSessionHCP() {
-		return sessionHCP;
-	}
-
-	public void setSessionHCP(List<HCP> sessionHCP) {
-		this.sessionHCP = sessionHCP;
-	}
 
 	public List<RegisteredHCP> getSession_RegisteredHCP() {
 		return session_RegisteredHCP;

@@ -24,7 +24,7 @@ public class AnonymousUserManager implements IAnonymousUserManager {
 	
 	public HCP storeAnonymousUser(HCP user) {
 		
-		getSessionFactory().openSession().save(user);
+		getSessionFactory().getCurrentSession().persist(user);
 		
 		return user;
 	}
@@ -46,7 +46,9 @@ public class AnonymousUserManager implements IAnonymousUserManager {
 
 	public void deleteAnonymousUser(HCP anonymousUser) {
 		
-		getSessionFactory().openSession().delete(anonymousUser);
+		//HCP utemp = findAnonymousUserById(anonymousUser.getHCPID());
+		
+		getSessionFactory().getCurrentSession().delete(anonymousUser);
 
 	}
 

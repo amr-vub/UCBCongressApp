@@ -27,23 +27,17 @@ public class Questions {
 	@Column @Temporal(TemporalType.TIME)
 	private Date QsSubmissionTime;
 	
+	/*
 	// each qestion can be asked by one hcp
 	@ManyToOne
 	@JoinColumn(nullable=false)
 	private HCP qs_HCP;
+	*/
 	
 	// each question can be related to one and only one session
 	@ManyToOne
 	@JoinColumn(nullable=false)
 	private Session qs_session;
-
-	public HCP getQs_HCP() {
-		return qs_HCP;
-	}
-
-	public void setQs_HCP(HCP qs_HCP) {
-		this.qs_HCP = qs_HCP;
-	}
 
 	public Session getQs_session() {
 		return qs_session;

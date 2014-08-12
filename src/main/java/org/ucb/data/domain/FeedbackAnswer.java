@@ -25,17 +25,12 @@ public class FeedbackAnswer {
 	@Column
 	private String fbTextAnswer;
 	
+	/*
 	@OneToOne
 	@JoinColumn(nullable=false)
 	private HCP FBAnswer_HCP;
+	*/
 
-	public HCP getFBAnswer_HCP() {
-		return FBAnswer_HCP;
-	}
-
-	public void setFBAnswer_HCP(HCP fBAnswer_HCP) {
-		FBAnswer_HCP = fBAnswer_HCP;
-	}
 
 	public int getFbAnswerID() {
 		return fbAnswerID;

@@ -9,8 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -50,6 +48,10 @@ public class HCP {
 	@Column
 	private boolean regesteredStatus;
 	
+	// how many times HCP invites other HCPs
+	@Column
+	private int no_Sent_Invitation;
+	
 	// each HCP can have only one Agenda
 	@OneToOne(cascade = CascadeType.ALL, mappedBy="agenda_hcp") 
 	private Agenda HCP_agenda;
@@ -58,11 +60,13 @@ public class HCP {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "HCPInitialInterests_hcp")
 	private List<HCPInitialInterests> HCP_hcpInitialInterests = new ArrayList<HCPInitialInterests>();
 	
+	/*
 	//each HCP will attend m to n sessions
 	@ManyToMany(cascade=CascadeType.ALL) 
 	@JoinTable(name="HCP_SESSION")
 	private List<Session> HCPSession;
-	
+	*/
+	/*
 	// each HCP can give one answer per feedback question
 	@OneToOne(cascade=CascadeType.ALL, mappedBy="FBAnswer_HCP")
 	private FeedbackAnswer HCP_FBAnswer;
@@ -74,37 +78,14 @@ public class HCP {
 	// each HCP can post zero or more questions
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="qs_HCP")
 	private List<Questions> HCP_qs;
-	
-	public List<Session> getHCPSession() {
-		return HCPSession;
+	*/
+
+	public int getNo_Sent_Invitation() {
+		return no_Sent_Invitation;
 	}
 
-	public void setHCPSession(List<Session> hCPSession) {
-		HCPSession = hCPSession;
-	}
-
-	public FeedbackAnswer getHCP_FBAnswer() {
-		return HCP_FBAnswer;
-	}
-
-	public void setHCP_FBAnswer(FeedbackAnswer hCP_FBAnswer) {
-		HCP_FBAnswer = hCP_FBAnswer;
-	}
-
-	public VoteChoices getHCP_voteChoices() {
-		return HCP_voteChoices;
-	}
-
-	public void setHCP_voteChoices(VoteChoices hCP_voteChoices) {
-		HCP_voteChoices = hCP_voteChoices;
-	}
-
-	public List<Questions> getHCP_qs() {
-		return HCP_qs;
-	}
-
-	public void setHCP_qs(List<Questions> hCP_qs) {
-		HCP_qs = hCP_qs;
+	public void setNo_Sent_Invitation(int no_Sent_Invitation) {
+		this.no_Sent_Invitation = no_Sent_Invitation;
 	}
 
 	public int getHCPID() {
