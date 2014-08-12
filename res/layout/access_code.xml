@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/access_code_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="124dp"
+        android:text="Please enter the access code:" />
+
+    <EditText
+        android:id="@+id/access_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/access_code_header"
+        android:layout_below="@id/access_code_header"
+        android:layout_marginTop="19dp"
+        android:ems="10"
+        android:hint="Access code" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/access_code_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/access_code"
+        android:layout_below="@id/access_code"
+        android:layout_marginTop="26dp"
+        android:text="Continue" />
+
+    <TextView
+        android:id="@+id/access_code_not_have_yet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/access_code_continue"
+        android:layout_below="@id/access_code_continue"
+        android:layout_marginTop="63dp"
+        android:text="I don&apos;t have a code yet." />
+
+    <Button
+        android:id="@+id/anony_survey_epil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/access_code_not_have_yet"
+        android:layout_below="@id/access_code_not_have_yet"
+        android:layout_marginTop="24dp"
+        android:text="Contact someone at UCB." />
+
+</RelativeLayout>

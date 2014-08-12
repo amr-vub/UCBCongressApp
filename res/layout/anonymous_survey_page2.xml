@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/anony_survey_header_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="I am specialized in:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <Button
+        android:id="@+id/anony_survey_arith"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@id/anony_survey_header_2"
+        android:layout_below="@id/anony_survey_header_2"
+        android:layout_marginTop="26dp"
+        android:background="@color/ucb_red"
+        android:text="Arthritis"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/anony_survey_epil"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@id/anony_survey_header_2"
+        android:layout_below="@id/anony_survey_arith"
+        android:layout_marginTop="26dp"
+        android:background="@color/ucb_light_blue"
+        android:text="Epilepsy"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/anony_survey_park"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@id/anony_survey_epil"
+        android:layout_below="@id/anony_survey_epil"
+        android:layout_marginTop="26dp"
+        android:background="@color/ucb_green"
+        android:text="Parkinson"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

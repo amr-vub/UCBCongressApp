@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="LoadingBackground">#3755FF</color>
+    <color name="ucb_blue">#354B96</color>
+    <color name="ucb_purple">#5E366E</color>
+    <color name="ucb_red">#CF004D</color>
+    <color name="ucb_orange">#EE8000</color>
+    <color name="ucb_light_blue">#4EADD0</color>
+    <color name="ucb_green">#96BA39</color>
+</resources>
