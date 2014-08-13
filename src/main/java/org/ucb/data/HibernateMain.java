@@ -11,15 +11,14 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.ucb.data.dao.AnonymousUserManager;
-import org.ucb.data.dao.IAnonymousUserManager;
 import org.ucb.data.domain.Agenda;
 import org.ucb.data.domain.FeedbackAnswer;
 import org.ucb.data.domain.HCP;
 import org.ucb.data.domain.HCPInitialInterests;
 import org.ucb.service.IServiceStub;
-import org.ucb.service.ServiceStub;
+
 
 public class HibernateMain {
 
@@ -66,7 +65,7 @@ public class HibernateMain {
 		user.setAcademic_practitioner_value("Academic");
 		user.setHCP_hcpInitialInterests(hCP_hcpInitialInterests);
 		
-		System.out.print(iServiceStub.storeAnonymousUser(user));
+		//System.out.print(iServiceStub.storeAnonymousUser(user));
 
 		HCP u = new HCP();
 		u.setHCPID(0);
@@ -76,6 +75,10 @@ public class HibernateMain {
 		//anonymousUserManager.updateAnonymousUser(user);
 		
 		//System.out.print(anonymousUserManager.anonymousUserExists(0));
+		
+		/// Spring mobile part
+		
+		//SpringApplication.run(HibernateMain.class, args);
 	}
 	
 	private static Session connect2DB(){
@@ -90,5 +93,4 @@ public class HibernateMain {
 		
 		return session;
 	}
-
 }
