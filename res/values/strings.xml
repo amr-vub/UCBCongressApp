@@ -6,8 +6,8 @@
     <string name="hello_world">Hello world!</string>
 
     <string-array name="drawer_titles">
-        <item>Agenda</item>
         <item>User profile</item>
+        <item>Agenda</item>
         <item>Speakers</item>
     </string-array>
 
