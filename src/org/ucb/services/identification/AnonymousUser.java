@@ -1,4 +1,4 @@
-package identification;
+package org.ucb.services.identification;
 
 import sampleLogin.SLoginModule;
 

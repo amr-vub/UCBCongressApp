@@ -1,4 +1,4 @@
-package voting;
+package org.ucb.services.voting;
 
 public class Election {
 	

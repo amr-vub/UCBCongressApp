@@ -1,4 +1,4 @@
-package identification;
+package org.ucb.services.identification;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,7 +6,8 @@ import java.util.Date;
 
 
 
-import preferences.Preference;
+
+import org.ucb.services.preferences.Preference;
 
 public class RegisteredUser extends AnonymousUser {
 	

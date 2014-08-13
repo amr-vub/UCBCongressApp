@@ -28,7 +28,7 @@ public class SLoginModule implements LoginModule {
     // initial state
     private Subject subject;
     private CallbackHandler callbackHandler;
-    private Map sharedState;
+    private Map sharedState; 
     private Map options;
 
     // configurable option
@@ -40,7 +40,7 @@ public class SLoginModule implements LoginModule {
 
     // username and password
     private String username;
-    private char[] password;
+    private char[] password; 
 
     // testUser's SamplePrincipal
     private SPrincipal userPrincipal;
@@ -137,7 +137,13 @@ public class SLoginModule implements LoginModule {
         }
 
         // verify the username/password
-        /**This is where the Username-Password check really happens*/
+        /**
+         * 
+         * This is where the Username-Password check really happens
+         * 
+         * 
+         * 
+         * */
         boolean usernameCorrect = false;
         boolean passwordCorrect = false;
         if (username.equals("testUser"))

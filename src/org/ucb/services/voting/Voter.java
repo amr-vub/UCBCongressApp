@@ -1,6 +1,6 @@
-package voting;
+package org.ucb.services.voting;
 
-import identification.AnonymousUser;
+import org.ucb.services.identification.AnonymousUser;
 
 public class Voter {
 

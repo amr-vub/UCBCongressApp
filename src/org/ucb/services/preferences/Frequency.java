@@ -1,4 +1,4 @@
-package preferences;
+package org.ucb.services.preferences;
 
 public enum Frequency {
 	WEEKLY,
