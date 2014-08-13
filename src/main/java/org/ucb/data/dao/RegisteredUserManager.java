@@ -16,7 +16,7 @@ public class RegisteredUserManager implements IRegisteredUserManager{
 	
 	public RegisteredHCP findRegisteredUserById(int HCPID) {
 		RegisteredHCP user = null ;		
-		List<HCP> list = sessionFactory.openSession().createQuery("SELECT u FROM RegisteredHCP u WHERE u.HCPID = :HCPID").setParameter("HCPID", HCPID).list();
+		List<HCP> list = sessionFactory.getCurrentSession().createQuery("SELECT u FROM RegisteredHCP u WHERE u.HCPID = :HCPID").setParameter("HCPID", HCPID).list();
 		if(!list.isEmpty())
 			user =  (RegisteredHCP) list.get(0);
 		
@@ -25,7 +25,7 @@ public class RegisteredUserManager implements IRegisteredUserManager{
 
 	public RegisteredHCP findRegisteredUserByEmail(String email) {
 		RegisteredHCP user = null ;		
-		List<HCP> list = sessionFactory.openSession().createQuery("SELECT u FROM RegisteredHCP u WHERE u.email = :email").setParameter("email", email).list();
+		List<HCP> list = sessionFactory.getCurrentSession().createQuery("SELECT u FROM RegisteredHCP u WHERE u.email = :email").setParameter("email", email).list();
 		if(!list.isEmpty())
 			user =  (RegisteredHCP) list.get(0);
 		
@@ -34,21 +34,21 @@ public class RegisteredUserManager implements IRegisteredUserManager{
 
 	public RegisteredHCP storeRegisteredUser(RegisteredHCP user) {
 
-		getSessionFactory().openSession().save(user);
+		getSessionFactory().getCurrentSession().persist(user);
 		
 		return user;
 	}
 
 	public boolean registeredUserExists(int registeredID) {
 		boolean isUser ;
-		List remp = sessionFactory.openSession().createQuery("SELECT u FROM HCP u WHERE u.registeredID = :registeredID").setParameter("registeredID", registeredID).list();
+		List remp = sessionFactory.getCurrentSession().createQuery("SELECT u FROM HCP u WHERE u.registeredID = :registeredID").setParameter("registeredID", registeredID).list();
 		isUser = remp.isEmpty() ? false:true ;
 		return isUser;
 	}
 
 	public RegisteredHCP updateRegisteredUser(RegisteredHCP registeredUser) {
 		
-		getSessionFactory().openSession().update(registeredUser);
+		getSessionFactory().getCurrentSession().merge(registeredUser);
 		
 		return registeredUser;
 	}

@@ -66,18 +66,12 @@ public class HibernateMain {
 		user.setAcademic_practitioner_value("Academic");
 		user.setHCP_hcpInitialInterests(hCP_hcpInitialInterests);
 		
-		//session.beginTransaction();
-		
-		//System.out.print(session.save(user));
-				
-		//session.getTransaction().commit();
-		
-		//System.out.print(iServiceStub.storeAnonymousUser(user));
+		System.out.print(iServiceStub.storeAnonymousUser(user));
 
-		//HCP u = new HCP();
-		//u.setHCPID(0);
+		HCP u = new HCP();
+		u.setHCPID(0);
 		
-		iServiceStub.deleteAnonymousUser(user);
+		//iServiceStub.deleteAnonymousUser(u);
 		
 		//anonymousUserManager.updateAnonymousUser(user);
 		

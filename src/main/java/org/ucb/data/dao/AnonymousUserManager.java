@@ -15,23 +15,22 @@ public class AnonymousUserManager implements IAnonymousUserManager {
 	
 	public HCP findAnonymousUserById(int anonymousID) {
 		HCP user = null ;		
-		List<HCP> list = sessionFactory.openSession().createQuery("SELECT u FROM HCP u WHERE u.HCPID = :anonymousID").setParameter("anonymousID", anonymousID).list();
+		List<HCP> list = sessionFactory.getCurrentSession().createQuery("SELECT u FROM HCP u WHERE u.HCPID = :anonymousID").setParameter("anonymousID", anonymousID).list();
 		if(!list.isEmpty())
-			user =  (HCP) list.get(0);
-		
+			user =  (HCP) list.get(0);		
 		return user;
 	}
 	
 	public HCP storeAnonymousUser(HCP user) {
 		
-		getSessionFactory().getCurrentSession().persist(user);
+		getSessionFactory().getCurrentSession().save(user);
 		
 		return user;
 	}
 
 	public boolean anonymousUserExists(int anonymousID) {
 		boolean isUser ;
-		List remp = sessionFactory.openSession().createQuery("SELECT u FROM HCP u WHERE u.HCPID = :anonymousID").setParameter("anonymousID", anonymousID).list();
+		List remp = sessionFactory.getCurrentSession().createQuery("SELECT u FROM HCP u WHERE u.HCPID = :anonymousID").setParameter("anonymousID", anonymousID).list();
 		isUser = remp.isEmpty() ? false:true ;
 		return isUser;
 	}
@@ -39,7 +38,7 @@ public class AnonymousUserManager implements IAnonymousUserManager {
 
 	public HCP updateAnonymousUser(HCP anonymousUser) {
 		
-		getSessionFactory().openSession().update(anonymousUser);
+		getSessionFactory().getCurrentSession().update(anonymousUser);
 		
 		return anonymousUser;
 	}

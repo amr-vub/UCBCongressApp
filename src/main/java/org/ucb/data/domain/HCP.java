@@ -12,6 +12,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.Cascade;
+
 /** 
  * This class is the base class of HCP, it contains the details
  * that we collect anonymously from HCP
@@ -57,7 +59,8 @@ public class HCP {
 	private Agenda HCP_agenda;
 	
 	// each HCP have one or many interests
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "HCPInitialInterests_hcp")
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "HCPInitialInterests_hcp")
+	@Cascade({org.hibernate.annotations.CascadeType.ALL})
 	private List<HCPInitialInterests> HCP_hcpInitialInterests = new ArrayList<HCPInitialInterests>();
 	
 	/*

@@ -1,5 +1,6 @@
 package org.ucb.data.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 /** 
  * This class contains the initial interests collected from HCP 
@@ -24,6 +28,7 @@ public class HCPInitialInterests {
 	private String HCP_Initial_Interest;
 	
 	@ManyToOne @JoinColumn(nullable=false)
+	@OnDelete(action=OnDeleteAction.CASCADE)
 	private HCP HCPInitialInterests_hcp;
 
 	
