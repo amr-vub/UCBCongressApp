@@ -4,7 +4,8 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.List;
 
-import org.ucb.ui.*;
+import org.ucb.ui.R;
+import org.ucb.ui.activity.*;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

@@ -1,9 +1,10 @@
 package org.ucb.ui.activity;
 
+import org.ucb.ui.activity.*;
+import org.ucb.ui.activity.adapter.LoginAdapter;
 import org.ucb.ui.activity.home.HomeActivity;
-import org.ucb.ui.adapter.LoginAdapter;
 
-import org.ucb.ui.*;
+import org.ucb.ui.R;
 
 import android.app.Activity;
 import android.app.Dialog;

@@ -10,14 +10,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:text="I am a:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/anony_survey_doctor"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/anony_survey_header_1"
         android:layout_marginLeft="50dp"
@@ -29,7 +29,7 @@
     <Button
         android:id="@+id/anony_survey_nurse"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_alignBaseline="@id/anony_survey_doctor"
         android:layout_alignBottom="@id/anony_survey_doctor"
         android:layout_marginLeft="10dp"
@@ -39,25 +39,25 @@
         android:textColor="@color/white" />
 
     <Button
-        android:id="@+id/anony_survey_pharma"
+        android:id="@+id/anony_survey_phd"
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignLeft="@id/anony_survey_doctor"
-        android:layout_below="@id/anony_survey_doctor"
+        android:layout_height="150dp"
+        android:layout_alignLeft="@+id/anony_survey_nurse"
+        android:layout_below="@+id/anony_survey_nurse"
         android:layout_marginTop="10dp"
-        android:background="@color/ucb_red"
-        android:text="Pharmacist"
+        android:background="@color/ucb_orange"
+        android:text="PhD"
         android:textColor="@color/white" />
 
     <Button
-        android:id="@+id/anony_survey_phd"
+        android:id="@+id/anony_survey_pharma"
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignBaseline="@id/anony_survey_pharma"
-        android:layout_alignBottom="@id/anony_survey_pharma"
-        android:layout_alignLeft="@id/anony_survey_nurse"
-        android:background="@color/ucb_orange"
-        android:text="PhD"
+        android:layout_height="150dp"
+        android:layout_alignBaseline="@+id/anony_survey_phd"
+        android:layout_alignBottom="@+id/anony_survey_phd"
+        android:layout_toLeftOf="@+id/anony_survey_nurse"
+        android:background="@color/ucb_red"
+        android:text="Pharmacist"
         android:textColor="@color/white" />
 
 </RelativeLayout>

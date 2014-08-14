@@ -1,8 +1,9 @@
 package org.ucb.ui.activity;
 
-import org.ucb.ui.adapter.LoginAdapter;
+import org.ucb.ui.activity.*;
+import org.ucb.ui.activity.adapter.LoginAdapter;
 
-import org.ucb.ui.*;
+import org.ucb.ui.R;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -61,6 +62,7 @@ public class SignUpActivity extends Activity {
 					Toast.makeText(getApplicationContext(),
 							"Account Successfully Created ", Toast.LENGTH_LONG)
 							.show();
+					finish();
 				}
 			}
 		});

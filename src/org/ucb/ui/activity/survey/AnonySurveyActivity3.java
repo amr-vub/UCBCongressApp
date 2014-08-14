@@ -2,11 +2,12 @@ package org.ucb.ui.activity.survey;
 
 import java.util.ArrayList;
 
+import org.ucb.ui.activity.*;
+import org.ucb.ui.activity.adapter.AnonySurveyAdapter3;
 import org.ucb.ui.activity.home.HomeActivity;
-import org.ucb.ui.adapter.AnonySurveyAdapter3;
-import org.ucb.ui.object.InterestItem;
+import org.ucb.ui.activity.object.InterestItem;
 
-import org.ucb.ui.*;
+import org.ucb.ui.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -50,8 +51,14 @@ public class AnonySurveyActivity3 extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View v, int position,
 					long arg3) {
-				interestOptions.get(position).setState(true);
-				myAdapter.notifyDataSetChanged();
+				if(interestOptions.get(position).isState()== true){
+					interestOptions.get(position).setState(false);
+					myAdapter.notifyDataSetChanged();
+				}
+				else{
+					interestOptions.get(position).setState(true);
+					myAdapter.notifyDataSetChanged();
+				}
 			}
 		});
 

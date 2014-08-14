@@ -1,6 +1,8 @@
 package org.ucb.ui.activity.survey;
 
-import org.ucb.ui.*;
+import org.ucb.ui.R;
+import org.ucb.ui.activity.*;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

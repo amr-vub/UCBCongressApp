@@ -9,40 +9,40 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
         android:text="I am specialized in:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/anony_survey_arith"
-        android:layout_width="250dp"
-        android:layout_height="80dp"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
         android:layout_alignLeft="@id/anony_survey_header_2"
         android:layout_below="@id/anony_survey_header_2"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="30dp"
         android:background="@color/ucb_red"
         android:text="Arthritis"
         android:textColor="@color/white" />
 
     <Button
         android:id="@+id/anony_survey_epil"
-        android:layout_width="250dp"
-        android:layout_height="80dp"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
         android:layout_alignLeft="@id/anony_survey_header_2"
         android:layout_below="@id/anony_survey_arith"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="10dp"
         android:background="@color/ucb_light_blue"
         android:text="Epilepsy"
         android:textColor="@color/white" />
 
     <Button
         android:id="@+id/anony_survey_park"
-        android:layout_width="250dp"
-        android:layout_height="80dp"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
         android:layout_alignLeft="@id/anony_survey_epil"
         android:layout_below="@id/anony_survey_epil"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="10dp"
         android:background="@color/ucb_green"
         android:text="Parkinson"
         android:textColor="@color/white" />

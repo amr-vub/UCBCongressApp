@@ -1,13 +1,19 @@
 package org.ucb.ui.activity.home;
 
 
-import org.ucb.ui.*;
+import org.ucb.ui.R;
+import org.ucb.ui.activity.*;
+import org.ucb.ui.activity.preference.SettingsActivity;
+
 import android.os.Bundle;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -83,14 +89,7 @@ public class HomeActivity extends FragmentActivity {
 	 * open or close the NavigationDrawer when the user clicking the ActionBar
 	 * app icon.
 	 */
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		if (mDrawerToggle.onOptionsItemSelected(item)) {
-			return true;
-		}
 
-		return super.onOptionsItemSelected(item);
-	}
 
 	/*
 	 * When using the ActionBarDrawerToggle, you must call it during
@@ -138,6 +137,7 @@ public class HomeActivity extends FragmentActivity {
 					.replace(R.id.content_frame,
 							SpeakersActivity.newInstance(), "Speakers")
 					.commit();
+			break;
 		}
 		mDrawerLayout.closeDrawer(mDrawerList);
 	}
@@ -146,6 +146,44 @@ public class HomeActivity extends FragmentActivity {
 	public void setTitle(CharSequence title) {
 		mTitle = title;
 		getActionBar().setTitle(mTitle);
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu items for use in the action bar
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.home, menu);
+	    return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+		if (mDrawerToggle.onOptionsItemSelected(item)) {
+			return true;
+		}
+		else{
+		    switch (item.getItemId()) {
+		        case R.id.action_register:
+		            openRegister();
+		            return true;
+		        case R.id.action_settings:
+		            openSettings();
+		            return true;
+		        default:
+		            return super.onOptionsItemSelected(item);
+		    }
+		}
+	}
+
+	private void openRegister() {
+		Intent intent = new Intent(HomeActivity.this, SignUpActivity.class);
+		startActivity(intent);
+	}
+
+	private void openSettings() {
+		Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+		startActivity(intent);
 	}
 
 }

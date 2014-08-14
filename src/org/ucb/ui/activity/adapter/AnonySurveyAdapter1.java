@@ -1,4 +1,4 @@
-package org.ucb.ui.adapter;
+package org.ucb.ui.activity.adapter;
 
 public class AnonySurveyAdapter1 {
 

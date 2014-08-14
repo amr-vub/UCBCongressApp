@@ -1,4 +1,4 @@
-package org.ucb.ui.adapter;
+package org.ucb.ui.activity.adapter;
 
 import android.content.ContentValues;
 import android.content.Context;

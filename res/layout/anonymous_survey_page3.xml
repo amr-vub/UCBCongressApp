@@ -9,23 +9,25 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
         android:text="I am interested in:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <GridView
         android:id="@+id/gridView1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_above="@+id/anony_survey_interest_next"
         android:layout_alignLeft="@id/anony_survey_header_3"
         android:layout_below="@id/anony_survey_header_3"
+        android:choiceMode="multipleChoice"
         android:gravity="center"
-        android:horizontalSpacing="10dp"
-        android:verticalSpacing="10dp"
+        android:horizontalSpacing="5dp"
         android:numColumns="auto_fit"
         android:stretchMode="columnWidth"
-        android:textColor="@color/white" >
+        android:textColor="@color/white"
+        android:verticalSpacing="5dp" >
 
     </GridView>
 
@@ -33,9 +35,9 @@
         android:id="@+id/anony_survey_interest_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/anony_survey_header_3"
+        android:layout_alignLeft="@+id/gridView1"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="98dp"
+        android:layout_marginBottom="50dp"
         android:text="Next" />
 
 </RelativeLayout>

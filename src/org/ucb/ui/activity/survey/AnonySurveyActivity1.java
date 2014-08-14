@@ -1,7 +1,8 @@
 package org.ucb.ui.activity.survey;
 
-import org.ucb.ui.adapter.AnonySurveyAdapter1;
-import org.ucb.ui.*;
+import org.ucb.ui.activity.*;
+import org.ucb.ui.activity.adapter.AnonySurveyAdapter1;
+import org.ucb.ui.R;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -6,9 +6,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Vector;
-import org.ucb.ui.*;
-import org.ucb.ui.adapter.ScrollState;
-import org.ucb.ui.adapter.ViewPagerAdapter;
+
+import org.ucb.ui.R;
+import org.ucb.ui.activity.*;
+import org.ucb.ui.activity.adapter.ScrollState;
+import org.ucb.ui.activity.adapter.ViewPagerAdapter;
 
 import android.content.Context;
 import android.os.Bundle;

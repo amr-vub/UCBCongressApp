@@ -2,8 +2,10 @@ package org.ucb.ui.activity;
 
 import java.util.ArrayList;
 import java.util.Locale;
-import org.ucb.ui.*;
-import org.ucb.ui.object.Session;
+
+import org.ucb.ui.R;
+import org.ucb.ui.activity.*;
+import org.ucb.ui.activity.object.Session;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

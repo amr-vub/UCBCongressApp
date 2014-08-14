@@ -22,7 +22,7 @@
         android:layout_below="@id/ucb_logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:text="Check our booth at IBM."
-        android:textColor="@color/LoadingBackground" />
+        android:text="Check our booth at Somewhere."
+        android:textColor="@color/ucb_blue" />
 
 </RelativeLayout>

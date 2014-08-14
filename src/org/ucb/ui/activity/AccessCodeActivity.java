@@ -1,8 +1,8 @@
 package org.ucb.ui.activity;
 
 import org.ucb.ui.R;
+import org.ucb.ui.activity.adapter.AccessCodeAdapter;
 import org.ucb.ui.activity.survey.AnonySurveyActivity1;
-import org.ucb.ui.adapter.AccessCodeAdapter;
 
 
 import android.app.Activity;
@@ -60,7 +60,7 @@ public class AccessCodeActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.acess_code, menu);
+		// getMenuInflater().inflate(R.menu.acess_code, menu);
 		return true;
 	}
 

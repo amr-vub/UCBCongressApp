@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="16"
+        android:minSdkVersion="17"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".activity.LoadingActivity"
+            android:name="org.ucb.ui.LoadingActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,27 +24,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.AccessCodeActivity">
+        <activity android:name="org.ucb.ui.AccessCodeActivity" >
         </activity>
-        <activity android:name=".activity.survey.AnonySurveyActivity1">
+        <activity android:name="org.ucb.ui.survey.AnonySurveyActivity1" >
         </activity>
-        <activity
-            android:name=".activity.survey.AnonySurveyActivity2"
-            android:label="@string/title_anony_survey_activity2" >
+        <activity android:name="org.ucb.ui.survey.AnonySurveyActivity2">
         </activity>
-        <activity
-            android:name = ".activity.survey.AnonySurveyActivity3"
-            android:label="@string/title_anony_survey_activity3" >
+        <activity android:name="org.ucb.ui.survey.AnonySurveyActivity3" >
         </activity>
-        <activity android:name=".activity.home.HomeActivity">
+        <activity android:name="org.ucb.ui.home.HomeActivityty" >
         </activity>
-        <activity android:name=".activity.SignUpActivity">
+        <activity android:name="org.ucb.ui.SignUpActivity" >
         </activity>
-        <activity android:name=".activity.home.SpeakersActivity">
+        <activity android:name="org.ucb.ui.home.SpeakersActivityity" >
         </activity>
-        <activity android:name=".activity.StartActivity">
+        <activity android:name="org.ucb.ui.StartActivity" >
         </activity>
-        <activity android:name=".activity.TabbedActivity">
+        <activity android:name="org.ucb.ui.TabbedActivity" >
+        </activity>
+        <activity android:name="org.ucb.ui.preference.SettingsActivityctivity" >
         </activity>
     </application>
 
