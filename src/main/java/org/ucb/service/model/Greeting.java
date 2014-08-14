@@ -1,4 +1,4 @@
-package org.ucb.main;
+package org.ucb.service.model;
 
 public class Greeting {
 
