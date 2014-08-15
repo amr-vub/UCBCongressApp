@@ -7,11 +7,12 @@
     <string name="register">Register</string>
 
     <string-array name="drawer_titles">
-		<item>User profile</item>
+        <item>User profile</item>
         <item>Agenda</item>
         <item>Speakers</item>
+        <item>Preferences</item>
     </string-array>
-    
+
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="title_activity_item_one">ItemOne</string>
@@ -26,5 +27,7 @@
     <string name="title_anony_survey_activity1">AnonySurveyActivity1</string>
     <string name="title_anony_survey_activity2">AnonySurveyActivity2</string>
     <string name="title_anony_survey_activity3">AnonySurveyActivity3</string>
+    <string name="title_preferenceitem_list">PreferenceItems</string>
+    <string name="title_preferenceitem_detail">PreferenceItem Detail</string>
 
 </resources>

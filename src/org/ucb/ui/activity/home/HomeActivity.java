@@ -3,7 +3,6 @@ package org.ucb.ui.activity.home;
 
 import org.ucb.ui.R;
 import org.ucb.ui.activity.*;
-import org.ucb.ui.activity.preference.SettingsActivity;
 
 import android.os.Bundle;
 import android.content.Intent;
@@ -138,6 +137,13 @@ public class HomeActivity extends FragmentActivity {
 							SpeakersActivity.newInstance(), "Speakers")
 					.commit();
 			break;
+		case 3:
+			getSupportFragmentManager()
+			.beginTransaction()
+			.replace(R.id.content_frame,
+					PreferenceActivity.newInstance(), "Preferences")
+			.commit();
+	break;
 		}
 		mDrawerLayout.closeDrawer(mDrawerList);
 	}
@@ -168,7 +174,6 @@ public class HomeActivity extends FragmentActivity {
 		            openRegister();
 		            return true;
 		        case R.id.action_settings:
-		            openSettings();
 		            return true;
 		        default:
 		            return super.onOptionsItemSelected(item);
@@ -177,12 +182,7 @@ public class HomeActivity extends FragmentActivity {
 	}
 
 	private void openRegister() {
-		Intent intent = new Intent(HomeActivity.this, SignUpActivity.class);
-		startActivity(intent);
-	}
-
-	private void openSettings() {
-		Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+		Intent intent = new Intent(HomeActivity.this, RegisterActivity.class);
 		startActivity(intent);
 	}
 

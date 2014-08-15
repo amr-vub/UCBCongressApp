@@ -37,7 +37,7 @@ public class StartActivity extends Activity {
 			public void onClick(View v) {
 				// Create Intent for SignUpActivity and start the activity
 				Intent intentSignUp = new Intent(getApplicationContext(),
-						SignUpActivity.class);
+						RegisterActivity.class);
 				startActivity(intentSignUp);
 			}
 		});

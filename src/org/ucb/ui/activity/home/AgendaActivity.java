@@ -10,7 +10,7 @@ import java.util.Vector;
 import org.ucb.ui.R;
 import org.ucb.ui.activity.*;
 import org.ucb.ui.activity.adapter.ScrollState;
-import org.ucb.ui.activity.adapter.ViewPagerAdapter;
+import org.ucb.ui.activity.adapter.AgendaAdapter;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -32,7 +32,7 @@ public class AgendaActivity extends Fragment {
 
 	Context mContext;
 	ViewPager mViewPager; // ViewPager will host the tabs and contents
-	ViewPagerAdapter mSectionsPagerAdapter;
+	AgendaAdapter mSectionsPagerAdapter;
 
 	public static AgendaActivity newInstance() {
 		return new AgendaActivity();
@@ -52,7 +52,7 @@ public class AgendaActivity extends Fragment {
 		View v = inflater.inflate(R.layout.agenda, container, false);
 		mViewPager = (ViewPager) v.findViewById(R.id.agenda_view_pager);
 
-		mSectionsPagerAdapter = new ViewPagerAdapter(mContext);
+		mSectionsPagerAdapter = new AgendaAdapter(mContext);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 
 		return v;

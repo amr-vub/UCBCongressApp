@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="org.ucb.ui.LoadingActivity"
+            android:name=".activity.LoadingActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,26 +24,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="org.ucb.ui.AccessCodeActivity" >
-        </activity>
-        <activity android:name="org.ucb.ui.survey.AnonySurveyActivity1" >
-        </activity>
-        <activity android:name="org.ucb.ui.survey.AnonySurveyActivity2">
-        </activity>
-        <activity android:name="org.ucb.ui.survey.AnonySurveyActivity3" >
-        </activity>
-        <activity android:name="org.ucb.ui.home.HomeActivityty" >
-        </activity>
-        <activity android:name="org.ucb.ui.SignUpActivity" >
-        </activity>
-        <activity android:name="org.ucb.ui.home.SpeakersActivityity" >
-        </activity>
-        <activity android:name="org.ucb.ui.StartActivity" >
-        </activity>
-        <activity android:name="org.ucb.ui.TabbedActivity" >
-        </activity>
-        <activity android:name="org.ucb.ui.preference.SettingsActivityctivity" >
-        </activity>
-    </application>
+        <activity android:name=".activity.AccessCodeActivity" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.StartActivity" />
+        <activity android:name=".activity.home.AgendaActivity" />
+        <activity android:name=".activity.home.HomeActivity" />
+        <activity android:name=".activity.home.SpeakersActivity" />
+        <activity android:name=".activity.home.SessionActivity"/>
+    	<activity android:name=".activity.home.PreferenceActivity" />
+        <activity android:name=".activity.home.UserProfileActivity" />
+        <activity android:name=".activity.survey.AnonySurveyActivity1" />
+        <activity android:name=".activity.survey.AnonySurveyActivity2" />
+        <activity android:name=".activity.survey.AnonySurveyActivity3" />
+        </application>
 
 </manifest>
