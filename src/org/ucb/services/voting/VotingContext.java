@@ -34,6 +34,8 @@ public class VotingContext {
 
 	public void setQuestion(String question) {
 		this.question = question;
+		
+		//TODO: Store this field in the DB
 	}
 	
 	

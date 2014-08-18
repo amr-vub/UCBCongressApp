@@ -1,5 +1,5 @@
 
-package sampleLogin;
+package org.ucb.services.login;
 
 import java.io.*;
 import java.util.*;

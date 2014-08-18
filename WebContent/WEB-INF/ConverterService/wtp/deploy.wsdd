@@ -10,11 +10,11 @@
       <parameter name="className" value="wtp.Converter"/>
       <parameter name="wsdlPortType" value="Converter"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://wtp" xmlns:retNS="http://wtp" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="celsiusToFarenheit" qname="operNS:celsiusToFarenheit" returnQName="retNS:celsiusToFarenheitReturn" returnType="rtns:float" soapAction="">
-        <parameter xmlns:pns="http://wtp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:celsius" type="tns:float"/>
-      </operation>
       <operation xmlns:operNS="http://wtp" xmlns:retNS="http://wtp" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="farenheitToCelsius" qname="operNS:farenheitToCelsius" returnQName="retNS:farenheitToCelsiusReturn" returnType="rtns:float" soapAction="">
         <parameter xmlns:pns="http://wtp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:farenheit" type="tns:float"/>
+      </operation>
+      <operation xmlns:operNS="http://wtp" xmlns:retNS="http://wtp" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="celsiusToFarenheit" qname="operNS:celsiusToFarenheit" returnQName="retNS:celsiusToFarenheitReturn" returnType="rtns:float" soapAction="">
+        <parameter xmlns:pns="http://wtp" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:celsius" type="tns:float"/>
       </operation>
       <parameter name="allowedMethods" value="celsiusToFarenheit farenheitToCelsius"/>
 

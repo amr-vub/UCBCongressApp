@@ -11,6 +11,7 @@ public class Election {
 	
 	/**
 	 * Initialization constructor
+	 * 
 	 * */
 	public Election()
 	{
@@ -22,7 +23,12 @@ public class Election {
 	
 	/**
 	 * Copy constructor
-	 * */
+	 * 
+	 * @param done - a flag determining whether the user has voted or not.
+	 * @param voterID - the user who votes.
+	 * @param votingCandidateID - the participant at the voting process.
+	 * @param votingContextID
+	 */
 	public Election(boolean done, Voter voterID,
 			VotingCandidate votingCandidateID, VotingContext votingContextID) {
 		
@@ -31,7 +37,7 @@ public class Election {
 		this.votingCandidateID = votingCandidateID;
 		this.votingContextID   = votingContextID;
 		
-		// Storing in the DB can happen at this point.
+		//TODO: Storing in the DB can happen at this point.
 	}
 	
 	public void vote(Voter voterID, VotingContext votingContextID, VotingCandidate votingCandidate){
@@ -44,6 +50,8 @@ public class Election {
 		this.votingCandidateID.vote();
 		
 		done                   = true;
+		
+		//TODO: Store all these fields in the DB
 	}
 	
 	

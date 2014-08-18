@@ -3,71 +3,76 @@ package org.ucb.services.identification;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.security.auth.login.LoginException;
 
-
-
-
+import org.ucb.services.login.SLoginModule;
 import org.ucb.services.preferences.Preference;
 
 public class RegisteredUser extends AnonymousUser {
-	
-	/* Assuming everyone has one*/
+
+	/* Assuming everyone has one */
 	private Integer uniqueID;
-	
-	/* Mr. / Ms. / Mrs.*/
-	private Title personalTitle; 
-	
+
+	/* Mr. / Ms. / Mrs. */
+	private Title personalTitle;
+
 	private String firstName;
-	
+
 	private String lastName;
-	
+
 	private String address;
-	
+
 	private Integer zipCode;
-	
+
 	private String city;
-	
+
 	// country is known from AnonymousUser
-	
+
 	private String email;
-	
+
 	private Integer phoneNumber;
-	
+
 	private ArrayList<String> specializations;
-	
+
 	private ArrayList<String> subSpecializations;
-	
+
 	private ArrayList<String> therapeuticAreas;
-	
-	private Preference Preferences;		
-	
+
+	private Preference Preferences;
+
 	private Date registrationDate;
-	
+
 	private Date lastLoginDate;
+
+	protected static SLoginModule loginModule;
 	
-	/** 
+	/**
 	 * Initialization constructor
 	 * */
-	public RegisteredUser()
-	{
-		uniqueID 				= 0;
-		personalTitle 			= Title.UNDEFINED;		
-		firstName 				= null;
-		lastName				= null;
-		address 				= null;
-		zipCode 				= 0;
-		city 					= null;
-		
-		email 					= null;
-		phoneNumber 			= 0;		
-		
-		specializations 		= null;		
-		subSpecializations 		= null;		
-		therapeuticAreas 		= null;		
-		Preferences 			= null;
-		lastLoginDate           = null;		
+	public RegisteredUser() {
+		uniqueID = 0;
+		personalTitle = Title.UNDEFINED;
+		firstName = null;
+		lastName = null;
+		address = null;
+		zipCode = 0;
+		city = null;
+
+		email = null;
+		phoneNumber = 0;
+
+		specializations = null;
+		subSpecializations = null;
+		therapeuticAreas = null;
+		Preferences = null;
+		lastLoginDate = null;
+
+		// Instantiate the Login Module if this hasn't be done previously
+		if (!(loginModule instanceof SLoginModule)) {
+			loginModule = new SLoginModule();
+		}
 	}
-	
+
 	/**
 	 * Copy Constructor
 	 * */
@@ -94,5 +99,22 @@ public class RegisteredUser extends AnonymousUser {
 		Preferences = preferences;
 		this.registrationDate = registrationDate;
 		this.lastLoginDate = lastLoginDate;
+
+		// Instantiate the Login Module if this hasn't be done previously
+		if (!(loginModule instanceof SLoginModule)) {
+			loginModule = new SLoginModule();
+		}
+
+		// TODO: Store these fields as a new entry in the DB.
+	}
+	
+	public boolean login() throws LoginException
+	{
+		boolean loggedIn = false;
+		loggedIn = loginModule.login();
+		
+		//TODO: Store in the DB the loggedIn value
+		
+		return loggedIn;
 	}
 }

@@ -1,4 +1,4 @@
-package sampleLogin;
+package org.ucb.services.login;
 
 import java.security.Principal;
 

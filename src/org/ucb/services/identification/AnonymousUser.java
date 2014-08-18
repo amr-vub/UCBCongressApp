@@ -1,10 +1,8 @@
 package org.ucb.services.identification;
 
-import sampleLogin.SLoginModule;
-
 import java.util.ArrayList;
 
-import sampleLogin.SLoginModule;
+import org.ucb.services.login.SLoginModule;
 
 public class AnonymousUser {
 
@@ -15,8 +13,6 @@ public class AnonymousUser {
 	protected ArrayList<String> professionalTitles;
 
 	protected String academicTitle;
-
-	protected static SLoginModule loginModule;
 
 	protected SessionIdentifierGenerator sessionIdentifier;
 
@@ -35,11 +31,6 @@ public class AnonymousUser {
 		sessionIdentifier = new SessionIdentifierGenerator();
 		checkedIn = false;
 		invitationsSent = 0;
-
-		// Instantiate the Login Module if this hasn't be done previously
-		if (!(loginModule instanceof SLoginModule)) {
-			loginModule = new SLoginModule();
-		}
 	}
 
 	public String generateRandomCode() {
@@ -53,7 +44,8 @@ public class AnonymousUser {
 		
 		invitationsSent++;
 		
-		//Store the invitationCode in the DB
+		//TODO: Store the invitationCode in the DB for this User
+		//TODO: Store the invitationsSent in the DB for this User
 		
 		return invitationCode;
 	}
@@ -63,6 +55,7 @@ public class AnonymousUser {
 			if (checkInCode.matches(inputCode)) {
 				// The User is checked in
 				checkedIn = true;
+				//TODO: Store checkedIn in the DB
 				return 0;
 			} else {
 				checkedIn = false;

@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -28,12 +28,16 @@
   <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
   <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
  </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
  <ns1:service name="Converter" provider="java:RPC" style="wrapped" use="literal">
-  <ns2:operation name="celsiusToFarenheit" qname="ns1:celsiusToFarenheit" returnQName="ns1:celsiusToFarenheitReturn" returnType="xsd:float" soapAction="" xmlns:ns1="http://wtp" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
-   <ns2:parameter qname="ns1:celsius" type="xsd:float"/>
+  <ns2:operation name="farenheitToCelsius" qname="ns1:farenheitToCelsius" returnQName="ns1:farenheitToCelsiusReturn" returnType="xsd:float" soapAction="" xmlns:ns1="http://wtp" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:farenheit" type="xsd:float"/>
   </ns2:operation>
-  <ns1:operation name="farenheitToCelsius" qname="ns2:farenheitToCelsius" returnQName="ns2:farenheitToCelsiusReturn" returnType="xsd:float" soapAction="" xmlns:ns2="http://wtp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns2:farenheit" type="xsd:float"/>
+  <ns1:operation name="celsiusToFarenheit" qname="ns2:celsiusToFarenheit" returnQName="ns2:celsiusToFarenheitReturn" returnType="xsd:float" soapAction="" xmlns:ns2="http://wtp" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:celsius" type="xsd:float"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="celsiusToFarenheit farenheitToCelsius"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
@@ -43,10 +47,6 @@
   <ns1:parameter name="schemaQualified" value="http://wtp"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://wtp"/>
   <ns1:parameter name="wsdlServiceElement" value="ConverterService"/>
- </ns1:service>
- <ns1:service name="Version" provider="java:RPC">
-  <ns1:parameter name="allowedMethods" value="getVersion"/>
-  <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>

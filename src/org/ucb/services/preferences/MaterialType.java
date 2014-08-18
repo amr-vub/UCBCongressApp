@@ -1,6 +1,6 @@
 package org.ucb.services.preferences;
 
-public enum Material {
+public enum MaterialType {
 	WEBINARS,
 	CONFERENCES,
 	PAPERS,

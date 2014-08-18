@@ -27,6 +27,8 @@ public class VotingCandidate {
 		this.choiceName = choiceName;
 		this.reference = reference;
 		this.voteCount = voteCount;
+		
+		//TODO: Store the fields in the DB
 	}
 
 	public String getChoiceName() {
@@ -35,6 +37,8 @@ public class VotingCandidate {
 
 	public void setChoiceName(String choiceName) {
 		this.choiceName = choiceName;
+		
+		//TODO: Update the field in the DB
 	}
 
 	public Object getReference() {
@@ -43,6 +47,8 @@ public class VotingCandidate {
 
 	public void setReference(Object reference) {
 		this.reference = reference;
+		
+		//TODO: Update the field in the DB
 	}
 
 	public Integer getVoteCount() {

@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class Preference {
 	
+	// Equivalent to "#define ..." in C
 	private static final int FIELDS_OF_INTEREST_COUNT = 3;
 	private static final int MATERIALS_COUNT          = 6;
 	
@@ -17,27 +18,44 @@ public class Preference {
 	private Frequency updateFrequency;
 	
 	/* In order to adjust the granularity of preferences*/
-	private boolean optinout[][];
+	private Opt optinout[][];
 	
-	/* Initializing the optinout matrix*/
+	/** Initializing the optinout matrix
+	 * 
+	 * This should reflect the fields of interest and more exact which types of information
+	 * related to that field.
+	 * 
+	 * */
 	public Preference()
 	{
-		optinout = new boolean[FIELDS_OF_INTEREST_COUNT][MATERIALS_COUNT];		
+		optinout = new Opt[FIELDS_OF_INTEREST_COUNT][MATERIALS_COUNT];		
 	}
 	
-	/* Copy constructor*/
+	/**
+	 *  Copy constructor
+	 *  
+	 *  */
 	public Preference(Integer preferenceID,
 			ArrayList<String> communicationChannels,
 			ArrayList<FieldOfInterest> fieldsOfInterest, Date lastTimeUpdate,
-			Frequency updateFrequency, ArrayList<ArrayList<Material>> optinout) {
+			Frequency updateFrequency, ArrayList<ArrayList<MaterialType>> optinout) {
 	
 		this.preferenceID = preferenceID;
 		this.communicationChannels = communicationChannels;
 		//this.fieldsOfInterest = fieldsOfInterest;
 		this.lastTimeUpdate = lastTimeUpdate;
-		this.updateFrequency = updateFrequency;		
+		this.updateFrequency = updateFrequency;
+		
+		//TODO: Store the fields in the DB
 	}
 	
+	/**
+	 * This function opts in for all materials related to a given Field of Interest.
+	 * 
+	 * @param fieldOfInterest - the fieldOfInterest for which the user opts in.
+	 * 
+	 * @return None.
+	 */
 	public void setOptinout(FieldOfInterest fieldOfInterest)
 	{
 		int materialIterator     = 0;
@@ -59,11 +77,21 @@ public class Preference {
 		/* Setting all the material types for the desired Field of Interest.*/
 		for(materialIterator = 0; materialIterator < MATERIALS_COUNT ; materialIterator++)
 		{
-			optinout[fieldOfInterestIndex][materialIterator] = true;
+			optinout[fieldOfInterestIndex][materialIterator] = Opt.OPT_IN;
+			//TODO: Update the Entry in the DB
 		}		
 	}
 	
-	public void modifyOptinout(FieldOfInterest fieldOfInterest, Material materialType, boolean value)
+	/**
+	 * This function modifies the opt-in-out status of the preference center.
+	 * 
+	 * @param fieldOfInterest - the fieldOfInterest for which the modification must be made.
+	 * @param materialType - the material type for which the user wants to opt in or opt out.
+	 * @param option - user's choice, whether to opt in or opt out for a given material type.
+	 * 
+	 * @return None.
+	 */
+	public void modifyOptinout(FieldOfInterest fieldOfInterest, MaterialType materialType, Opt option)
 	{
 		int fieldOfInterestIndex = 0;
 		int materialTypeIndex    = 0;
@@ -103,7 +131,8 @@ public class Preference {
 			break;
 		
 		}		
-		optinout[fieldOfInterestIndex][materialTypeIndex] = value;
+		optinout[fieldOfInterestIndex][materialTypeIndex] = option;
+		//TODO: Update the Entry in the DB
 	}	
 	
 }
