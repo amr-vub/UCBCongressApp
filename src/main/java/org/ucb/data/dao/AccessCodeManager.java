@@ -23,9 +23,11 @@ public class AccessCodeManager implements IAccessCodeManager{
 		return false;
 	}
 
-	public void insertAccessCode(Access_Code_Dir access_Code_Dir) {
+	public void insertAccessCode(int access_Code) {
 
-		sessionFactory.getCurrentSession().persist(access_Code_Dir);
+		Access_Code_Dir tmp = new Access_Code_Dir();
+		tmp.setAccessCode(access_Code);
+		sessionFactory.getCurrentSession().persist(tmp);
 	}
 	
 	

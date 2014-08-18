@@ -15,4 +15,6 @@ public interface IAnonymousUserManager {
 	
 	public void deleteAnonymousUser(HCP anonymousUser);
 	
+	public void update_No_Sent_Invitation(int anonymousUserID, int inv);
+	
 }

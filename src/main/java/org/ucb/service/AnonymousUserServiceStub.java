@@ -32,5 +32,16 @@ public class AnonymousUserServiceStub implements IAnonymousUserServiceStub {
 		
 		return iAnonymousUserManager.findAnonymousUserById(ID);
 	}
+	@Transactional
+	public void update_invitationsSent(int anonymousUserID, int inv) {
+		// TODO Auto-generated method stub
+		
+		iAnonymousUserManager.update_No_Sent_Invitation(anonymousUserID, inv);
+	}
+	@Transactional
+	public boolean anonymousUserExists(int anonymousID) {
+		// TODO Auto-generated method stub
+		return iAnonymousUserManager.anonymousUserExists(anonymousID);
+	}
 
 }

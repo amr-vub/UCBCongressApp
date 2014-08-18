@@ -6,5 +6,5 @@ public interface IAccessCodeManager {
 
 	public boolean accessCodeExists(int access_Code);
 	
-	public void insertAccessCode(Access_Code_Dir access_Code_Dir);
+	public void insertAccessCode(int access_Code);
 }

@@ -27,10 +27,7 @@ public class GreetingController {
 
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", required=false, defaultValue="World") String name) {
-    	
-    	HCP u = getiAnonymousUserServiceStub().getHCPbyID(0);
-    	Greeting g = new Greeting(u.getHCPID(), u.getSpecialization());
-    	/*
+
     	HCP user = new HCP();
 		
 		
@@ -65,11 +62,19 @@ public class GreetingController {
 		user.setHCP_agenda(hCP_agenda);
 		user.setAcademic_practitioner_value("Academic");
 		user.setHCP_hcpInitialInterests(hCP_hcpInitialInterests);
-    	*/
-    	//iAnonymousUserServiceStub.storeAnonymousUser(user);
+    	
+    	iAnonymousUserServiceStub.storeAnonymousUser(user);
+    	/**/
+    	HCP u = getiAnonymousUserServiceStub().getHCPbyID(0);
+    	Greeting g = new Greeting(u.getHCPID(), u.getSpecialization());
+		
+		 
+		 
+		//iAnonymousUserServiceStub.deleteAnonymousUser(user);
 		return g;
-    	//return new Greeting(counter.incrementAndGet(),
-               // String.format(template, name));
+
+//    	return new Greeting(counter.incrementAndGet(),
+//                String.format(template, name));
     }
     
 //    @RequestMapping("/error")
