@@ -78,7 +78,9 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
 							.show();
 					return;
 				} else {
-					// Save the Data in Database
+					/** Save the user information into database
+					 *  SERVICE: need to connect to database
+					 */
 					loginAdapter.insertEntry(first, pwd);
 					Toast.makeText(getApplicationContext(),
 							"Account Successfully Created ", Toast.LENGTH_LONG)

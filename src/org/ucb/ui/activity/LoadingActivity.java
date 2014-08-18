@@ -27,7 +27,7 @@ public class LoadingActivity extends Activity {
 				// This method will be executed once the timer is over
 				// Start the anonymous user screen: enter access code
 				Intent i = new Intent(LoadingActivity.this,
-						AccessCodeActivity.class);
+						StartActivity.class);
 				startActivity(i);
 
 				// close this activity

@@ -19,7 +19,7 @@ public class AccessCodeActivity extends Activity {
 
 	EditText accessCode;
 	Button accessCodeContinue;
-	//Button accessCodeContactMsl;
+	// Button accessCodeContactMsl;
 
 	AccessCodeAdapter accessCodeAdapter;
 

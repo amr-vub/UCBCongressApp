@@ -1,22 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/sign_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/button_sign_in"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign in"
-        android:onClick="signIn" />
+        android:layout_marginLeft= "50dp"
+        android:layout_marginTop="50dp"
+        android:text="I have registered:" />
 
     <Button
-        android:id="@+id/button_sign_up"
+        android:id="@+id/button_signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign up" 
-        android:onClick="signUp"/>
+        android:layout_alignLeft="@id/textView1"
+        android:layout_below="@id/textView1"
+        android:text="Sign in to see what is new!" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/button_signin"
+        android:layout_below="@id/button_signin"
+        android:text="I have an access code:" />
+
+    <Button
+        android:id="@+id/button_anonymous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/textView2"
+        android:layout_below="@id/textView2"
+        android:text="Start exploring the app!" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/button_anonymous"
+        android:layout_below="@id/button_anonymous"
+        android:text="I don&apos;t have an access code yet" />
+
+    <Button
+        android:id="@+id/button_contact_ucb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/textView3"
+        android:layout_below="@id/textView3"
+        android:text="Help!" />
+
+</RelativeLayout>

@@ -1,6 +1,5 @@
 package org.ucb.ui.activity;
 
-import org.ucb.ui.activity.*;
 import org.ucb.ui.activity.adapter.LoginAdapter;
 import org.ucb.ui.activity.home.HomeActivity;
 
@@ -16,7 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class StartActivity extends Activity {
-	Button buttonSignIn, buttonSignUp;
+	Button buttonSignIn, buttonAnonymous;
 	LoginAdapter loginAdapter;
 
 	@Override
@@ -29,66 +28,31 @@ public class StartActivity extends Activity {
 		loginAdapter = loginAdapter.open();
 
 		// Get The Reference Of Buttons
-		buttonSignIn = (Button) findViewById(R.id.button_sign_in);
-		buttonSignUp = (Button) findViewById(R.id.button_sign_up);
+		buttonSignIn = (Button) findViewById(R.id.button_signin);
+		buttonAnonymous = (Button) findViewById(R.id.button_anonymous);
 
-		// Set OnClick Listener on SignUp button
-		buttonSignUp.setOnClickListener(new View.OnClickListener() {
+		// Set OnClick listener on anonymous button for anonymous user to enter access code
+		buttonAnonymous.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				// Create Intent for SignUpActivity and start the activity
-				Intent intentSignUp = new Intent(getApplicationContext(),
-						RegisterActivity.class);
-				startActivity(intentSignUp);
+				Intent intent = new Intent(getApplicationContext(),
+						AccessCodeActivity.class);
+				startActivity(intent);
 			}
 		});
-	}
-
-	// Method to handle click event of sign in button
-	public void signIn(View view) {
-		final Dialog dialog = new Dialog(StartActivity.this);
-		dialog.setContentView(R.layout.login);
-		dialog.setTitle("Login");
-
-		// get the references of views
-		final EditText loginUserName = (EditText) dialog
-				.findViewById(R.id.login_user_name);
-		final EditText loginPassword = (EditText) dialog
-				.findViewById(R.id.login_password);
-
-		Button buttonSignIn2 = (Button) dialog
-				.findViewById(R.id.button_sign_in2);
-
-		// Set on click listener
-		buttonSignIn2.setOnClickListener(new View.OnClickListener() {
-
+		buttonSignIn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
 			public void onClick(View v) {
-				// get The User name and Password
-				String username = loginUserName.getText().toString();
-				String password = loginPassword.getText().toString();
-
-				/** SERVICE the logic is required here to validate username and password */
-				// fetch the Password form database for respective user name
-				String storedPassword = loginAdapter.getSinlgeEntry(username);
-
-				/** SERVICE check LoginAdapter */
-				// check if the Stored password matches with password entered by user
-				if (username.equals("ucb")&&password.equals("jim")) {
-					Toast.makeText(StartActivity.this,
-							"Congrats: Login Successfull", Toast.LENGTH_LONG)
-							.show();
-					dialog.dismiss();
-					Intent intent = new Intent(StartActivity.this, HomeActivity.class);
-					startActivity(intent);
-				} else {
-					Toast.makeText(StartActivity.this,
-							"User Name or Password does not match",
-							Toast.LENGTH_LONG).show();
-				}
+				// Create Intent for sign in activity for registered users
+				Intent intent = new Intent(getApplicationContext(),
+						LogInActivity.class);
+				startActivity(intent);
+				
 			}
 		});
-
-		dialog.show();
 	}
+	
 
 	@Override
 	protected void onDestroy() {
