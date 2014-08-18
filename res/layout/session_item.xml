@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <!-- session title -->
+
+    <TextView
+        android:id="@+id/session_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dip"
+        android:paddingLeft="8dip"
+        android:paddingTop="8dip"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- session time -->
+
+    <TextView
+        android:id="@+id/session_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/session_title"
+        android:layout_below="@id/session_title"
+        android:textSize="12sp" />
+    <!-- session place -->
+
+    <TextView
+        android:id="@+id/session_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/session_title"
+        android:layout_toRightOf="@id/session_time"
+        android:paddingLeft="5dp"
+        android:textSize="12sp" />
+    <!-- session speaker name -->
+
+    <TextView
+        android:id="@+id/session_speaker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/session_time"
+        android:layout_below="@id/session_time"
+        android:textSize="12sp" />
+
+</RelativeLayout>

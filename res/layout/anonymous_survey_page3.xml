@@ -26,7 +26,7 @@
         android:horizontalSpacing="5dp"
         android:numColumns="auto_fit"
         android:stretchMode="columnWidth"
-        android:textColor="@color/white"
+        android:textColor="@color/ucb_blue"
         android:verticalSpacing="5dp" >
 
     </GridView>
@@ -35,7 +35,7 @@
         android:id="@+id/anony_survey_interest_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/gridView1"
+        android:layout_alignRight="@id/gridView1"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="50dp"
         android:text="Next" />
