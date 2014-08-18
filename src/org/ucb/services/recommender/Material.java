@@ -27,6 +27,7 @@ public abstract class Material {
 		this.ranking = (rankingCount + newRank) / (rankingTimes * rankingMax);
 
 		// TODO: Store the current ranking into the DB
+		//
 	}
 
 }
