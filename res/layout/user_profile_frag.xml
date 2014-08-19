@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/user_profile_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/user_avatar" />
+
+    <TextView
+        android:id="@+id/user_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/user_profile_avatar"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:text="first name last name"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/user_profile_profession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/user_profile_name"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="5dp"
+        android:text="profession" />
+
+    <TextView
+        android:id="@+id/user_profile_string1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/user_profile_profession"
+        android:layout_toRightOf="@id/user_profile_profession"
+        android:layout_centerHorizontal="true"
+        android:text=" specialized in " />
+
+    <TextView
+        android:id="@+id/user_profile_specialization"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/user_profile_profession"
+        android:layout_toRightOf="@id/user_profile_string1"
+        android:text="specialization" />
+
+    <TextView
+        android:id="@+id/user_profile_string2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/user_profile_profession"
+        android:layout_below="@id/user_profile_profession"
+        android:layout_marginTop="10dp"
+        android:text="Field of interests"
+        android:textStyle="bold" />
+    
+    <TextView
+        android:id="@+id/user_profile_string3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/user_profile_string2"
+        android:layout_below="@+id/user_profile_string2"
+        android:text="Are we right about your interests?\nCheck them to help us provide better services for you."
+        android:textSize="10sp"
+        android:textStyle="italic" />
+
+</RelativeLayout>

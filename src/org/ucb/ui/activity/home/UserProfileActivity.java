@@ -18,14 +18,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.TextView;
 
 public class UserProfileActivity extends Fragment {
 
 	public final static String TAG = UserProfileActivity.class.getSimpleName();
+	TextView name;
+	TextView profession;
+	TextView specialization;
 	
-	public UserProfileActivity() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public static UserProfileActivity newInstance() {
 		return new UserProfileActivity();
@@ -39,13 +40,21 @@ public class UserProfileActivity extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.fragment_webview, container, false);
+		View v = inflater.inflate(R.layout.user_profile_frag, container, false);
+		name = (TextView) v.findViewById(R.id.user_profile_name);
+		profession = (TextView) v.findViewById(R.id.user_profile_profession);
+		specialization = (TextView) v.findViewById(R.id.user_profile_specialization);
+		
+		/**
+		 * SERVICE: need to get the following information
+		 * first name, last name, profession, specialization
+		 */
+		name.setText("Sheldon Cooper");
+		profession.setText("General practitioner");
+		specialization.setText("Parkinson");
+		return v;
 	}
+
+
 	
-	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState) {
-		super.onViewCreated(view, savedInstanceState);
-		WebView webView = (WebView) view.findViewById(R.id.webView);
-		webView.loadUrl("http://www.ucb.com");
-	}
 }

@@ -1,5 +1,6 @@
 package org.ucb.ui.activity.home;
 
+import java.util.ArrayList;
 
 import org.ucb.ui.R;
 import org.ucb.ui.activity.*;
@@ -22,24 +23,34 @@ import android.widget.ListView;
 
 public class HomeActivity extends FragmentActivity {
 
-	private static final String TAG = HomeActivity.class.getSimpleName();
+	final String TAG = HomeActivity.class.getSimpleName();
 
-	private DrawerLayout mDrawerLayout;
-	private ListView mDrawerList;
-	private ActionBarDrawerToggle mDrawerToggle;
+	boolean userMode;
+	SessionManager session;
+	DrawerLayout mDrawerLayout;
+	ListView mDrawerList;
+	ActionBarDrawerToggle mDrawerToggle;
 
-	private CharSequence mDrawerTitle;
-	private CharSequence mTitle;
-	private String[] mDrawerItmes;
+	CharSequence mDrawerTitle;
+	CharSequence mTitle;
+	ArrayList<String> mDrawerItems;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		mDrawerItems = new ArrayList<String>();
+		session = new SessionManager(getApplicationContext());
+		userMode = session.getUserMode();
 		mTitle = mDrawerTitle = getTitle();
 
-		mDrawerItmes = getResources().getStringArray(R.array.drawer_titles);
+		if(session.getUserMode()){
+			mDrawerItems.add(getResources().getString(R.string.user_profile));
+			mDrawerItems.add(getResources().getString(R.string.preferences));
+		}
+		mDrawerItems.add(getResources().getString(R.string.agenda));
+		mDrawerItems.add(getResources().getString(R.string.speakers));
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
@@ -50,9 +61,8 @@ public class HomeActivity extends FragmentActivity {
 
 		// Add items to the ListView
 		mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-				R.layout.drawer_list_item, mDrawerItmes));
-		// Set the OnItemClickListener so something happens when a
-		// user clicks on an item.
+				R.layout.drawer_list_item, mDrawerItems));
+
 		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
 		// Enable ActionBar app icon to behave as action to toggle nav drawer
@@ -84,13 +94,6 @@ public class HomeActivity extends FragmentActivity {
 	}
 
 	/*
-	 * If you do not have any menus, you still need this function in order to
-	 * open or close the NavigationDrawer when the user clicking the ActionBar
-	 * app icon.
-	 */
-
-
-	/*
 	 * When using the ActionBarDrawerToggle, you must call it during
 	 * onPostCreate() and onConfigurationChanged()
 	 */
@@ -119,10 +122,13 @@ public class HomeActivity extends FragmentActivity {
 
 		switch (position) {
 		case 0:
-			getSupportFragmentManager()
-					.beginTransaction()
-					.replace(R.id.content_frame, UserProfileActivity.newInstance(),
-							UserProfileActivity.TAG).commit();
+			if (this.userMode) {
+				getSupportFragmentManager()
+						.beginTransaction()
+						.replace(R.id.content_frame,
+								UserProfileActivity.newInstance(),
+								"UserProfileActivity").commit();
+			}
 			break;
 		case 1:
 			getSupportFragmentManager()
@@ -138,12 +144,14 @@ public class HomeActivity extends FragmentActivity {
 					.commit();
 			break;
 		case 3:
-			getSupportFragmentManager()
-			.beginTransaction()
-			.replace(R.id.content_frame,
-					PreferenceActivity.newInstance(), "Preferences")
-			.commit();
-	break;
+			if (this.userMode) {
+				getSupportFragmentManager()
+						.beginTransaction()
+						.replace(R.id.content_frame,
+								PreferenceActivity.newInstance(), "Preferences")
+						.commit();
+			}
+			break;
 		}
 		mDrawerLayout.closeDrawer(mDrawerList);
 	}
@@ -153,31 +161,40 @@ public class HomeActivity extends FragmentActivity {
 		mTitle = title;
 		getActionBar().setTitle(mTitle);
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu items for use in the action bar
-	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.home, menu);
-	    return super.onCreateOptionsMenu(menu);
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.home, menu);
+		if(!this.userMode){
+			menu.findItem(R.id.action_register).setVisible(true);
+			menu.findItem(R.id.action_invitation).setVisible(false);
+			invalidateOptionsMenu();
+		}
+		if(this.userMode){
+			menu.findItem(R.id.action_register).setVisible(false);
+			menu.findItem(R.id.action_invitation).setVisible(true);
+			invalidateOptionsMenu();
+		}
+		return super.onCreateOptionsMenu(menu);
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-	    // Handle presses on the action bar items
+		// Handle presses on the action bar items
 		if (mDrawerToggle.onOptionsItemSelected(item)) {
 			return true;
-		}
-		else{
-		    switch (item.getItemId()) {
-		        case R.id.action_register:
-		            openRegister();
-		            return true;
-		        case R.id.action_settings:
-		            return true;
-		        default:
-		            return super.onOptionsItemSelected(item);
-		    }
+		} else {
+			switch (item.getItemId()) {
+			case R.id.action_register:
+				openRegister();
+				return true;
+			case R.id.action_settings:
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
+			}
 		}
 	}
 

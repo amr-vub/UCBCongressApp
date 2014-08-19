@@ -4,10 +4,11 @@ import org.ucb.ui.R;
 import org.ucb.ui.activity.adapter.AccessCodeAdapter;
 import org.ucb.ui.activity.survey.AnonySurveyActivity1;
 
-
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,8 +20,7 @@ public class AccessCodeActivity extends Activity {
 
 	EditText accessCode;
 	Button accessCodeContinue;
-	// Button accessCodeContactMsl;
-
+	SessionManager session;
 	AccessCodeAdapter accessCodeAdapter;
 
 	@Override
@@ -28,6 +28,7 @@ public class AccessCodeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.access_code);
 
+		session = new SessionManager(getApplicationContext());
 		// get instance of log in adapter
 		accessCodeAdapter = new AccessCodeAdapter(this);
 
@@ -39,11 +40,10 @@ public class AccessCodeActivity extends Activity {
 			public void onClick(View view) {
 
 				String codeValue = accessCode.getText().toString();
+				session.createAnonymousSession(codeValue);
 
 				/** SERVICE to validate the access code */
 				if (codeValue.equals("iamjim")) {
-					Toast.makeText(getApplicationContext(), "Success",
-							Toast.LENGTH_LONG).show();
 					Intent intent = new Intent(AccessCodeActivity.this,
 							AnonySurveyActivity1.class);
 					startActivity(intent);
@@ -56,4 +56,5 @@ public class AccessCodeActivity extends Activity {
 			}
 		});
 	}
+
 }

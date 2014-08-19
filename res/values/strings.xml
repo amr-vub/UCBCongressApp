@@ -6,13 +6,11 @@
     <string name="hello_world">Hello world!</string>
     <string name="register">Register</string>
 
-    <string-array name="drawer_titles">
-        <item>User profile</item>
-        <item>Agenda</item>
-        <item>Speakers</item>
-        <item>Preferences</item>
-    </string-array>
-
+    <string name="user_profile">User profile</string>
+    <string name="agenda">Agenda</string>
+    <string name="speakers">Speakers</string>
+    <string name="preferences">Preferences</string>
+    
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="title_activity_item_one">ItemOne</string>

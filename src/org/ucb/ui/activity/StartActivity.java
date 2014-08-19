@@ -46,7 +46,7 @@ public class StartActivity extends Activity {
 			public void onClick(View v) {
 				// Create Intent for sign in activity for registered users
 				Intent intent = new Intent(getApplicationContext(),
-						LogInActivity.class);
+						LoginActivity.class);
 				startActivity(intent);
 				
 			}
