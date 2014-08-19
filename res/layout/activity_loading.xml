@@ -23,6 +23,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:text="Check our booth at Somewhere."
-        android:textColor="@color/ucb_blue" />
+        android:textColor="@color/ucb_blue2" />
 
 </RelativeLayout>

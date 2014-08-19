@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
@@ -13,16 +13,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
             android:padding="10dp"
             android:text="I would like to receive info:"
-            android:textColor="@color/ucb_blue"
-            android:textSize="20sp" />
+            android:textColor="@color/ucb_black"
+            android:textSize="16sp" />
 
         <SeekBar
             android:id="@+id/frequency_bar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="10dp"
             android:max="3"
             android:progress="0"
             android:secondaryProgress="0" />
@@ -30,10 +34,12 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:visibility="visible"
-            android:weightSum="12" >
+            android:weightSum="8" >
 
             <TextView
                 android:layout_width="0dp"
@@ -41,8 +47,8 @@
                 android:layout_weight="2"
                 android:gravity="center_horizontal"
                 android:text="daily"
-                android:textColor="@color/ucb_blue"
-                android:textStyle="bold" />
+                android:textColor="@color/ucb_black"
+                android:textSize="12sp" />
 
             <TextView
                 android:layout_width="0dp"
@@ -50,32 +56,37 @@
                 android:layout_weight="2"
                 android:gravity="center_horizontal"
                 android:text="weekly"
-                android:textColor="@color/ucb_blue"
-                android:textStyle="bold" />
+                android:textColor="@color/ucb_black"
+                android:textSize="12sp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2.97"
+                android:layout_weight="2"
                 android:gravity="center_horizontal"
                 android:text="biweekly"
-                android:textColor="@color/ucb_blue"
-                android:textStyle="bold" />
+                android:textColor="@color/ucb_black"
+                android:textSize="12sp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2.78"
+                android:layout_weight="2"
                 android:gravity="center_horizontal"
                 android:text="monthly"
-                android:textColor="@color/ucb_blue"
-                android:textStyle="bold" />
+                android:textColor="@color/ucb_black"
+                android:textSize="12sp" />
+
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/preference"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical" >
 
         <TextView
@@ -83,31 +94,37 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="I would like to receive by:"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <CheckBox
             android:id="@+id/checkBox1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email newsletters" />
+            android:layout_marginTop="20dp"
+            android:text="Email newsletters"
+            android:textColor="@color/ucb_black" />
 
         <CheckBox
             android:id="@+id/checkBox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone calls" />
+            android:text="Phone calls"
+            android:textColor="@color/ucb_black" />
 
         <CheckBox
             android:id="@+id/checkBox3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Text messages" />
+            android:text="Text messages"
+            android:textColor="@color/ucb_black" />
 
         <CheckBox
             android:id="@+id/checkBox4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Post" />
+            android:text="Post"
+            android:textColor="@color/ucb_black" />
+
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

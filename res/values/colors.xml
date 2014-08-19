@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#FFFFFF</color>
-    <color name="ucb_blue">#354B96</color>
-    <color name="ucb_purple">#5E366E</color>
-    <color name="ucb_red">#CF004D</color>
-    <color name="ucb_orange">#EE8000</color>
-    <color name="ucb_light_blue">#4EADD0</color>
-    <color name="ucb_green">#96BA39</color>
     <color name="black">#000000</color>
+    
+    <color name="ucb_blue1">#4670B4</color>
+    <color name="ucb_blue2">#354B96</color>
+    <color name="ucb_blue3">#001489</color>
+    
+    <color name="ucb_purple1">#865FA0</color>
+    <color name="ucb_purple2">#5E366E</color>
+    <color name="ucb_purple3">#512C70</color>
+    
+    <color name="ucb_red1">#E85276</color>
+    <color name="ucb_red2">#CF004D</color>
+    <color name="ucb_red3">#B4004E</color>
+    
+    <color name="ucb_orange1">#F7AC00</color>
+    <color name="ucb_orange2">#EE8000</color>
+    <color name="ucb_orange3">#EE8000</color>
+    
+    <color name="ucb_sky_blue">#4EADD0</color>
+    
+    <color name="ucb_green">#96BA39</color>
+    
+    <color name="ucb_grey1">#ECEDED</color>
+    <color name="ucb_grey2">#BCBCBC</color>
+    <color name="ucb_grey3">#888888</color>
+    <color name="ucb_grey4">#555555</color>
+    
+    <color name="ucb_black">#1C1C1B</color>
 </resources>

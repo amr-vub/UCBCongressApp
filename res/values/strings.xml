@@ -17,14 +17,11 @@
     <string name="title_section1">Day 1</string>
     <string name="title_section2">Day 2</string>
     <string name="title_section3">Day 3</string>
-    <string name="title_activity_tabbed">TabbedActivity</string>
-    <string name="title_activity_home">HomeActivity</string>
-    <string name="title_activity_speakers">SpeakersActivity</string>
-    <string name="title_activity_loading">LoadingActivity</string>
-    <string name="title_activity_acess_code">AcessCodeActivity</string>
-    <string name="title_anony_survey_activity1">AnonySurveyActivity1</string>
-    <string name="title_anony_survey_activity2">AnonySurveyActivity2</string>
-    <string name="title_anony_survey_activity3">AnonySurveyActivity3</string>
+   
+    <string name="title_activity_speakers">Speakers</string>
+    <string name="title_anony_survey_activity1">eHealthDesk</string>
+    <string name="title_anony_survey_activity2">eHealthDesk</string>
+    <string name="title_anony_survey_activity3">eHealthDesk</string>
     <string name="title_preferenceitem_list">PreferenceItems</string>
     <string name="title_preferenceitem_detail">PreferenceItem Detail</string>
 

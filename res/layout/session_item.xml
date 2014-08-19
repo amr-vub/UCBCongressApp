@@ -2,6 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
     android:orientation="vertical" >
 
     <!-- session title -->
@@ -10,9 +14,6 @@
         android:id="@+id/session_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="4dip"
-        android:paddingLeft="8dip"
-        android:paddingTop="8dip"
         android:textSize="18sp"
         android:textStyle="bold" />
 

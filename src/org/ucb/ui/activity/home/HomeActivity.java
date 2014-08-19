@@ -45,12 +45,13 @@ public class HomeActivity extends FragmentActivity {
 		userMode = session.getUserMode();
 		mTitle = mDrawerTitle = getTitle();
 
-		if(session.getUserMode()){
-			mDrawerItems.add(getResources().getString(R.string.user_profile));
-			mDrawerItems.add(getResources().getString(R.string.preferences));
-		}
 		mDrawerItems.add(getResources().getString(R.string.agenda));
 		mDrawerItems.add(getResources().getString(R.string.speakers));
+		if(session.getUserMode()){
+			mDrawerItems.add(0,getResources().getString(R.string.user_profile));
+			mDrawerItems.add(getResources().getString(R.string.preferences));
+		}
+		
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerList = (ListView) findViewById(R.id.left_drawer);
 

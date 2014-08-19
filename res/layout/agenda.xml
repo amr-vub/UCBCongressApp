@@ -2,32 +2,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/agenda_view_pager"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    <android.support.v4.view.ViewPager
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/agenda_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
+        <android.support.v4.view.PagerTitleStrip
+            android:id="@+id/agenda_pager_title_strip"
+            style="@style/view_pager_title_strip"
+            android:layout_gravity="top"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" />
+    </android.support.v4.view.ViewPager>
 
-
-    <android.support.v4.view.PagerTitleStrip
-        android:id="@+id/agenda_pager_title_strip"
-        style="@style/view_pager_title_strip"
-        android:layout_gravity="top"
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:background="#33b5e5"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp" />
-</android.support.v4.view.ViewPager>
-
-<Button
-    android:id="@+id/button1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentRight="true"
-    android:background="#33b5e5"
-    android:textColor="@color/white"
-    android:text="My agenda" />
+        android:text="My agenda"
+        android:textColor="@color/white" />
 
 </RelativeLayout>

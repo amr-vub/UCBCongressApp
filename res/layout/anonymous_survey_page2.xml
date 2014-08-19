@@ -21,7 +21,7 @@
         android:layout_alignLeft="@id/anony_survey_header_2"
         android:layout_below="@id/anony_survey_header_2"
         android:layout_marginTop="30dp"
-        android:background="@color/ucb_red"
+        android:background="@color/ucb_red2"
         android:text="Arthritis"
         android:textColor="@color/white" />
 
@@ -32,7 +32,7 @@
         android:layout_alignLeft="@id/anony_survey_header_2"
         android:layout_below="@id/anony_survey_arith"
         android:layout_marginTop="10dp"
-        android:background="@color/ucb_light_blue"
+        android:background="@color/ucb_sky_blue"
         android:text="Epilepsy"
         android:textColor="@color/white" />
 

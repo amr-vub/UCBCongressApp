@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-
     <TextView
         android:id="@+id/detail_session_title"
         android:layout_width="100dp"
@@ -11,6 +10,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"
         android:text="TextView"
+        android:textSize="20sp"
         android:textStyle="bold" />
     
     <TextView
@@ -21,7 +21,7 @@
         android:layout_alignBottom="@id/detail_session_title"
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@id/detail_session_title"
-        android:text="You might be interested in the following:" />
+        android:text="You might be interested in:" />
 
     <TextView
         android:id="@+id/detail_session_place"
@@ -30,7 +30,8 @@
         android:layout_alignLeft="@id/detail_session_title"
         android:layout_below="@id/detail_session_title"
         android:layout_marginTop="20dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/detail_session_time"
@@ -39,7 +40,8 @@
         android:layout_alignLeft="@id/detail_session_place"
         android:layout_below="@id/detail_session_place"
         android:layout_marginTop="10dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/detail_session_speaker"
@@ -48,23 +50,39 @@
         android:layout_alignLeft="@id/detail_session_time"
         android:layout_below="@id/detail_session_time"
         android:layout_marginTop="10dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/detail_session_abstract"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-       	android:layout_alignLeft="@id/detail_session_speaker"
+        android:layout_alignLeft="@id/detail_session_speaker"
         android:layout_below="@id/detail_session_speaker"
         android:layout_marginTop="10dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/detail_session_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/ucb_sky_blue"
+        android:text="Rate and review"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/detail_session_interest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/detail_session_speaker"
-        android:layout_alignLeft="@id/detail_interest_text"
+        android:layout_above="@+id/detail_session_abstract"
+        android:layout_alignLeft="@+id/detail_interest_text"
+        android:layout_alignTop="@+id/detail_session_place"
         android:background="@drawable/button_shape"
         android:gravity="left" />
 

@@ -5,5 +5,5 @@
     android:layout_height="20dp"
     android:background="@drawable/button"
     android:textAlignment="center"
-    android:textColor="@color/ucb_blue" />
+    android:textColor="@color/ucb_blue2" />
 
