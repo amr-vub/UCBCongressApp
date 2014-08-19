@@ -11,6 +11,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.client.RestTemplate;
+import org.ucb.service.model.Greeting;
+import org.ucb.service.model.Tservice;
 import org.ucb.data.domain.Agenda;
 import org.ucb.data.domain.FeedbackAnswer;
 import org.ucb.data.domain.HCP;
@@ -65,7 +68,13 @@ public class Application {
 		user.setHCP_hcpInitialInterests(hCP_hcpInitialInterests);
 		
 		//System.out.print(iServiceStub.storeAnonymousUser(user));
-		*/
+		*/    	
+    	
+        Tservice tservice = new Tservice();
+        Greeting g = tservice.doInd();
+        
+        System.out.print(g.getContent());
+    	
     	SpringApplication.run(Application.class, args);
    
     }

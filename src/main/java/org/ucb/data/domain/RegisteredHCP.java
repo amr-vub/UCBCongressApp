@@ -68,6 +68,10 @@ public class RegisteredHCP extends HCP{
 	@JoinTable(name="RegisteredHCP_RECPAPER")
 	private List<RecommendedPapers> registeredHCP_RecPeper;
 	
+	// each registered HCP have a login info
+	@OneToOne(cascade=CascadeType.ALL, mappedBy="Login_regHCP")
+	private Login regHCP_login;
+	
 	public List<Session> getRegisteredHCP_Session() {
 		return registeredHCP_Session;
 	}

@@ -63,7 +63,7 @@ public class GreetingController {
 		user.setAcademic_practitioner_value("Academic");
 		user.setHCP_hcpInitialInterests(hCP_hcpInitialInterests);
     	
-    	iAnonymousUserServiceStub.storeAnonymousUser(user);
+    	//iAnonymousUserServiceStub.storeAnonymousUser(user);
     	/**/
     	HCP u = getiAnonymousUserServiceStub().getHCPbyID(0);
     	Greeting g = new Greeting(u.getHCPID(), u.getSpecialization());
