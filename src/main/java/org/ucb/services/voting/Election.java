@@ -1,59 +1,66 @@
 package org.ucb.services.voting;
 
+import org.springframework.stereotype.Service;
+import org.ucb.data.domain.Session;
+import org.ucb.data.domain.Vote;
+import org.ucb.data.domain.VoteChoices;
+
+@Service
 public class Election {
 	
+	private Vote vote;
+	private VoteChoices votechoices;
+	private Session session;
 	
-	private boolean done;
+	private String voteQuestion;
 	
-	private Voter voterID;	
-	private VotingCandidate votingCandidateID;	
-	private VotingContext votingContextID;
-	
-	/**
-	 * Initialization constructor
-	 * 
-	 * */
-	public Election()
+	public void setVoteQuestion(String voteQuestion)
 	{
-		done               = false;
-		voterID            = null;
-		votingCandidateID  = null;
-		votingContextID    = null;
+		vote.setVoteQuestion(voteQuestion);
 	}
 	
-	/**
-	 * Copy constructor
-	 * 
-	 * @param done - a flag determining whether the user has voted or not.
-	 * @param voterID - the user who votes.
-	 * @param votingCandidateID - the participant at the voting process.
-	 * @param votingContextID
-	 */
-	public Election(boolean done, Voter voterID,
-			VotingCandidate votingCandidateID, VotingContext votingContextID) {
-		
-		this.done              = done;
-		this.voterID           = voterID;
-		this.votingCandidateID = votingCandidateID;
-		this.votingContextID   = votingContextID;
-		
-		//TODO: Storing in the DB can happen at this point.
+	public String getVoteQuestion()
+	{
+		return vote.getVoteQuestion();
 	}
 	
-	public void vote(Voter voterID, VotingContext votingContextID, VotingCandidate votingCandidate){
-		
-		this.voterID           = voterID;
-		this.votingContextID   = votingContextID;
-		this.votingCandidateID = votingCandidate;
-		
-		this.voterID.vote();
-		this.votingCandidateID.vote();
-		
-		done                   = true;
-		
-		//TODO: Store all these fields in the DB
+	public void setVoteSession(Session session)
+	{
+		vote.setVote_session(session);
 	}
 	
+	public Session getVoteSession()
+	{
+		return vote.getVote_session();
+	}
 	
-
+	public void setVoteResult(int chosenVoteChoice)
+	{
+		vote.setVoteResult(chosenVoteChoice);
+	}
+	
+	public int getVoteResult()
+	{
+		return vote.getVoteResult();
+	}
+	
+	public void setVoteValue(int voteValue)
+	{
+		votechoices.setVoteValue(voteValue);
+	}
+	
+	public int getVoteValue()
+	{
+		return votechoices.getVoteValue();
+	}
+	
+	public void setVoteChoices(String choices)
+	{
+		votechoices.setChoices(choices);
+	}
+	
+	public String getVoteChoices()
+	{
+		return votechoices.getChoices();
+	}
 }

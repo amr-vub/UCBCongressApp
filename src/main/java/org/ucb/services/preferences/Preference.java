@@ -2,137 +2,71 @@ package org.ucb.services.preferences;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import org.springframework.stereotype.Service;
+import org.ucb.data.domain.Category;
+import org.ucb.data.domain.Domain_of_Contact;
+import org.ucb.data.domain.Preferences;
+import org.ucb.data.domain.RegisteredHCP;
+
+@Service
 public class Preference {
 	
-	// Equivalent to "#define ..." in C
-	private static final int FIELDS_OF_INTEREST_COUNT = 3;
-	private static final int MATERIALS_COUNT          = 6;
-	
-	private Integer preferenceID;
-	
-	private ArrayList<String> communicationChannels;
-	
-	private Date lastTimeUpdate;
-	
-	private Frequency updateFrequency;
-	
-	/* In order to adjust the granularity of preferences*/
-	private Opt optinout[][];
-	
-	/** Initializing the optinout matrix
-	 * 
-	 * This should reflect the fields of interest and more exact which types of information
-	 * related to that field.
-	 * 
-	 * */
-	public Preference()
+	private Preferences preferences;
+		
+	public void setCommunicationChannel(String communicationChannel)
 	{
-		optinout = new Opt[FIELDS_OF_INTEREST_COUNT][MATERIALS_COUNT];		
+		preferences.setCommunication_Channel(communicationChannel);
 	}
 	
-	/**
-	 *  Copy constructor
-	 *  
-	 *  */
-	public Preference(Integer preferenceID,
-			ArrayList<String> communicationChannels,
-			ArrayList<FieldOfInterest> fieldsOfInterest, Date lastTimeUpdate,
-			Frequency updateFrequency, ArrayList<ArrayList<MaterialType>> optinout) {
-	
-		this.preferenceID = preferenceID;
-		this.communicationChannels = communicationChannels;
-		//this.fieldsOfInterest = fieldsOfInterest;
-		this.lastTimeUpdate = lastTimeUpdate;
-		this.updateFrequency = updateFrequency;
-		
-		//TODO: Store the fields in the DB
+	public String getCommunicationChannel()
+	{
+		return preferences.getCommunication_Channel();
 	}
 	
-	/**
-	 * This function opts in for all materials related to a given Field of Interest.
-	 * 
-	 * @param fieldOfInterest - the fieldOfInterest for which the user opts in.
-	 * 
-	 * @return None.
-	 */
-	public void setOptinout(FieldOfInterest fieldOfInterest)
+	public void setOptIn_OptOut(boolean optIn_optOut)
 	{
-		int materialIterator     = 0;
-		int fieldOfInterestIndex = 0;
-		
-		switch(fieldOfInterest)
-		{
-		case PARKINSON:
-			fieldOfInterestIndex = 0;
-			break;
-		case EPILEPSY:
-			fieldOfInterestIndex = 1;
-			break;
-		case RHEUMATOID_ARTHRITIS:
-			fieldOfInterestIndex = 2;
-			break;
-		}
-		
-		/* Setting all the material types for the desired Field of Interest.*/
-		for(materialIterator = 0; materialIterator < MATERIALS_COUNT ; materialIterator++)
-		{
-			optinout[fieldOfInterestIndex][materialIterator] = Opt.OPT_IN;
-			//TODO: Update the Entry in the DB
-		}		
+		preferences.setOptIn_OptOut(optIn_optOut);
 	}
 	
-	/**
-	 * This function modifies the opt-in-out status of the preference center.
-	 * 
-	 * @param fieldOfInterest - the fieldOfInterest for which the modification must be made.
-	 * @param materialType - the material type for which the user wants to opt in or opt out.
-	 * @param option - user's choice, whether to opt in or opt out for a given material type.
-	 * 
-	 * @return None.
-	 */
-	public void modifyOptinout(FieldOfInterest fieldOfInterest, MaterialType materialType, Opt option)
+	public boolean isOptinOut()
 	{
-		int fieldOfInterestIndex = 0;
-		int materialTypeIndex    = 0;
-		
-		switch(fieldOfInterest)
-		{
-		case PARKINSON:
-			fieldOfInterestIndex = 0;
-			break;
-		case EPILEPSY:
-			fieldOfInterestIndex = 1;
-			break;
-		case RHEUMATOID_ARTHRITIS:
-			fieldOfInterestIndex = 2;
-			break;
-		}
-		
-		switch(materialType)
-		{
-		case WEBINARS:
-			materialTypeIndex = 0;
-			break;
-		case CONFERENCES:
-			materialTypeIndex = 1;
-			break;
-		case PAPERS:
-			materialTypeIndex = 2;
-			break;
-		case BOOKS:
-			materialTypeIndex = 3;
-			break;
-		case ARTICLES:
-			materialTypeIndex = 4;
-			break;
-		case MAGAZINES:
-			materialTypeIndex = 5;
-			break;
-		
-		}		
-		optinout[fieldOfInterestIndex][materialTypeIndex] = option;
-		//TODO: Update the Entry in the DB
-	}	
+		return preferences.isOptIn_OptOut();
+	}
 	
+	public void setTimeRange(int timeRange)
+	{
+		preferences.setTimeRange(timeRange);
+	}
+	
+	public int getTimeRange()
+	{
+		return preferences.getTimeRange();
+	}
+	
+	public void setPref_registeredHCP(RegisteredHCP pref_registeredHCP)
+	{
+		preferences.setPref_registeredHCP(pref_registeredHCP);
+	}
+	
+	public void setPref_domain(List<Domain_of_Contact> pref_domain) 
+	{
+		preferences.setPref_domain(pref_domain);
+	}
+	
+	public List<Domain_of_Contact> getPref_domain()
+	{
+		return preferences.getPref_domain();
+	}
+	
+	public void setPref_cat(List<Category> pref_cat) 
+	{
+		preferences.setPref_cat(pref_cat);
+	}
+	
+	public List<Category> getPref_cat() 
+	{
+		return preferences.getPref_cat();
+	}
 }

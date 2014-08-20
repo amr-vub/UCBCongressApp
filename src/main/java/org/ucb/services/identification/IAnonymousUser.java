@@ -1,10 +1,11 @@
 package org.ucb.services.identification;
 
+
 public interface IAnonymousUser {
 	
-	public int generateRandomCode() ;
+	public void storeAnonymousUser() ;	
 	
-	public int generateInvitation();
+	public int generateInvitation() ;
 	
-	public boolean checkIn(int inputCode) ;
+	public int checkIn(int inputCode) ;
 }
