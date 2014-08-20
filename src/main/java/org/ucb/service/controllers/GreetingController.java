@@ -26,7 +26,7 @@ public class GreetingController {
     private IAnonymousUserServiceStub iAnonymousUserServiceStub;
 
     @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam(value="name", required=false, defaultValue="World") String name) {
+    public Greeting greeting(@RequestParam(value="accessCode", required=false, defaultValue="World") String name) {
 
     	HCP user = new HCP();
 		

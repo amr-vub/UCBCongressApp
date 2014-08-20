@@ -3,11 +3,14 @@ package org.ucb.services.identification;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.ucb.data.dao.IAccessCodeManager;
 import org.ucb.service.IAnonymousUserServiceStub;
 import org.ucb.services.login.SLoginModule;
 
-public class AnonymousUser {
+@Service
+public class AnonymousUser implements IAnonymousUser{
 
 	/* Assuming everyone has one */
 	protected Integer uniqueID;
@@ -44,12 +47,14 @@ public class AnonymousUser {
 		invitationsSent = 0;
 	}
 
+	@Transactional
 	public int generateRandomCode() {
 		checkInCode = sessionIdentifier.generateCode();
 		
 		return checkInCode;
 	}
 	
+	@Transactional
 	public int generateInvitation(){
 		invitationCode = sessionIdentifier.generateCode();
 		
@@ -63,6 +68,7 @@ public class AnonymousUser {
 		return invitationCode;
 	}
 
+	@Transactional
 	public boolean checkIn(int inputCode) {
 		if (checkedIn == false) { 
 			if (iAnonymousUserServiceStub.anonymousUserExists(inputCode)) {
