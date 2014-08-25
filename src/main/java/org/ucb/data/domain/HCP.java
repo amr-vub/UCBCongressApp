@@ -34,6 +34,10 @@ public class HCP {
 	@Id
 	private int HCPID;
 	
+	
+	@Column
+	private String profession;
+	
 	// HCP area of specialization
 	@Column
 	private String specialization;
@@ -82,9 +86,17 @@ public class HCP {
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="qs_HCP")
 	private List<Questions> HCP_qs;
 	*/
-
+	
 	public int getNo_Sent_Invitation() {
 		return no_Sent_Invitation;
+	}
+
+	public String getProfession() {
+		return profession;
+	}
+
+	public void setProfession(String profession) {
+		this.profession = profession;
 	}
 
 	public void setNo_Sent_Invitation(int no_Sent_Invitation) {

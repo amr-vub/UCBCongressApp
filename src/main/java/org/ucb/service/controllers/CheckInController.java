@@ -21,8 +21,6 @@ public class CheckInController {
 		AccessCode acc = new AccessCode();
 		acc.setAccess_code(accessCode.getAccess_code());
 		acc.setCheckin(tmp);
-		return acc;
-	
-		
+		return acc;			
 	} 
 }
