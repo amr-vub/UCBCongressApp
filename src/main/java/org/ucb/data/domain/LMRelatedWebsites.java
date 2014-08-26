@@ -14,7 +14,7 @@ import javax.persistence.ManyToMany;
  * This class contains those website's info 
  */
 @Entity
-public class LMRelatedWebsites {
+public class LMRelatedWebsites extends LearmMore{
 
 	@Id @GeneratedValue
 	private int LMRelatedWebsitesID;

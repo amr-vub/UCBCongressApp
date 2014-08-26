@@ -15,7 +15,7 @@ import javax.persistence.ManyToMany;
  */
 
 @Entity
-public class LMRelatedpapers {
+public class LMRelatedpapers extends LearmMore{
 
 	@Id @GeneratedValue
 	private int LMRelatedpapersID;

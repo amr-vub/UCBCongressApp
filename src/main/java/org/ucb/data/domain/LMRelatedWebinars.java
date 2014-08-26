@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
  */
 
 @Entity
-public class LMRelatedWebinars {
+public class LMRelatedWebinars extends LearmMore{
 
 	@Id @GeneratedValue
 	private int LMRelatedWebinarsID;
