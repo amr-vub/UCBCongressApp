@@ -8,7 +8,6 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.ucb.data.dao.IRegisteredUserManager;
@@ -18,8 +17,14 @@ import org.ucb.data.domain.HCP;
 import org.ucb.data.domain.HCPInitialInterests;
 import org.ucb.data.domain.Login;
 import org.ucb.data.domain.RegisteredHCP;
+import org.ucb.data.domain.out.InitialInterests;
+import org.ucb.data.domain.out.Specialization;
+import org.ucb.data.domain.out.SubSpecialzation;
+import org.ucb.data.domain.out.profession;
 import org.ucb.service.IAnonymousUserServiceStub;
 import org.ucb.service.model.Greeting;
+import org.ucb.service.model.InitialInterestModel;
+import org.ucb.service.survey.IInitialInterestService;
 
 @RestController
 public class GreetingController {
@@ -32,6 +37,9 @@ public class GreetingController {
     
     @Autowired
     private IRegisteredUserManager iRegisteredUserManager;
+    
+    @Autowired
+    private IInitialInterestService iMockInitialInterestService;
 
     @RequestMapping("/greeting")
     @Transactional
@@ -90,7 +98,7 @@ public class GreetingController {
 		user.setAcademic_practitioner_value("Academic");
 		user.setHCP_hcpInitialInterests(hCP_hcpInitialInterests);    
 		
-    	iAnonymousUserServiceStub.storeAnonymousUser(user);
+    	//iAnonymousUserServiceStub.storeAnonymousUser(user);
 		
 		//iRegisteredUserManager.storeRegisteredUser(registeredHCP);
     	/**/		
@@ -103,14 +111,60 @@ public class GreetingController {
     	
     	//Greeting g = new Greeting(u.getHCPID(), u.getSpecialization());		
 		 
-    	;
+    	
     	
 		//iAnonymousUserServiceStub.deleteAnonymousUser(u);
 		
 		//return g;
+		
+		// adding mock up data for the survey part
+		List<profession> profList = new ArrayList<profession>();
+		profession prof = new profession();
+		Specialization spec = new Specialization();
+		List<SubSpecialzation> subSpecialList = new ArrayList<SubSpecialzation>();
+		SubSpecialzation subSpecial = new SubSpecialzation();
+		//
+		List<InitialInterests> initInterestsForEpil = new ArrayList<InitialInterests>();
+		
+		InitialInterests init0 = new InitialInterests();
+		init0.setInitialInterests("Epilepsy");
+		initInterestsForEpil.add(init0);
+		init0.setInital_Subspecial(subSpecial);
+		
+		InitialInterests init1 = new InitialInterests();
+		init1.setInitialInterests("Eating Disorders");
+		initInterestsForEpil.add(init1);
+		init1.setInital_Subspecial(subSpecial);
+		
+		InitialInterests init2 = new InitialInterests();
+		init2.setInitialInterests("Stop Smoking");
+		initInterestsForEpil.add(init2);
+		init2.setInital_Subspecial(subSpecial);
 
+		subSpecial.setSubspec_IniInterests(initInterestsForEpil);
+		subSpecial.setSubSpecialzation("Epilepsy");
+		subSpecial.setSubSpec_Special(spec);
+		//
+		
+		subSpecialList.add(subSpecial);
+		spec.setSpecial_subSpec(subSpecialList);
+		spec.setSpecializationType("Epilepsy");
+		
+		prof.setProfessionType("doctor");
+		prof.setProf_special(spec);
+		profList.add(prof);
+		spec.setSpecial_prof(profList);
+		
+		//iMockInitialInterestService.storeProf(prof);
+		//iMockInitialInterestService.storeSpecial(spec);
+		
+		InitialInterestModel initialInterestModel = new InitialInterestModel();
+		initialInterestModel.setSpecialType("Epilepsy");
+		
+		List<SubSpecialzation> subList = iMockInitialInterestService.getSubSpecial(initialInterestModel);
+		
     	return new Greeting(counter.incrementAndGet(),
-                String.format(template, name));
+                String.format(template, subList.get(0).getSubSpecialzation()));
     }
     
 //    @RequestMapping("/error")

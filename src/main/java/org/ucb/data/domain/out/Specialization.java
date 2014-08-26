@@ -24,5 +24,38 @@ public class Specialization {
 	private List<profession> special_prof;
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="subSpec_Special")
-	private List<SubSpecialzation> Special_subSpec;	
+	private List<SubSpecialzation> Special_subSpec;
+
+	public int getSpecializationID() {
+		return specializationID;
+	}
+
+	public void setSpecializationID(int specializationID) {
+		this.specializationID = specializationID;
+	}
+
+	public String getSpecializationType() {
+		return SpecializationType;
+	}
+
+	public void setSpecializationType(String specializationType) {
+		SpecializationType = specializationType;
+	}
+
+	public List<profession> getSpecial_prof() {
+		return special_prof;
+	}
+
+	public void setSpecial_prof(List<profession> special_prof) {
+		this.special_prof = special_prof;
+	}
+
+	public List<SubSpecialzation> getSpecial_subSpec() {
+		return Special_subSpec;
+	}
+
+	public void setSpecial_subSpec(List<SubSpecialzation> special_subSpec) {
+		Special_subSpec = special_subSpec;
+	}	
+	
 }
