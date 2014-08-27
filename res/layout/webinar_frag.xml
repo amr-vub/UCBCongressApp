@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/learn_more_text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -18,8 +18,8 @@
         android:id="@+id/web_frequency_bar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/textView1"
-        android:layout_below="@id/textView1"
+        android:layout_alignLeft="@id/learn_more_text1"
+        android:layout_below="@id/learn_more_text1"
         android:layout_margin="10dp"
         android:max="3"
         android:progress="0"
@@ -77,10 +77,10 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/learn_more_text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/textView1"
+        android:layout_alignLeft="@id/learn_more_text1"
         android:layout_below="@id/web_frequency_bar_text"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
@@ -91,8 +91,8 @@
         android:id="@+id/web_checkBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/textView2"
-        android:layout_below="@id/textView2"
+        android:layout_alignLeft="@id/learn_more_text2"
+        android:layout_below="@id/learn_more_text2"
         android:text="Email newsletters" />
 
     <CheckBox

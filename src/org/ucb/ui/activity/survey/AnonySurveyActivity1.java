@@ -24,7 +24,7 @@ public class AnonySurveyActivity1 extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.anonymous_survey_page1);
+		setContentView(R.layout.survey_anonymous_page1);
 
 		// get instance of log in adapter
 		surveyAdapter = new AnonySurveyAdapter1();

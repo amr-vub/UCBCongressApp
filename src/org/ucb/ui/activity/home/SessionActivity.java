@@ -1,9 +1,10 @@
 package org.ucb.ui.activity.home;
 
 import org.ucb.ui.R;
-import org.ucb.ui.activity.AccessCodeActivity;
+import org.ucb.ui.activity.SessionManager;
 import org.ucb.ui.activity.adapter.AccessCodeAdapter;
 import org.ucb.ui.activity.adapter.SessionAdapter;
+import org.ucb.ui.activity.learnmore.LearnMoreActivity;
 import org.ucb.ui.activity.survey.AnonySurveyActivity1;
 
 import android.app.Activity;
@@ -15,12 +16,13 @@ import android.widget.*;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 public class SessionActivity extends Activity {
+	SessionManager session;
 	TextView detailSessionTitle;
 	TextView detailSessionTime;
 	TextView detailSessionPlace;
 	TextView detailSessionSpeaker;
 	TextView detailSessionAbstract;
-	Button detailSessionInterest;
+	Button detailSessionLearnMore;
 
 	SessionAdapter sessionAdapter;
 
@@ -37,25 +39,24 @@ public class SessionActivity extends Activity {
 		sessionAdapter = new SessionAdapter(this);
 
 		// Get references of views
-		detailSessionTitle = (TextView) findViewById(R.id.detail_session_title);
-		detailSessionTime = (TextView) findViewById(R.id.detail_session_time);
-		detailSessionPlace = (TextView) findViewById(R.id.detail_session_place);
-		detailSessionSpeaker = (TextView) findViewById(R.id.detail_session_speaker);
-		detailSessionAbstract = (TextView) findViewById(R.id.detail_session_abstract);
-		detailSessionInterest = (Button) findViewById(R.id.detail_session_interest);
+		detailSessionTitle = (TextView) findViewById(R.id.session_detail_title);
+		detailSessionTime = (TextView) findViewById(R.id.learn_more_text1);
+		detailSessionPlace = (TextView) findViewById(R.id.learn_more_text2);
+		detailSessionSpeaker = (TextView) findViewById(R.id.learn_more_text3);
+		detailSessionAbstract = (TextView) findViewById(R.id.text_abstract);
+		detailSessionLearnMore = (Button) findViewById(R.id.button_learn_more);
 
-		detailSessionTitle.setText("Introduction");
 		detailSessionTime.setText("2014-08-01 09:00");
 		detailSessionPlace.setText("Room 501");
 		detailSessionSpeaker.setText("Dr. Chiu Matthews");
 		detailSessionAbstract.setText("Here is the abstract");
-		detailSessionInterest.setText("The patient as a teather: case oriented teaching");
+		detailSessionTitle.setText("The patient as a teather: case oriented teaching");
 		
-		detailSessionInterest.setOnClickListener(new OnClickListener(){
+		detailSessionLearnMore.setOnClickListener(new OnClickListener(){
 
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(SessionActivity.this, SessionActivity.class);
+				Intent i = new Intent(SessionActivity.this, LearnMoreActivity.class);
 				startActivity(i);
 			}
 			

@@ -34,7 +34,7 @@ public class AnonySurveyAdapter3 extends BaseAdapter {
 		ViewHolder holder;
 
 		if (convertView == null) {
-			convertView = mInflater.inflate(R.layout.interest_options, null);
+			convertView = mInflater.inflate(R.layout.survey_interest_options, null);
 			holder = new ViewHolder();
 			holder.text = (TextView) convertView.findViewById(R.id.interest_item);
 			convertView.setTag(holder);

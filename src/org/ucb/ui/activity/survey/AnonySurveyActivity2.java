@@ -18,7 +18,7 @@ public class AnonySurveyActivity2 extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.anonymous_survey_page2);
+		setContentView(R.layout.survey_anonymous_page2);
 
 		// Get references of views
 		anonySurveyArth = (Button) findViewById(R.id.anony_survey_arith);

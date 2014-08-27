@@ -24,5 +24,11 @@
     <string name="title_anony_survey_activity3">eHealthDesk</string>
     <string name="title_preferenceitem_list">PreferenceItems</string>
     <string name="title_preferenceitem_detail">PreferenceItem Detail</string>
+    
+    <string-array name="recommended_resources">
+        <item>Webinars</item>
+        <item>Websites</item>
+        <item>Papers</item>
+    </string-array>
 
 </resources>

@@ -5,22 +5,10 @@
     android:orientation="vertical" >
     
     <EditText
-        android:id="@+id/login_user_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="120dp"
-        android:ems="10"
-        android:hint="Username"
-        android:textColorHint="@color/ucb_grey3"
-        android:textSize="16sp" />
-    
-    <EditText
         android:id="@+id/login_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/login_user_name"
+        android:layout_below="@+id/login_user_name"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="20dp"
@@ -30,17 +18,35 @@
         android:textColorHint="@color/ucb_grey3"
         android:textSize="16sp" />
 
+<EditText
+    android:id="@+id/login_user_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignLeft="@+id/login_password"
+    android:layout_alignParentTop="true"
+    android:layout_alignRight="@+id/login_password"
+    android:layout_marginTop="40dp"
+    android:ems="10"
+    android:hint="Username"
+    android:textColorHint="@color/ucb_grey3"
+    android:textSize="16sp" >
+
+    <requestFocus />
+</EditText>
+
 <Button
     android:id="@+id/button_sign_in2"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_below="@id/login_password"
-    android:layout_marginLeft="80dp"
-    android:layout_marginRight="80dp"
-    android:layout_marginTop="50dp"
-    android:background="@color/ucb_grey1"
+    android:layout_alignLeft="@+id/login_password"
+    android:layout_alignRight="@+id/login_password"
+    android:layout_below="@+id/login_password"
+    android:layout_marginBottom="30dp"
+    android:layout_marginTop="30dp"
+    android:background="@color/ucb_grey2"
     android:text="Log in"
-    android:textColor="@color/ucb_black"
-    android:textSize="16sp" />
+    android:textColor="@color/ucb_grey4"
+    android:textSize="16sp"
+    android:textStyle="bold" />
 
 </RelativeLayout>

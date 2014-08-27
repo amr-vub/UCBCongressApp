@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sign_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0.95"
+    android:background="@color/ucb_blue2"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="10dp" >
+
+        <Button
+            android:id="@+id/button_anonymous"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@color/ucb_grey1"
+            android:text="Enter access code"
+            android:textColor="@color/ucb_grey4"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_signin"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:alpha="0.75"
+            android:background="@color/ucb_sky_blue"
+            android:text="Sign in"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_icons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" >
+
+        <ImageView
+            android:id="@+id/start_imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="54dp"
+            android:src="@drawable/ic_personalisation" />
+
+        <ImageView
+            android:id="@+id/start_imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_imageView2"
+            android:layout_marginTop="79dp"
+            android:layout_toLeftOf="@+id/start_imageView1"
+            android:src="@drawable/ic_vote" />
+
+        <ImageView
+            android:id="@+id/start_imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/start_imageView4"
+            android:layout_marginLeft="11dp"
+            android:layout_toRightOf="@+id/start_imageView1"
+            android:src="@drawable/ic_agenda" />
+
+        <ImageView
+            android:id="@+id/start_imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/start_imageView4"
+            android:layout_alignTop="@+id/start_imageView2"
+            android:layout_marginRight="35dp"
+            android:src="@drawable/ic_feedback" />
+
+        <ImageView
+            android:id="@+id/start_imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/start_imageView3"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_black_box" />
+
+        <ImageView
+            android:id="@+id/start_imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_imageView1"
+            android:layout_marginTop="68dp"
+            android:layout_toRightOf="@+id/start_imageView5"
+            android:src="@drawable/ic_question" />
+    </RelativeLayout>
+
+</RelativeLayout>

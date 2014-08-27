@@ -1,67 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@color/ucb_grey1" >
 
     <TextView
-        android:id="@+id/detail_session_title"
+        android:id="@+id/session_detail_title"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@+id/button_learn_more"
+        android:background="@color/white"
+        android:gravity="bottom"
+        android:paddingBottom="5dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="6dp"
+        android:paddingTop="16dp"
         android:text="TextView"
+        android:textAllCaps="false"
         android:textSize="20sp"
         android:textStyle="bold" />
-    
-    <TextView
-        android:id="@+id/detail_interest_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/detail_session_title"
-        android:layout_alignBottom="@id/detail_session_title"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@id/detail_session_title"
-        android:text="You might be interested in:" />
-
-    <TextView
-        android:id="@+id/detail_session_place"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/detail_session_title"
-        android:layout_below="@id/detail_session_title"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/detail_session_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/detail_session_place"
-        android:layout_below="@id/detail_session_place"
-        android:layout_marginTop="10dp"
-        android:text="TextView"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/detail_session_speaker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/detail_session_time"
-        android:layout_below="@id/detail_session_time"
-        android:layout_marginTop="10dp"
-        android:text="TextView"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/detail_session_abstract"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/detail_session_speaker"
-        android:layout_below="@id/detail_session_speaker"
-        android:layout_marginTop="10dp"
-        android:text="TextView"
-        android:textSize="14sp" />
 
     <Button
         android:id="@+id/detail_session_rate"
@@ -74,16 +35,113 @@
         android:text="Rate and review"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="normal" />
 
     <Button
-        android:id="@+id/detail_session_interest"
+        android:id="@+id/button_learn_more"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/detail_session_abstract"
-        android:layout_alignLeft="@+id/detail_interest_text"
-        android:layout_alignTop="@+id/detail_session_place"
-        android:background="@drawable/button_shape"
-        android:gravity="left" />
+        android:layout_alignBottom="@+id/session_detail_title"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:gravity="bottom|center_vertical|center_horizontal"
+        android:text="Learn more..." />
+
+    <ImageView
+        android:id="@+id/icon_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/icon_time"
+        android:layout_below="@+id/icon_time"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_action_place" />
+
+    <ImageView
+        android:id="@+id/icon_speaker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/icon_place"
+        android:layout_below="@+id/icon_place"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_action_person" />
+
+    <TextView
+        android:id="@+id/learn_more_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/icon_time"
+        android:layout_alignRight="@+id/button_learn_more"
+        android:layout_alignTop="@+id/icon_time"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/icon_time"
+        android:gravity="center_vertical"
+        android:text="9:00-10:00" />
+
+    <TextView
+        android:id="@+id/learn_more_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/icon_place"
+        android:layout_alignLeft="@+id/learn_more_text1"
+        android:layout_alignRight="@+id/learn_more_text1"
+        android:layout_alignTop="@+id/icon_place"
+        android:gravity="center_vertical"
+        android:text="Room 501" />
+
+    <TextView
+        android:id="@+id/learn_more_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/icon_speaker"
+        android:layout_alignLeft="@+id/learn_more_text2"
+        android:layout_alignRight="@+id/learn_more_text2"
+        android:layout_alignTop="@+id/icon_speaker"
+        android:gravity="center_vertical"
+        android:text="John Doe" />
+
+    <TextView
+        android:id="@+id/title_abstract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/icon_speaker"
+        android:layout_alignRight="@+id/learn_more_text3"
+        android:layout_below="@+id/icon_speaker"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Abstract"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_abstract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/title_abstract"
+        android:layout_alignRight="@+id/title_abstract"
+        android:layout_below="@+id/title_abstract"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:text="This session mainly focuses on..." />
+
+    <ImageView
+        android:id="@+id/icon_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/session_detail_title"
+        android:layout_below="@+id/session_detail_title"
+        android:layout_marginTop="11dp"
+        android:src="@drawable/ic_action_time" />
+
+    <Button
+        android:id="@+id/button_download_doc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_abstract"
+        android:layout_alignRight="@+id/text_abstract"
+        android:layout_below="@+id/text_abstract"
+        android:layout_marginTop="10dp"
+        android:text="View the presentation" />
 
 </RelativeLayout>

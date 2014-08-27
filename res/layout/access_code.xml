@@ -3,36 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/access_code_header"
+    <Button
+        android:id="@+id/access_code_continue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="124dp"
-        android:text="Please enter the access code:" />
+        android:layout_alignLeft="@+id/access_code"
+        android:layout_alignRight="@+id/access_code"
+        android:layout_below="@id/access_code"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Continue" />
 
     <EditText
         android:id="@+id/access_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/access_code_header"
-        android:layout_below="@id/access_code_header"
-        android:layout_marginTop="19dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="Access code" >
 
         <requestFocus />
     </EditText>
-
-    <Button
-        android:id="@+id/access_code_continue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/access_code"
-        android:layout_below="@id/access_code"
-        android:layout_marginTop="26dp"
-        android:text="Continue" />
 
 </RelativeLayout>

@@ -34,7 +34,7 @@ public class AnonySurveyActivity3 extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.anonymous_survey_page3);
+		setContentView(R.layout.survey_anonymous_page3);
 
 		interestOptions = new ArrayList<InterestItem>();
 		for (String s : numbers) {
@@ -70,6 +70,7 @@ public class AnonySurveyActivity3 extends Activity {
 				Intent intent = new Intent(AnonySurveyActivity3.this,
 						HomeActivity.class);
 				startActivity(intent);
+				finish();
 			}
 		});
 	}
