@@ -1,11 +1,15 @@
 package org.ucb.data.domain;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Login {
@@ -19,6 +23,10 @@ public class Login {
 	// TODO: Maybe saved a hashed password
 	@Column
 	private String password;
+	
+	@Column
+	@Temporal(TemporalType.DATE)
+	private Date lastLogIn;
 	
 	@OneToOne @JoinColumn(nullable=false)
 	private RegisteredHCP Login_regHCP;
@@ -53,6 +61,14 @@ public class Login {
 
 	public void setLogin_regHCP(RegisteredHCP login_regHCP) {
 		Login_regHCP = login_regHCP;
+	}
+
+	public Date getLastLogIn() {
+		return lastLogIn;
+	}
+
+	public void setLastLogIn(Date lastLogIn) {
+		this.lastLogIn = lastLogIn;
 	}
 	
 	

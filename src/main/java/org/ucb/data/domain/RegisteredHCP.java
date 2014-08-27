@@ -15,6 +15,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.Cascade;
+
 
 /** 
  * This class is a sub-class of HCP, it contains the specific details
@@ -44,7 +46,7 @@ public class RegisteredHCP extends HCP{
 	@Column
 	private int phone;
 	
-	@OneToOne(mappedBy="pref_registeredHCP")
+	@OneToOne(cascade = CascadeType.ALL,mappedBy="pref_registeredHCP")
 	private Preferences registeredHCP_preferences;
 	
 	@Column  @Temporal(TemporalType.DATE)

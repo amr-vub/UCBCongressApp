@@ -7,16 +7,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.ucb.data.domain.RegisteredHCP;
 import org.ucb.data.domain.out.InitialInterests;
 import org.ucb.data.domain.out.SubSpecialzation;
 import org.ucb.service.model.InitialInterestModel;
 import org.ucb.service.survey.IInitialInterestService;
+import org.ucb.services.identification.IRegisteredUserService;
 
 @RestController
 public class SurveyController {
 
 	@Autowired
 	private IInitialInterestService iInitialInterestService;
+	
+	@Autowired
+	private IRegisteredUserService iRegisteredUserService;
 	
 	@RequestMapping(value="/survey/getInitInteresets", method= RequestMethod.POST)
 	public InitialInterestModel getInitInteresets(@RequestBody InitialInterestModel initM){
@@ -39,5 +44,11 @@ public class SurveyController {
 		initialInterestModel.setSubSpecList(subSpecialList);
 		
 		return initialInterestModel;
+	}
+	
+	@RequestMapping(value="/survey/saveNewAnonynousUser", method= RequestMethod.POST)
+	public void saveNewAnonynousUser(@RequestBody RegisteredHCP hcp){
+		
+		iRegisteredUserService.storeUser(hcp);
 	}
 }

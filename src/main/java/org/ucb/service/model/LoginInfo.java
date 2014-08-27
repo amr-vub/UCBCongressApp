@@ -6,6 +6,8 @@ public class LoginInfo {
 	private String password;
 	
 	private boolean userExists;
+	
+	private int HCPID;
 
 	public LoginInfo() {
 	}
@@ -15,6 +17,14 @@ public class LoginInfo {
 		this.username = username;
 		this.password = password;
 		this.userExists = userExists;
+	}
+
+	public int getHCPID() {
+		return HCPID;
+	}
+
+	public void setHCPID(int hCPID) {
+		HCPID = hCPID;
 	}
 
 	public String getUsername() {

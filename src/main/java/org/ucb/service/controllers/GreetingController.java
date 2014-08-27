@@ -1,5 +1,8 @@
 package org.ucb.service.controllers;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,10 +15,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.ucb.data.dao.IRegisteredUserManager;
 import org.ucb.data.domain.Agenda;
+import org.ucb.data.domain.Category;
+import org.ucb.data.domain.Domain_of_Contact;
 import org.ucb.data.domain.FeedbackAnswer;
 import org.ucb.data.domain.HCP;
 import org.ucb.data.domain.HCPInitialInterests;
+import org.ucb.data.domain.LMRelatedWebinars;
+import org.ucb.data.domain.LMRelatedWebsites;
+import org.ucb.data.domain.LMRelatedpapers;
 import org.ucb.data.domain.Login;
+import org.ucb.data.domain.Preferences;
 import org.ucb.data.domain.RegisteredHCP;
 import org.ucb.data.domain.out.InitialInterests;
 import org.ucb.data.domain.out.Specialization;
@@ -25,6 +34,7 @@ import org.ucb.service.IAnonymousUserServiceStub;
 import org.ucb.service.model.Greeting;
 import org.ucb.service.model.InitialInterestModel;
 import org.ucb.service.survey.IInitialInterestService;
+import org.ucb.services.preferences.Preference;
 
 @RestController
 public class GreetingController {
@@ -43,36 +53,79 @@ public class GreetingController {
 
     @RequestMapping("/greeting")
     @Transactional
-    public Greeting greeting(@RequestParam(value="accessCode", required=false, defaultValue="World") String name) {
+    public Greeting greeting(@RequestParam(value="accessCode", required=false, defaultValue="World") String name) throws ParseException {
 
-    	HCP user = new HCP();
+    	RegisteredHCP user = new RegisteredHCP();
 		
     	//HCP u = getiAnonymousUserServiceStub().getHCPbyID(0);
     	
-    	RegisteredHCP registeredHCP = new RegisteredHCP(); //iRegisteredUserManager.findRegisteredUserById(0);
+    	//RegisteredHCP registeredHCP = new RegisteredHCP(); //iRegisteredUserManager.findRegisteredUserById(0);
     	
-    	registeredHCP.setAcademic_practitioner_value("academic");
-    	registeredHCP.setCountry("Belgium");
-    	registeredHCP.setEmail("x@y.com");
-    	registeredHCP.setHCPName("jim");
-    	registeredHCP.setRegisteredAt(new Date());
+    	user.setAcademic_practitioner_value("academic");
+    	user.setCountry("Belgium");
+    	user.setEmail("x@y.com");
+    	user.setHCPName("jim");
+    	user.setRegisteredAt(new Date());
     	//registeredHCP.setHCPID(0);
     	
 		
 		//Initialization
+    	
+		// adding learn more data
+		LMRelatedpapers lmRelatedpapers = new LMRelatedpapers();
+		List<LMRelatedpapers> lmRelatedpapersList = new ArrayList<LMRelatedpapers>();
+		lmRelatedpapers.setLMRelatedpapersAbstract("Epileptic encephalopathies are a"
+				+ " devastating group of epilepsies with poor prognosis, of which"
+				+ " the majority are of unknown etiology.");
+		lmRelatedpapers.setLMRelatedpapersAuthors("Gemma L Carvill et al.");
+		lmRelatedpapers.setLMRelatedpapersName("Targeted resequencing in epileptic "
+				+ "encephalopathies identifies de novo mutations in CHD2 and SYNGAP1");
+		lmRelatedpapers.setLMRelatedpapersLinks("http://www.nature.com/ng/journal/v45/n7/abs/ng.2646.html");		
+		
+		LMRelatedWebinars lmRelatedWebinars = new LMRelatedWebinars();
+		
+		
+		LMRelatedWebsites lmRelatedWebsites =  new LMRelatedWebsites();
+		List<LMRelatedWebsites> lmRelatedWebsitesList = new ArrayList<LMRelatedWebsites>();
+		lmRelatedWebsites.setLMRelatedWebsitesAbstract("Nature Genetics publishes "
+				+ "the very highest quality research in genetics");
+		lmRelatedWebsites.setLMRelatedWebsitesLink("http://www.nature.com/ng/index.html");
+		lmRelatedWebsites.setLMRelatedWebsitesName("Nature Genetics");		
+		
 		Agenda hCP_agenda = new Agenda();
+		List<Agenda> hCP_agendaList = new ArrayList<Agenda>();
 		List<HCPInitialInterests> hCP_hcpInitialInterests = new ArrayList<HCPInitialInterests>();
 		HCPInitialInterests hcpInitialInterests = new HCPInitialInterests();
 		org.ucb.data.domain.Session ses = new org.ucb.data.domain.Session();
+		ses.setEndTime(new Date());
+		ses.setPlace("Hall K11");
+		ses.setStartTime(new Date());
+		//
+		String inputStr = "11-11-2012";
+		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		Date inputDate = dateFormat.parse(inputStr);
+		//
+		ses.setSessionDate(inputDate);
+		ses.setSessionAbstract("Epileptic Encephalopathies");
+		ses.setSession_agenda(hCP_agendaList);
+		
+		lmRelatedpapersList.add(lmRelatedpapers);
+		lmRelatedWebsitesList.add(lmRelatedWebsites);
+		
+		ses.setSession_RelatedWebsites(lmRelatedWebsitesList);
+		ses.setSession_Relatedpapers(lmRelatedpapersList);
+		
 		List<org.ucb.data.domain.Session> sesArr = new ArrayList<org.ucb.data.domain.Session>();
 		sesArr.add(ses);
+		lmRelatedpapers.setRelatedpapers_session(sesArr);
+		lmRelatedWebsites.setRelatedWebsites_session(sesArr);
 		
 		// login info
 		Login login = new Login();
 		login.setPassword("1234");
 		login.setUsername("jim");
-		registeredHCP.setRegHCP_login(login);
-		login.setLogin_regHCP(registeredHCP);
+		user.setRegHCP_login(login);
+		login.setLogin_regHCP(user);
 		
 		// Agenda
 		hCP_agenda.setAgenda_hcp(user);
@@ -90,15 +143,36 @@ public class GreetingController {
 		FeedbackAnswer fbAns = new FeedbackAnswer();
 		fbAns.setFbAnswer(3);
 		
+		//pref
+		Preferences pref = new Preferences();
+		pref.setCommunication_Channel("Emails");
+		pref.setOptIn_OptOut(true);
+		Category cat = new Category();
+		cat.setCat_pref(pref);
+		cat.setCategory("UCB Info");
+		List<Category> catList = new ArrayList<Category>();
+		catList.add(cat);
+		pref.setPref_cat(catList);
+		Domain_of_Contact domain_of_Contact = new Domain_of_Contact();
+		domain_of_Contact.setDomain("eplipsy");
+		domain_of_Contact.setDomain_preferences(pref);
+		List<Domain_of_Contact> domain_of_ContactList = new ArrayList<Domain_of_Contact>();
+		domain_of_ContactList.add(domain_of_Contact);
+		pref.setPref_domain(domain_of_ContactList);
+		pref.setPref_registeredHCP(user);
+		
 		user.setHCPID(0);
 		user.setRegesteredStatus(true);
 		user.setSpecialization("Eplipsy1");
 		user.setSub_specialization("Eplipsy Surgury");
 		user.setHCP_agenda(hCP_agenda);
 		user.setAcademic_practitioner_value("Academic");
-		user.setHCP_hcpInitialInterests(hCP_hcpInitialInterests);    
+		user.setHCP_hcpInitialInterests(hCP_hcpInitialInterests);
+		user.setProfession("doctor");
+		user.setRegisteredHCP_preferences(pref);
 		
     	//iAnonymousUserServiceStub.storeAnonymousUser(user);
+		//iRegisteredUserManager.storeUser(user);
 		
 		//iRegisteredUserManager.storeRegisteredUser(registeredHCP);
     	/**/		
@@ -158,13 +232,15 @@ public class GreetingController {
 		//iMockInitialInterestService.storeProf(prof);
 		//iMockInitialInterestService.storeSpecial(spec);
 		
-		InitialInterestModel initialInterestModel = new InitialInterestModel();
-		initialInterestModel.setSpecialType("Epilepsy");
+//		InitialInterestModel initialInterestModel = new InitialInterestModel();
+//		initialInterestModel.setSpecialType("Epilepsy");
+//		
+//		List<SubSpecialzation> subList = iMockInitialInterestService.getSubSpecial(initialInterestModel);
+	
 		
-		List<SubSpecialzation> subList = iMockInitialInterestService.getSubSpecial(initialInterestModel);
 		
     	return new Greeting(counter.incrementAndGet(),
-                String.format(template, subList.get(0).getSubSpecialzation()));
+    			user.getHCP_hcpInitialInterests().toString());
     }
     
 //    @RequestMapping("/error")

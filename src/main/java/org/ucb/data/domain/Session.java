@@ -57,7 +57,7 @@ public class Session {
 	private List<Agenda> session_agenda;
 	
 	// each session can have zero or more questions
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="")
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="qs_session")
 	private List<Questions> session_qs;
 	
 	// each session can have one or many related websit

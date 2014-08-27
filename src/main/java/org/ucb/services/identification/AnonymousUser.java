@@ -17,7 +17,7 @@ public class AnonymousUser implements IAnonymousUser{
 	protected HCP hcpUser;
 	protected SessionIdentifierGenerator sessionIdentifier;
 	@Autowired
-	protected AccessCodeManager accessCodeManager;
+	protected IAccessCodeManager accessCodeManager;
 	@Autowired
 	protected IAnonymousUserManager anonymousUserManager;
 	

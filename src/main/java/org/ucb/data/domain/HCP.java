@@ -32,40 +32,40 @@ public class HCP {
 	 * which we can reuse it here nad link our App to UCB's
 	 */
 	@Id
-	private int HCPID;
+	protected int HCPID;
 	
 	
 	@Column
-	private String profession;
+	protected String profession;
 	
 	// HCP area of specialization
 	@Column
-	private String specialization;
+	protected String specialization;
 	
 	// HCP sub_specialization
 	@Column
-	private String sub_specialization;
+	protected String sub_specialization;
 	
 	// Determines if HCP is active in the field of academia of clinically engaged
 	@Column
-	private String academic_practitioner_value;
+	protected String academic_practitioner_value;
 	
 	//is this HCP registered or anonymous
 	@Column
-	private boolean regesteredStatus;
+	protected boolean regesteredStatus;
 	
 	// how many times HCP invites other HCPs
 	@Column
-	private int no_Sent_Invitation;
+	protected int no_Sent_Invitation;
 	
 	// each HCP can have only one Agenda
 	@OneToOne(cascade = CascadeType.ALL, mappedBy="agenda_hcp") 
-	private Agenda HCP_agenda;
+	protected Agenda HCP_agenda;
 	
 	// each HCP have one or many interests
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "HCPInitialInterests_hcp")
 	@Cascade({org.hibernate.annotations.CascadeType.ALL})
-	private List<HCPInitialInterests> HCP_hcpInitialInterests = new ArrayList<HCPInitialInterests>();
+	protected List<HCPInitialInterests> HCP_hcpInitialInterests = new ArrayList<HCPInitialInterests>();
 	
 	/*
 	//each HCP will attend m to n sessions

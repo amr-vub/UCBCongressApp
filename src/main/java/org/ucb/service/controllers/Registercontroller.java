@@ -5,24 +5,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.ucb.service.model.LoginInfo;
+import org.ucb.data.domain.RegisteredHCP;
 import org.ucb.services.identification.IRegisteredUserService;
 
 @RestController
-public class Logincontroller {
+public class Registercontroller {
 
 	@Autowired
-	IRegisteredUserService iRegisteredUserService;
+	private IRegisteredUserService iRegisteredUserService;
 	
-	@RequestMapping(value="/logIn" , method = RequestMethod.POST)
-	public LoginInfo checkLogin(@RequestBody LoginInfo login){
+	@RequestMapping(value="/register",  method = RequestMethod.POST)
+	public RegisteredHCP register(@RequestBody RegisteredHCP hcp){
 		
-		LoginInfo info;
+		RegisteredHCP hcpReturn = 
+				iRegisteredUserService.registerUser(hcp);
 		
-		// Here we should call the logging in service 
-		info = iRegisteredUserService.login(login);
+		return hcpReturn;
 		
-		return info;
 	}
-	
 }
