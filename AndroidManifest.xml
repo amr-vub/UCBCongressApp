@@ -31,13 +31,13 @@
         <activity android:name=".activity.home.AgendaActivity" />
         <activity android:name=".activity.home.HomeActivity" />
         <activity android:name=".activity.home.SpeakersActivity" />
-        <activity android:name=".activity.home.SessionActivity"/>
-    	<activity android:name=".activity.home.PreferenceActivity" />
+        <activity android:name=".activity.home.SessionActivity" />
+        <activity android:name=".activity.home.PreferenceActivity" />
         <activity android:name=".activity.home.UserProfileActivity" />
         <activity android:name=".activity.survey.AnonySurveyActivity1" />
         <activity android:name=".activity.survey.AnonySurveyActivity2" />
         <activity android:name=".activity.survey.AnonySurveyActivity3" />
-        <activity android:name=".activity.learnmore.LearnMoreActivity"/>
-        </application>
+        <activity android:name=".activity.learnmore.LearnMoreActivity" />
+    </application>
 
 </manifest>

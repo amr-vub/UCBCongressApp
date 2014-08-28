@@ -13,18 +13,22 @@
             android:id="@+id/agenda_pager_title_strip"
             style="@style/view_pager_title_strip"
             android:layout_gravity="top"
+            android:background="@color/ucb_blue1"
             android:paddingBottom="5dp"
             android:paddingTop="5dp" />
+
     </android.support.v4.view.ViewPager>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/session_add_to_agenda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:background="#33b5e5"
+        android:alpha="0.9"
+        android:background="@color/ucb_blue1"
+        android:height="50dp"
         android:text="My agenda"
         android:textColor="@color/white" />
 

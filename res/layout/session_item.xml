@@ -2,11 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
-    android:orientation="vertical" >
+    android:paddingTop="10dp" >
 
     <!-- session title -->
 
@@ -51,5 +51,15 @@
         android:layout_below="@id/session_time"
         android:text="speaker"
         android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/session_add_to_agenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/session_title"
+        android:layout_alignTop="@+id/session_title"
+        android:background="@drawable/ic_action_event"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
 
 </RelativeLayout>

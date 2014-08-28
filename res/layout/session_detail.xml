@@ -1,147 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/ucb_grey1" >
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/session_detail_title"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_toLeftOf="@+id/button_learn_more"
-        android:background="@color/white"
-        android:gravity="bottom"
-        android:paddingBottom="5dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="6dp"
-        android:paddingTop="16dp"
-        android:text="TextView"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ucb_grey1" >
 
-    <Button
-        android:id="@+id/detail_session_rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:background="@color/ucb_sky_blue"
-        android:text="Rate and review"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="normal" />
+        <TextView
+            android:id="@+id/session_detail_title"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@+id/button_learn_more"
+            android:alpha="0.9"
+            android:background="@color/ucb_sky_blue"
+            android:gravity="bottom"
+            android:paddingBottom="5dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="6dp"
+            android:paddingTop="16dp"
+            android:text="TextView"
+            android:textAllCaps="false"
+            android:textColor="@color/ucb_grey1"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button_learn_more"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/session_detail_title"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="5dp"
-        android:gravity="bottom|center_vertical|center_horizontal"
-        android:text="Learn more..." />
+        <Button
+            android:id="@+id/detail_session_rate"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/ucb_blue1"
+            android:text="Rate and review"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal" />
 
-    <ImageView
-        android:id="@+id/icon_place"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/icon_time"
-        android:layout_below="@+id/icon_time"
-        android:layout_marginTop="5dp"
-        android:src="@drawable/ic_action_place" />
+        <Button
+            android:id="@+id/button_learn_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/session_detail_title"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:alpha="0.9"
+            android:background="@color/ucb_blue1"
+            android:gravity="bottom|center_vertical|center_horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="50dp"
+            android:text="Learn\n more..."
+            android:textColor="@color/ucb_grey1" />
 
-    <ImageView
-        android:id="@+id/icon_speaker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/icon_place"
-        android:layout_below="@+id/icon_place"
-        android:layout_marginTop="5dp"
-        android:src="@drawable/ic_action_person" />
+        <ImageView
+            android:id="@+id/icon_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/icon_time"
+            android:layout_below="@+id/icon_time"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_action_place" />
 
-    <TextView
-        android:id="@+id/learn_more_text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/icon_time"
-        android:layout_alignRight="@+id/button_learn_more"
-        android:layout_alignTop="@+id/icon_time"
-        android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@+id/icon_time"
-        android:gravity="center_vertical"
-        android:text="9:00-10:00" />
+        <ImageView
+            android:id="@+id/icon_speaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/icon_place"
+            android:layout_below="@+id/icon_place"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_action_person" />
 
-    <TextView
-        android:id="@+id/learn_more_text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/icon_place"
-        android:layout_alignLeft="@+id/learn_more_text1"
-        android:layout_alignRight="@+id/learn_more_text1"
-        android:layout_alignTop="@+id/icon_place"
-        android:gravity="center_vertical"
-        android:text="Room 501" />
+        <TextView
+            android:id="@+id/learn_more_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/icon_time"
+            android:layout_alignRight="@+id/button_learn_more"
+            android:layout_alignTop="@+id/icon_time"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/icon_time"
+            android:gravity="center_vertical"
+            android:text="9:00-10:00" />
 
-    <TextView
-        android:id="@+id/learn_more_text3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/icon_speaker"
-        android:layout_alignLeft="@+id/learn_more_text2"
-        android:layout_alignRight="@+id/learn_more_text2"
-        android:layout_alignTop="@+id/icon_speaker"
-        android:gravity="center_vertical"
-        android:text="John Doe" />
+        <TextView
+            android:id="@+id/learn_more_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/icon_place"
+            android:layout_alignLeft="@+id/learn_more_text1"
+            android:layout_alignRight="@+id/learn_more_text1"
+            android:layout_alignTop="@+id/icon_place"
+            android:gravity="center_vertical"
+            android:text="Room 501" />
 
-    <TextView
-        android:id="@+id/title_abstract"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/icon_speaker"
-        android:layout_alignRight="@+id/learn_more_text3"
-        android:layout_below="@+id/icon_speaker"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="Abstract"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/learn_more_text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/icon_speaker"
+            android:layout_alignLeft="@+id/learn_more_text2"
+            android:layout_alignRight="@+id/learn_more_text2"
+            android:layout_alignTop="@+id/icon_speaker"
+            android:gravity="center_vertical"
+            android:text="John Doe" />
 
-    <TextView
-        android:id="@+id/text_abstract"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/title_abstract"
-        android:layout_alignRight="@+id/title_abstract"
-        android:layout_below="@+id/title_abstract"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="10dp"
-        android:text="This session mainly focuses on..." />
+        <TextView
+            android:id="@+id/title_abstract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/icon_speaker"
+            android:layout_alignRight="@+id/learn_more_text3"
+            android:layout_below="@+id/icon_speaker"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Abstract"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/icon_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/session_detail_title"
-        android:layout_below="@+id/session_detail_title"
-        android:layout_marginTop="11dp"
-        android:src="@drawable/ic_action_time" />
+        <TextView
+            android:id="@+id/text_abstract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/title_abstract"
+            android:layout_alignRight="@+id/title_abstract"
+            android:layout_below="@+id/title_abstract"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:text="@string/sample_abstract" />
 
-    <Button
-        android:id="@+id/button_download_doc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/text_abstract"
-        android:layout_alignRight="@+id/text_abstract"
-        android:layout_below="@+id/text_abstract"
-        android:layout_marginTop="10dp"
-        android:text="View the presentation" />
+        <ImageView
+            android:id="@+id/icon_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/session_detail_title"
+            android:layout_below="@+id/session_detail_title"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_action_time" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/button_download_doc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/text_abstract"
+            android:layout_alignRight="@+id/text_abstract"
+            android:layout_below="@+id/text_abstract"
+            android:layout_marginTop="10dp"
+            android:text="View the presentation" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:background="@color/ucb_black" >
+
+        <TextView
+            android:id="@+id/anony_survey2_textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivInstruction"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Click here to get your personalized information!"
+            android:textColor="@color/ucb_sky_blue"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivInstruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="78dp"
+            android:clickable="false"
+            android:paddingLeft="20dip"
+            android:paddingTop="25dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_arrow" />
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -18,12 +18,13 @@
     </style>
 
     <style name="view_pager_title_strip">
-        <item name="android:background">#4EADD0</item>
+        <item name="android:height">50dp</item>
+        <item name="android:background">#4670B4</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
  	</style>
-
+ 	
 </resources>

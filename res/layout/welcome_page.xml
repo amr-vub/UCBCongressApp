@@ -8,6 +8,7 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -17,8 +18,9 @@
         <Button
             android:id="@+id/button_anonymous"
             android:layout_width="fill_parent"
-            android:layout_height="80dp"
-            android:layout_marginLeft="10dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:background="@color/ucb_grey1"
@@ -30,9 +32,9 @@
         <Button
             android:id="@+id/button_signin"
             android:layout_width="fill_parent"
-            android:layout_height="80dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="10dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
             android:layout_weight="1"
             android:alpha="0.75"
             android:background="@color/ucb_sky_blue"
@@ -45,63 +47,150 @@
     <RelativeLayout
         android:id="@+id/relative_layout_icons"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:layout_above="@+id/linearLayout1"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" >
-
-        <ImageView
-            android:id="@+id/start_imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="54dp"
-            android:src="@drawable/ic_personalisation" />
-
-        <ImageView
-            android:id="@+id/start_imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/start_imageView2"
-            android:layout_marginTop="79dp"
-            android:layout_toLeftOf="@+id/start_imageView1"
-            android:src="@drawable/ic_vote" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
 
         <ImageView
             android:id="@+id/start_imageView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/start_imageView4"
-            android:layout_marginLeft="11dp"
+            android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/start_imageView1"
             android:src="@drawable/ic_agenda" />
 
-        <ImageView
-            android:id="@+id/start_imageView3"
+        <TextView
+            android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/start_imageView4"
-            android:layout_alignTop="@+id/start_imageView2"
-            android:layout_marginRight="35dp"
-            android:src="@drawable/ic_feedback" />
+            android:layout_alignLeft="@+id/start_imageView5"
+            android:layout_alignTop="@+id/textView4"
+            android:gravity="center"
+            android:text="agenda"
+            android:textColor="@color/ucb_grey1"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Ucare, cares about you..."
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/ucb_grey1"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView6"
+            android:layout_alignRight="@+id/textView6"
+            android:layout_below="@+id/textView6"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:text="Sign in to see the information\nwe have prepared for you."
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/start_imageView3"
+            android:layout_below="@+id/start_imageView2"
+            android:gravity="center_horizontal"
+            android:text="feedback"
+            android:textColor="@color/ucb_grey1"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/anony_survey2_textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_imageView1"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:text="information\nonly for you"
+            android:textColor="@color/ucb_grey1"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/start_imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/textView2"
+            android:src="@drawable/ic_vote" />
 
         <ImageView
             android:id="@+id/start_imageView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/start_imageView3"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_black_box" />
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:src="@drawable/ic_box" />
 
         <ImageView
             android:id="@+id/start_imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/start_imageView1"
-            android:layout_marginTop="68dp"
-            android:layout_toRightOf="@+id/start_imageView5"
+            android:layout_alignTop="@+id/start_imageView6"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/textView6"
             android:src="@drawable/ic_question" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/start_imageView2"
+            android:layout_below="@+id/start_imageView2"
+            android:layout_toRightOf="@+id/textView6"
+            android:gravity="center_horizontal"
+            android:text="ask it\nget it"
+            android:textColor="@color/ucb_grey1"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_imageView4"
+            android:layout_toRightOf="@+id/textView2"
+            android:gravity="center_horizontal"
+            android:text="let your voice\nbe heard"
+            android:textColor="@color/ucb_grey1"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/start_imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/ic_feedback" />
+
+        <ImageView
+            android:id="@+id/start_imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView7"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_personalisation" />
+
     </RelativeLayout>
 
 </RelativeLayout>

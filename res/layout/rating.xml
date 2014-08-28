@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/anony_survey2_textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Your opinion is important to us!\n Rate how you feel about this session:" />
+
+    <RatingBar
+        android:id="@+id/ratingBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/anony_survey2_textView1"
+        android:layout_alignRight="@+id/anony_survey2_textView1"
+        android:layout_below="@+id/anony_survey2_textView1"
+        android:layout_marginTop="15dp"
+        android:numStars="5"
+        android:stepSize="1.0" />
+
+    <Button
+        android:id="@+id/submit_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ratingBar1"
+        android:layout_alignRight="@+id/ratingBar1"
+        android:layout_below="@+id/ratingBar1"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.9"
+        android:background="@color/ucb_blue1"
+        android:text="Submit"
+        android:textColor="@color/ucb_grey1" />
+
+</RelativeLayout>

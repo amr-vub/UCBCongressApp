@@ -70,6 +70,7 @@ public class AgendaAdapter extends PagerAdapter {
 				scrollPosition[position] = firstVisibleItem;
 			}
 		});
+		
 		v.setOnItemClickListener(new OnItemClickListener(){
 
 			@Override

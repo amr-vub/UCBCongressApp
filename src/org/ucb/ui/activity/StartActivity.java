@@ -73,7 +73,7 @@ public class StartActivity extends Activity {
 
 	private void callLoginDialog() {
 		dialog1 = new Dialog(this);
-		dialog1.setTitle("Log in");
+		dialog1.setTitle("Sign in");
 		dialog1.setContentView(R.layout.login);
 		dialog1.setCancelable(true);
 
@@ -115,7 +115,7 @@ public class StartActivity extends Activity {
 		dialog2.setContentView(R.layout.access_code);
 		dialog2.setCancelable(true);
 
-		accessCode = (EditText) findViewById(R.id.access_code);
+		accessCode = (EditText) dialog2.findViewById(R.id.access_code);
 		dialog2.show();
 
 		Button accessCodeContinue = (Button) dialog2.findViewById(R.id.access_code_continue);

@@ -19,6 +19,7 @@ public class SessionManager {
 	final String KEY_ACCESS_CODE = "accesscode";
 	final String KEY_USERNAME = "username";
 	final String KEY_PASSWORD = "password";
+	final String FIRST_TIME = "firsttime";
 
 	// Constructor
 	public SessionManager(Context context) {
@@ -110,5 +111,14 @@ public class SessionManager {
 	// Get user mode: anonymous or logged in
 	public boolean getUserMode() {
 		return pref.getBoolean(USER_MODE, false);
+	}
+	
+	public boolean getFirstTime(){
+		return pref.getBoolean(FIRST_TIME, false);
+	}
+	public boolean setFirstTime(){
+		SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean("RanBefore", true);
+        return editor.commit();
 	}
 }

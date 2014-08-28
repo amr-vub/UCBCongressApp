@@ -2,15 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical"
     android:orientation="vertical" >
 
     <EditText
         android:id="@+id/first_name"
-        android:layout_width="120dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:drawableLeft="@drawable/ic_action_person"
+        android:drawablePadding="3dp"
         android:ems="10"
         android:hint="First name"
         android:inputType="textPersonName" >
@@ -22,22 +23,25 @@
         android:id="@+id/email"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_alignLeft="@+id/first_name"
+        android:layout_alignRight="@+id/last_name"
         android:layout_below="@id/first_name"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/ic_action_email"
+        android:drawablePadding="3dp"
         android:ems="10"
-        android:hint="email"
+        android:hint="Email"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/last_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="50dp"
-        android:layout_toRightOf="@id/first_name"
-        android:layout_alignBaseline="@id/first_name"
         android:layout_alignBottom="@id/first_name"
+        android:layout_alignTop="@+id/first_name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@id/first_name"
         android:ems="10"
         android:hint="Last name"
         android:inputType="textPersonName" />
@@ -46,18 +50,21 @@
         android:id="@+id/country"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_below="@id/email" />
+        android:layout_alignLeft="@+id/email"
+        android:layout_alignRight="@+id/email"
+        android:layout_below="@id/email"
+        android:layout_marginTop="5dp" />
 
     <EditText
         android:id="@+id/phone"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignLeft="@+id/country"
+        android:layout_alignRight="@+id/country"
         android:layout_below="@id/country"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/ic_action_phone"
+        android:drawablePadding="5dp"
         android:ems="10"
         android:hint="Phone number"
         android:inputType="phone" />
@@ -66,10 +73,12 @@
         android:id="@+id/password"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignLeft="@+id/phone"
+        android:layout_alignRight="@+id/phone"
         android:layout_below="@id/phone"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/ic_action_screen_locked_to_portrait"
+        android:drawablePadding="3dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
@@ -78,10 +87,12 @@
         android:id="@+id/confirm_password"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignRight="@+id/password"
         android:layout_below="@id/password"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/ic_action_screen_locked_to_portrait"
+        android:drawablePadding="3dp"
         android:ems="10"
         android:hint="Confirm password"
         android:inputType="textPassword" />
@@ -89,12 +100,13 @@
     <Button
         android:id="@+id/signup_create_account"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_below="@id/confirm_password"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
-        android:text="Create account" />
+        android:alpha="50"
+        android:background="@color/ucb_blue1"
+        android:text="Create account"
+        android:textColor="@color/ucb_grey1"
+        android:textSize="20sp" />
 
 </RelativeLayout>

@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">eHealthDesk</string>
+    <string name="app_name">Ucare</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="register">Register</string>
-
     <string name="user_profile">User profile</string>
     <string name="agenda">Agenda</string>
     <string name="speakers">Speakers</string>
     <string name="preferences">Preferences</string>
-    
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="title_activity_item_one">ItemOne</string>
     <string name="title_section1">Day 1</string>
     <string name="title_section2">Day 2</string>
     <string name="title_section3">Day 3</string>
-   
     <string name="title_activity_speakers">Speakers</string>
-    <string name="title_anony_survey_activity1">eHealthDesk</string>
-    <string name="title_anony_survey_activity2">eHealthDesk</string>
-    <string name="title_anony_survey_activity3">eHealthDesk</string>
+    <string name="title_anony_survey_activity1">Ucare</string>
+    <string name="title_anony_survey_activity2">Ucare</string>
+    <string name="title_anony_survey_activity3">Ucare</string>
     <string name="title_preferenceitem_list">PreferenceItems</string>
     <string name="title_preferenceitem_detail">PreferenceItem Detail</string>
-    
+
     <string-array name="recommended_resources">
         <item>Webinars</item>
         <item>Websites</item>
         <item>Papers</item>
     </string-array>
+
+    <string name="sample_abstract">Showcasing the most promising epilepsy therapies from healthcare companies dedicated to pioneering and advancing drugs, biologics, technologies and devices for epilepsy and seizures, this year\'s conference featured the third annual \"Shark Tank\" competition, in addition to a day designated for people with epilepsy, families and advocates. </string>
 
 </resources>

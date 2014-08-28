@@ -3,7 +3,7 @@ package org.ucb.ui.activity.adapter;
 import java.util.ArrayList;
 
 import org.ucb.ui.activity.*;
-import org.ucb.ui.activity.object.InterestItem;
+import org.ucb.model.InterestItem;
 import org.ucb.ui.activity.survey.AnonySurveyActivity3;
 import org.ucb.ui.activity.survey.AnonySurveyActivity3.ViewHolder;
 import org.ucb.ui.R;
@@ -44,11 +44,12 @@ public class AnonySurveyAdapter3 extends BaseAdapter {
 
 		holder.text.setText(object.getTitle());
 
-		if (object.isState() == true) {
-			holder.text.setBackground(context.getResources().getDrawable(R.drawable.button_checked));
+		if (object.isChecked() == true) {
+			holder.text.setBackground(context.getResources().getDrawable(R.drawable.ic_button_blue));
+			holder.text.setTextColor(context.getResources().getColor(R.color.ucb_grey1));
 		} else {
-			holder.text.setBackground(context.getResources().getDrawable(R.drawable.button));
-			
+			holder.text.setBackground(context.getResources().getDrawable(R.drawable.ic_button_white));
+			holder.text.setTextColor(context.getResources().getColor(R.color.ucb_blue1));
 		}
 		return convertView;
 	}

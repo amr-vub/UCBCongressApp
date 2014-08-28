@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@color/ucb_grey1" >
 
     <TextView
         android:id="@+id/register_survey_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="50dp"
-        android:text="I am interested in:"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignLeft="@+id/register_survey_textView1"
+        android:layout_alignRight="@+id/register_survey_textView1"
+        android:layout_below="@+id/register_survey_textView1"
+        android:layout_marginTop="10dp"
+        android:text="Are we correct about your interests?"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp" />
 
     <GridView
-        android:id="@+id/register_gridView"
+        android:id="@+id/register_gridView1"
         android:layout_width="250dp"
         android:layout_height="400dp"
-        android:layout_below="@id/register_survey_header"
+        android:layout_above="@+id/register_survey_next"
         android:layout_alignLeft="@id/register_survey_header"
+        android:layout_alignRight="@+id/register_survey_header"
+        android:layout_below="@id/register_survey_header"
+        android:layout_marginTop="10dp"
+        android:alpha="0.75"
         android:choiceMode="multipleChoice"
         android:gravity="center"
         android:horizontalSpacing="5dp"
@@ -31,13 +37,30 @@
 
     </GridView>
 
-    <Button
-        android:id="@+id/register_survey_interest_next"
+    <TextView
+        android:id="@+id/register_survey_textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@id/register_gridView"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Are there some topics that interest you? Tap them so that we will provide more!"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/register_survey_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
-        android:text="Next" />
+        android:layout_alignRight="@+id/register_gridView1"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.75"
+        android:background="@color/ucb_blue1"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Now let&apos;s start!"
+        android:textColor="@color/ucb_grey1" />
 
 </RelativeLayout>

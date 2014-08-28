@@ -5,7 +5,7 @@
     android:background="@color/ucb_grey1" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/anony_survey2_textView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -21,9 +21,9 @@
         android:id="@+id/learn_more_item_set"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/anony_survey2_textView1"
+        android:layout_alignRight="@+id/anony_survey2_textView1"
+        android:layout_below="@+id/anony_survey2_textView1"
         android:layout_marginBottom="10dp" >
 
     </ListView>

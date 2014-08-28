@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.ucb.ui.activity.*;
 import org.ucb.ui.activity.adapter.AnonySurveyAdapter3;
 import org.ucb.ui.activity.home.HomeActivity;
-import org.ucb.ui.activity.object.InterestItem;
+import org.ucb.model.InterestItem;
 
 import org.ucb.ui.R;
 
@@ -51,19 +51,19 @@ public class AnonySurveyActivity3 extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View v, int position,
 					long arg3) {
-				if(interestOptions.get(position).isState()== true){
-					interestOptions.get(position).setState(false);
+				if(interestOptions.get(position).isChecked()== true){
+					interestOptions.get(position).setChecked(false);
 					myAdapter.notifyDataSetChanged();
 				}
 				else{
-					interestOptions.get(position).setState(true);
+					interestOptions.get(position).setChecked(true);
 					myAdapter.notifyDataSetChanged();
 				}
 			}
 		});
 
 		nextButton = (Button) this
-				.findViewById(R.id.anony_survey_interest_next);
+				.findViewById(R.id.register_survey_next);
 		nextButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {

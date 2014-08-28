@@ -20,7 +20,7 @@ import android.widget.*;
  * of the sections/tabs/pages.
  */
 public class PreferenceAdapter extends FragmentPagerAdapter {
-	String[] pagerTitle = new String[] {"Congress", "UCB info", "Webinars"};
+	String[] pagerTitle = new String[] {"Congress", "UCB info"};
 
 	public PreferenceAdapter(FragmentManager fm) {
 		super(fm);
@@ -34,8 +34,6 @@ public class PreferenceAdapter extends FragmentPagerAdapter {
 				return new CongressFragment();
 			case 1:
 				return new ProductFragment();
-			case 2:
-				return new WebinarFragment();
 			default:
 				return new CongressFragment();
 		}
@@ -44,7 +42,7 @@ public class PreferenceAdapter extends FragmentPagerAdapter {
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return 3;
+		return 2;
 	}
 
 	@Override

@@ -10,31 +10,36 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AgendaPagerAdapter extends BaseAdapter {
 	private int position;
 	private Context mContext;
 	private LayoutInflater mLayoutInflater;
 	private ArrayList<Session> mEntries = new ArrayList<Session>();
+	boolean isSelected;
 
 	public AgendaPagerAdapter(Context context, int position) {
-		position = position+1;
+		position = position + 1;
 		mContext = context;
 		mLayoutInflater = (LayoutInflater) mContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		init(mEntries);
 	}
-	
+
 	// this function should connect to the service part and retrieve data
-	public void init(ArrayList<Session> entries){
-		for (int i=0; i<10; i++){
+	public void init(ArrayList<Session> entries) {
+		isSelected = false;
+		
+		for (int i = 0; i < 10; i++) {
 			Session s = new Session();
-			s.setDate("2014-08-2"+i);
-			s.setPlace("Room 50"+i);
-			s.setTitle("Day "+position+": Introduction "+i);
-			s.setSpeaker("Speaker "+i);
+			s.setDate("2014-08-2" + i);
+			s.setPlace("Room 50" + i);
+			s.setTitle("Day " + position + ": Introduction " + i);
+			s.setSpeaker("Speaker " + i);
 			entries.add(s);
 		}
 	}
@@ -64,7 +69,27 @@ public class AgendaPagerAdapter extends BaseAdapter {
 		} else {
 			itemView = (RelativeLayout) convertView;
 		}
+		Button addToPersonalAgenda = (Button) itemView
+				.findViewById(R.id.session_add_to_agenda);
+		addToPersonalAgenda.setOnClickListener(new View.OnClickListener() {
 
+			@Override
+			public void onClick(View v) {
+				if (isSelected) {
+					v.setBackgroundResource(R.drawable.ic_action_event);
+					Toast.makeText(mContext, "The session has been deleted.",
+							Toast.LENGTH_LONG).show();
+					isSelected = false;
+				}
+				else{
+					v.setBackgroundResource(R.drawable.ic_action_event_selected);
+					Toast.makeText(mContext, "The session has been added.",
+							Toast.LENGTH_LONG).show();
+					isSelected = true;
+				}
+			}
+
+		});
 		TextView sessionTitle = (TextView) itemView
 				.findViewById(R.id.session_title);
 		TextView sessionTime = (TextView) itemView
@@ -73,7 +98,7 @@ public class AgendaPagerAdapter extends BaseAdapter {
 				.findViewById(R.id.session_place);
 		TextView sessionSpeaker = (TextView) itemView
 				.findViewById(R.id.session_speaker);
-		
+
 		String title = mEntries.get(position).getTitle();
 		sessionTitle.setText(title);
 		String time = mEntries.get(position).getDate();

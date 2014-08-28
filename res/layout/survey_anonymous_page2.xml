@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <TextView
-        android:id="@+id/anony_survey_header_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:text="I am specialized in:"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    android:layout_height="match_parent"
+    android:background="@color/ucb_grey1" >
 
     <Button
         android:id="@+id/anony_survey_arith"
         android:layout_width="210dp"
-        android:layout_height="50dp"
-        android:layout_alignLeft="@id/anony_survey_header_2"
-        android:layout_below="@id/anony_survey_header_2"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/anony_survey_header_2"
+        android:layout_alignRight="@+id/anony_survey_header_2"
+        android:layout_below="@+id/anony_survey_header_2"
         android:layout_marginTop="30dp"
-        android:background="@color/ucb_red2"
+        android:background="@color/ucb_blue1"
         android:text="Arthritis"
         android:textColor="@color/white" />
 
     <Button
         android:id="@+id/anony_survey_epil"
         android:layout_width="210dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_alignLeft="@id/anony_survey_header_2"
+        android:layout_alignRight="@+id/anony_survey_arith"
         android:layout_below="@id/anony_survey_arith"
         android:layout_marginTop="10dp"
         android:background="@color/ucb_sky_blue"
@@ -39,12 +31,38 @@
     <Button
         android:id="@+id/anony_survey_park"
         android:layout_width="210dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_alignLeft="@id/anony_survey_epil"
+        android:layout_alignRight="@+id/anony_survey_epil"
         android:layout_below="@id/anony_survey_epil"
         android:layout_marginTop="10dp"
-        android:background="@color/ucb_green"
+        android:alpha="0.5"
+        android:background="@color/ucb_blue3"
         android:text="Parkinson"
         android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/anony_survey2_textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Want to meet peers? Specialists like you are already there!"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/anony_survey_header_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/anony_survey2_textView1"
+        android:layout_alignRight="@+id/anony_survey2_textView1"
+        android:layout_below="@+id/anony_survey2_textView1"
+        android:layout_marginTop="10dp"
+        android:text="What is your specialization?"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp" />
 
 </RelativeLayout>

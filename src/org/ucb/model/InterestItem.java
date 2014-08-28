@@ -2,20 +2,20 @@ package org.ucb.model;
 
 public class InterestItem {
 	String title;
-	boolean state;
+	boolean checked;
 
-	public InterestItem(String title, boolean state) {
+	public InterestItem(String title, boolean checked) {
 		super();
 		this.title = title;
-		this.state = state;
+		this.checked = checked;
 	}
 
-	public boolean isState() {
-		return state;
+	public boolean isChecked() {
+		return checked;
 	}
 
-	public void setState(boolean state) {
-		this.state = state;
+	public void setChecked(boolean checked) {
+		this.checked = checked;
 	}
 
 	public String getTitle() {
