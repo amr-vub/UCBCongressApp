@@ -31,7 +31,7 @@ public class RegisteredUserManager implements IRegisteredUserManager{
 
 	public RegisteredHCP findRegisteredUserByEmail(String email) {
 		RegisteredHCP user = null ;		
-		List<HCP> list = sessionFactory.getCurrentSession().createQuery("SELECT u FROM RegisteredHCP u WHERE u.email = :email").setParameter("email", email).list();
+		List<HCP> list = sessionFactory.getCurrentSession().createQuery("SELECT u FROM RegisteredHCP u WHERE u.email LIKE :email").setParameter("email", email).list();
 		if(!list.isEmpty())
 			user =  (RegisteredHCP) list.get(0);
 		
@@ -74,7 +74,7 @@ public class RegisteredUserManager implements IRegisteredUserManager{
 
 	public void deleteRegisteredsUser(RegisteredHCP registeredUser) {
 		
-		getSessionFactory().openSession().delete(registeredUser);
+		getSessionFactory().getCurrentSession().delete(registeredUser);
 		
 	}
 
