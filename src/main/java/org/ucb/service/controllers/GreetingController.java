@@ -59,7 +59,7 @@ public class GreetingController {
 		
     	//HCP u = getiAnonymousUserServiceStub().getHCPbyID(0);
     	
-    	//RegisteredHCP registeredHCP = new RegisteredHCP(); //iRegisteredUserManager.findRegisteredUserById(0);
+    	//RegisteredHCPModel registeredHCP = new RegisteredHCPModel(); //iRegisteredUserManager.findRegisteredUserById(0);
     	
     	user.setAcademic_practitioner_value("academic");
     	user.setCountry("Belgium");

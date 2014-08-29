@@ -74,6 +74,32 @@ public class RegisteredHCP extends HCP{
 	@OneToOne(cascade=CascadeType.ALL, mappedBy="Login_regHCP")
 	private Login regHCP_login;
 	
+	public RegisteredHCP(){
+		
+	}
+		
+	public RegisteredHCP(String hCPName, String email, String country,
+			int phone, Preferences registeredHCP_preferences,
+			Date registeredAt, List<HCP_More_Interest> more_Interest,
+			List<Session> registeredHCP_Session,
+			List<MSLSession> registeredHCP_MSLSession,
+			List<RecommendedPapers> registeredHCP_RecPeper, Login regHCP_login) {
+		super();
+		HCPName = hCPName;
+		this.email = email;
+		this.country = country;
+		this.phone = phone;
+		this.registeredHCP_preferences = registeredHCP_preferences;
+		RegisteredAt = registeredAt;
+		this.more_Interest = more_Interest;
+		this.registeredHCP_Session = registeredHCP_Session;
+		this.registeredHCP_MSLSession = registeredHCP_MSLSession;
+		this.registeredHCP_RecPeper = registeredHCP_RecPeper;
+		this.regHCP_login = regHCP_login;
+	}
+
+
+
 	public Login getRegHCP_login() {
 		return regHCP_login;
 	}
