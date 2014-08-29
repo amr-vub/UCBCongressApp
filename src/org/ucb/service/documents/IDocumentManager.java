@@ -8,7 +8,9 @@ public interface IDocumentManager {
 	
 	public void downloadDocument(String url);
 	
-	public void setAbstract(String _abstract);
+	public void rateDocument(int rating);
 	
-	public String getAbstract();
+	//public void setAbstract(String _abstract);
+	
+	//public String getAbstract();
 }
