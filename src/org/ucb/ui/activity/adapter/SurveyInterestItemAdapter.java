@@ -50,12 +50,12 @@ public class SurveyInterestItemAdapter extends BaseAdapter {
 
 		if (object.isChecked() == true) {
 			holder.text.setBackground(context.getResources().getDrawable(
-					R.drawable.ic_button_blue));
+					R.drawable.rounded_button_checked));
 			holder.text.setTextColor(context.getResources().getColor(
 					R.color.ucb_grey1));
 		} else {
 			holder.text.setBackground(context.getResources().getDrawable(
-					R.drawable.ic_button_white));
+					R.drawable.rounded_button_unchecked));
 			holder.text.setTextColor(context.getResources().getColor(
 					R.color.ucb_blue1));
 		}

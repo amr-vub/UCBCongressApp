@@ -45,7 +45,7 @@ public class AnonySurveyActivity3 extends Activity {
 			interestItems.add(new InterestItem(s, false));
 		}
 
-		gridView = (GridView) findViewById(R.id.anonymous_survey3_gridView);
+		gridView = (GridView) findViewById(R.id.user_profile_interests);
 
 		anonyAdapter = new SurveyInterestItemAdapter(this, interestItems);
 

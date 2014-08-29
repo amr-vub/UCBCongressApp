@@ -1,4 +1,4 @@
-package org.ucb.ui.activity.home;
+package org.ucb.ui.activity.session;
 
 import org.ucb.ui.R;
 import org.ucb.ui.activity.RegisterActivity;
@@ -25,6 +25,7 @@ public class SessionActivity extends Activity {
 	RatingBar ratingBar;
 	Button detailSessionLearnMore;
 	Button detailSessionRate;
+	Button detailViewDocument;
 	Dialog dialogbox;
 	SessionAdapter sessionAdapter;
 
@@ -51,6 +52,7 @@ public class SessionActivity extends Activity {
 		detailSessionAbstract = (TextView) findViewById(R.id.text_abstract);
 		detailSessionLearnMore = (Button) findViewById(R.id.button_learn_more);
 		detailSessionRate = (Button) findViewById(R.id.detail_session_rate);
+		detailViewDocument = (Button) findViewById(R.id.button_download_doc);
 
 		detailSessionTime.setText("2014-08-01 09:00");
 		detailSessionPlace.setText("Room 501");
@@ -90,11 +92,18 @@ public class SessionActivity extends Activity {
 				showRatingForm();
 			}
 		});
+		detailViewDocument.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(SessionActivity.this, ViewDocumentActivity.class);
+				startActivity(intent);
+				
+			}
+		});
 	}
 
 	protected void showRatingForm() {
-		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
 		dialogbox = new Dialog(SessionActivity.this);
 		dialogbox.setTitle("Rate this session");
 		dialogbox.setContentView(R.layout.rating);

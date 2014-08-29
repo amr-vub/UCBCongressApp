@@ -1,7 +1,6 @@
-package org.ucb.ui.activity.home;
+package org.ucb.ui.activity;
 
 import org.ucb.ui.R;
-import org.ucb.ui.activity.SessionManager;
 
 import android.app.Activity;
 import android.os.Bundle;

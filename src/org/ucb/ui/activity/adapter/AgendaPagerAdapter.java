@@ -3,7 +3,7 @@ package org.ucb.ui.activity.adapter;
 import java.util.ArrayList;
 
 import org.ucb.ui.R;
-import org.ucb.ui.activity.object.Session;
+import org.ucb.model.Session;
 
 import android.content.Context;
 import android.view.LayoutInflater;

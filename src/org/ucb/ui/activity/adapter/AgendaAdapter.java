@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.ucb.ui.R;
-import org.ucb.ui.activity.home.SessionActivity;
+import org.ucb.ui.activity.session.SessionActivity;
 
 import android.content.Context;
 import android.content.Intent;

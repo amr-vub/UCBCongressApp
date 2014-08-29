@@ -27,18 +27,21 @@
         <activity android:name=".activity.RegisterActivity" 
             android:label="Register"/>
         <activity android:name=".activity.StartActivity" />
+        <activity android:name=".activity.InvitationActivity"
+            android:label="Invitation"/>
         <activity android:name=".activity.home.AgendaActivity" 
             android:label="Agenda"/>
         <activity android:name=".activity.home.HomeActivity" 
             android:label="Agenda"/>
         <activity android:name=".activity.home.SpeakersActivity" 
             android:label="Speakers"/>
-        <activity android:name=".activity.home.SessionActivity" />
+        <activity android:name=".activity.session.SessionActivity" />
+        <activity android:name=".activity.session.ViewDocumentActivity" />
         <activity android:name=".activity.home.PreferenceActivity" 
             android:label="Preferences"/>
         <activity
             android:name=".activity.home.UserProfileActivity"
-            android:label="User profile" />
+            android:label="Profile" />
         <activity android:name=".activity.survey.AnonySurveyActivity1" />
         <activity android:name=".activity.survey.AnonySurveyActivity2" />
         <activity android:name=".activity.survey.AnonySurveyActivity3" />

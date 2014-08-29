@@ -1,136 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/ucb_grey1" >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
     <RelativeLayout
-        android:id="@+id/user_profile_layout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/white"
-        android:paddingBottom="10dp" >
+        android:background="@color/ucb_grey1" >
 
-        <ImageView
-            android:id="@+id/user_profile_avatar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/ic_user_avatar" />
-
-        <TextView
-            android:id="@+id/user_profile_profession"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/user_profile_name"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:text="General practitioner" />
-
-        <TextView
-            android:id="@+id/user_profile_name"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/user_profile_avatar"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="John Doe"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/user_profile_textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/user_profile_profession"
-            android:layout_toRightOf="@+id/user_profile_profession"
-            android:text=" specialized in " />
-
-        <TextView
-            android:id="@+id/user_profile_specialization"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/user_profile_textView1"
-            android:layout_alignBottom="@+id/user_profile_textView1"
-            android:layout_marginRight="30dp"
-            android:layout_toRightOf="@+id/user_profile_textView1"
-            android:text="Epilepsy" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/user_profile_layout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/user_profile_layout1"
-        android:layout_alignRight="@+id/user_profile_layout1"
-        android:layout_below="@id/user_profile_layout1"
-        android:background="@color/white"
-        android:paddingBottom="20dp" >
-        
-        <TextView
-            android:id="@+id/user_profile_string2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:text="Field of interests"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/user_profile_string3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/user_profile_string2"
-            android:layout_below="@+id/user_profile_string2"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:text="Are we right about your interests?\nUpdate them to help us provide better services for you."
-            android:textSize="14sp"
-            android:textStyle="italic" />
-
-        <GridView
-            android:id="@+id/anonymous_survey3_gridView"
+        <RelativeLayout
+            android:id="@+id/user_profile_layout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/user_profile_save_choice"
-            android:layout_alignLeft="@+id/user_profile_string3"
-            android:layout_below="@+id/user_profile_string3"
-            android:layout_marginRight="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
-            android:alpha="0.9"
-            android:gravity="center"
-            android:numColumns="2" >
+            android:background="@color/white"
+            android:paddingBottom="10dp" >
 
-        </GridView>
+            <ImageView
+                android:id="@+id/user_profile_avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_user_avatar" />
 
-        <Button
-            android:id="@+id/user_profile_save_choice"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/user_profile_profession"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/user_profile_name"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="General practitioner" />
+
+            <TextView
+                android:id="@+id/user_profile_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_profile_avatar"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="John Doe"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/user_profile_textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/user_profile_profession"
+                android:layout_toRightOf="@+id/user_profile_profession"
+                android:text=" specialized in " />
+
+            <TextView
+                android:id="@+id/user_profile_specialization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/user_profile_textView1"
+                android:layout_alignBottom="@+id/user_profile_textView1"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@+id/user_profile_textView1"
+                android:text="Epilepsy" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/user_profile_layout2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/anonymous_survey3_gridView"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="10dp"
-            android:alpha="0.9"
-            android:background="@color/ucb_blue1"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="Save my choice!"
-            android:textColor="@color/ucb_grey1" />
+            android:layout_alignLeft="@+id/user_profile_layout3"
+            android:layout_alignRight="@+id/user_profile_layout3"
+            android:layout_below="@+id/user_profile_layout1"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:paddingBottom="10dp" >
 
+            <TextView
+                android:id="@+id/user_profile_textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Social networks"
+                android:textColor="@color/ucb_grey4"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/user_profile_textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignLeft="@+id/user_profile_textView2"
+                android:layout_below="@+id/user_profile_textView2"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="Connect to Facebook" />
+
+            <TextView
+                android:id="@+id/user_profile_textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignLeft="@+id/user_profile_textView3"
+                android:layout_below="@+id/user_profile_textView3"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="Connect to LinkedIn" />
+
+            <Button
+                android:id="@+id/user_profile_facebook"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/user_profile_textView4"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/user_profile_textView4"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_social_linkedin" />
+
+            <Button
+                android:id="@+id/user_profile_linkedin"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/user_profile_textView4"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/user_profile_textView3"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_social_facebook" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/user_profile_layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/user_profile_layout1"
+            android:layout_alignRight="@+id/user_profile_layout1"
+            android:layout_below="@id/user_profile_layout2"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:paddingBottom="20dp" >
+
+            <TextView
+                android:id="@+id/user_profile_string2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Field of interests"
+                android:textColor="@color/ucb_grey4"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/user_profile_string3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/user_profile_string2"
+                android:layout_below="@+id/user_profile_string2"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Are we right about your interests? Update them to help us provide better services for you."
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+            <GridView
+                android:id="@+id/user_profile_interests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/user_profile_string3"
+                android:layout_below="@+id/user_profile_string3"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:alpha="0.9"
+                android:gravity="center"
+                android:numColumns="2" >
+            </GridView>
+
+            <Button
+                android:id="@+id/user_profile_save_choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/user_profile_interests"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:alpha="0.9"
+                android:background="@color/ucb_blue1"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:text="Save my choice!"
+                android:textColor="@color/ucb_grey1" />
+        </RelativeLayout>
     </RelativeLayout>
 
-</RelativeLayout>
+</ScrollView>

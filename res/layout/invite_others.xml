@@ -2,29 +2,43 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ucb_grey1"
+    android:background="@drawable/bg_people_wall"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/user_profile_textView1"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:paddingBottom="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="30dp"
-        android:text="Here is the access code, invite friends to use this app!"
-        android:textSize="16sp" />
+        android:background="@color/white"
+        android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/user_profile_specialization"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/user_profile_textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="79dp"
-        android:text="143987"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        <TextView
+            android:id="@+id/invite_others_textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Here is the access code, invite friends to use this app!"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/invite_others_textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/invite_others_textView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="30dp"
+            android:text="143987"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

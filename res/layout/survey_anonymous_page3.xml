@@ -20,7 +20,7 @@
         android:textStyle="bold" />
 
     <GridView
-        android:id="@+id/anonymous_survey3_gridView"
+        android:id="@+id/user_profile_interests"
         android:layout_width="250dp"
         android:layout_height="400dp"
         android:layout_above="@+id/register_survey_next"
@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/anonymous_survey3_gridView"
+        android:layout_alignRight="@+id/user_profile_interests"
         android:layout_marginBottom="30dp"
         android:layout_marginTop="20dp"
         android:alpha="0.75"
