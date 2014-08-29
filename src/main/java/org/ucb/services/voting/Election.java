@@ -43,16 +43,7 @@ public class Election {
 	{
 		return vote.getVoteResult();
 	}
-	
-	public void setVoteValue(int voteValue)
-	{
-		votechoices.setVoteValue(voteValue);
-	}
-	
-	public int getVoteValue()
-	{
-		return votechoices.getVoteValue();
-	}
+
 	
 	public void setVoteChoices(String choices)
 	{

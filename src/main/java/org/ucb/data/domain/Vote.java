@@ -1,11 +1,15 @@
 package org.ucb.data.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /** 
  * This class reflects a session's vote info
@@ -27,6 +31,12 @@ public class Vote {
 	@ManyToOne
 	@JoinColumn(nullable=false)
 	private Session vote_session;
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="choiceVote")
+	private List<VoteChoices> voteChoices;
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="Vote_value_Vote")
+	private List<Vote_value> vote_vValue;
 
 	public int getChosenVoteChoice() {
 		return chosenVoteChoice;

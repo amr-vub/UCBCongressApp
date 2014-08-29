@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 
@@ -20,23 +21,16 @@ public class VoteChoices {
 	
 	@Column
 	private String choices;
+
+	@ManyToOne 
+	@JoinColumn(nullable=false)
+	private Vote choiceVote;
 	
-	@Column
-	private int voteValue;
 	/*
 	@OneToOne
 	@JoinColumn(nullable=false)
 	private HCP VChoice_HCP;
 	*/
-
-
-	public int getVoteValue() {
-		return voteValue;
-	}
-
-	public void setVoteValue(int voteValue) {
-		this.voteValue = voteValue;
-	}
 
 	public int getChoiceID() {
 		return choiceID;
