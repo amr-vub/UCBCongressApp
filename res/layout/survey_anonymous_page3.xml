@@ -12,12 +12,15 @@
         android:layout_alignRight="@+id/register_survey_textView1"
         android:layout_below="@+id/register_survey_textView1"
         android:layout_marginTop="10dp"
+        android:alpha="0.9"
         android:text="What are your interests?"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="18sp" />
+        android:textColor="@color/ucb_black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <GridView
-        android:id="@+id/gridView1"
+        android:id="@+id/anonymous_survey3_gridView"
         android:layout_width="250dp"
         android:layout_height="400dp"
         android:layout_above="@+id/register_survey_next"
@@ -52,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/gridView1"
+        android:layout_alignRight="@+id/anonymous_survey3_gridView"
         android:layout_marginBottom="30dp"
         android:layout_marginTop="20dp"
         android:alpha="0.75"

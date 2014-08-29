@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import org.ucb.data.domain.LearnMoreItem;
 import org.ucb.ui.R;
-import org.ucb.ui.activity.adapter.AccessCodeAdapter;
 import org.ucb.ui.activity.adapter.SessionAdapter;
 import org.ucb.ui.activity.survey.AnonySurveyActivity1;
 

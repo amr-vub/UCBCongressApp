@@ -24,16 +24,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.AccessCodeActivity" />
-        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.RegisterActivity" 
+            android:label="Register"/>
         <activity android:name=".activity.StartActivity" />
-        <activity android:name=".activity.home.AgendaActivity" />
-        <activity android:name=".activity.home.HomeActivity" />
-        <activity android:name=".activity.home.SpeakersActivity" />
+        <activity android:name=".activity.home.AgendaActivity" 
+            android:label="Agenda"/>
+        <activity android:name=".activity.home.HomeActivity" 
+            android:label="Agenda"/>
+        <activity android:name=".activity.home.SpeakersActivity" 
+            android:label="Speakers"/>
         <activity android:name=".activity.home.SessionActivity" />
-        <activity android:name=".activity.home.PreferenceActivity" />
-        <activity android:name=".activity.home.UserProfileActivity" />
+        <activity android:name=".activity.home.PreferenceActivity" 
+            android:label="Preferences"/>
+        <activity
+            android:name=".activity.home.UserProfileActivity"
+            android:label="User profile" />
         <activity android:name=".activity.survey.AnonySurveyActivity1" />
         <activity android:name=".activity.survey.AnonySurveyActivity2" />
         <activity android:name=".activity.survey.AnonySurveyActivity3" />

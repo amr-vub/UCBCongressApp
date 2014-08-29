@@ -101,7 +101,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/user_profile_specialization"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/start_imageView3"
@@ -126,10 +126,10 @@
             android:id="@+id/start_imageView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView2"
+            android:layout_below="@+id/user_profile_specialization"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="35dp"
-            android:layout_toRightOf="@+id/textView2"
+            android:layout_toRightOf="@+id/user_profile_specialization"
             android:src="@drawable/ic_vote" />
 
         <ImageView
@@ -167,7 +167,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/start_imageView4"
-            android:layout_toRightOf="@+id/textView2"
+            android:layout_toRightOf="@+id/user_profile_specialization"
             android:gravity="center_horizontal"
             android:text="let your voice\nbe heard"
             android:textColor="@color/ucb_grey1"
@@ -177,7 +177,7 @@
             android:id="@+id/start_imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/textView2"
+            android:layout_above="@+id/user_profile_specialization"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="40dp"
             android:src="@drawable/ic_feedback" />

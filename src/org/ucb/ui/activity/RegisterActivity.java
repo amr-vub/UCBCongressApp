@@ -2,8 +2,10 @@ package org.ucb.ui.activity;
 
 
 import org.ucb.ui.activity.adapter.LoginAdapter;
+import org.ucb.ui.activity.survey.RegisteredSurveyActivity;
 import org.ucb.ui.R;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -86,6 +88,8 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
 							"Account Successfully Created ", Toast.LENGTH_LONG)
 							.show();
 					finish();
+					Intent intent = new Intent(RegisterActivity.this, RegisteredSurveyActivity.class);
+					startActivity(intent);
 				}
 			}
 		});

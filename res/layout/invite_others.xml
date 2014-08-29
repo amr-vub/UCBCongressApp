@@ -2,14 +2,29 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ucb_grey1"
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/user_profile_textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="81dp" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Here is the access code, invite friends to use this app!"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/user_profile_specialization"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_profile_textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="79dp"
+        android:text="143987"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

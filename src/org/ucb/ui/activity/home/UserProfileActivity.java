@@ -18,14 +18,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.GridView;
 import android.widget.TextView;
 
 public class UserProfileActivity extends Fragment {
 
 	public final static String TAG = UserProfileActivity.class.getSimpleName();
 	TextView name;
-	TextView profession;
 	TextView specialization;
+	TextView profession;
+	GridView interestList;
+	Button saveChoice;
 	
 
 	public static UserProfileActivity newInstance() {
@@ -44,6 +48,7 @@ public class UserProfileActivity extends Fragment {
 		name = (TextView) v.findViewById(R.id.user_profile_name);
 		profession = (TextView) v.findViewById(R.id.user_profile_profession);
 		specialization = (TextView) v.findViewById(R.id.user_profile_specialization);
+		saveChoice = (Button) v.findViewById(R.id.user_profile_save_choice);
 		
 		/**
 		 * SERVICE: need to get the following information

@@ -3,29 +3,16 @@ package org.ucb.ui.activity.home;
 import org.ucb.ui.R;
 import org.ucb.ui.activity.RegisterActivity;
 import org.ucb.ui.activity.SessionManager;
-import org.ucb.ui.activity.adapter.AccessCodeAdapter;
 import org.ucb.ui.activity.adapter.SessionAdapter;
 import org.ucb.ui.activity.learnmore.LearnMoreActivity;
-import org.ucb.ui.activity.survey.AnonySurveyActivity1;
-
-import com.github.amlcurran.showcaseview.OnShowcaseEventListener;
-import com.github.amlcurran.showcaseview.ShowcaseView;
-import com.github.amlcurran.showcaseview.targets.ViewTarget;
-
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.*;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 public class SessionActivity extends Activity {
 	SessionManager session;

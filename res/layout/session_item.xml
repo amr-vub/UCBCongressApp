@@ -56,8 +56,9 @@
         android:id="@+id/session_add_to_agenda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/session_title"
-        android:layout_alignTop="@+id/session_title"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
         android:background="@drawable/ic_action_event"
         android:focusable="false"
         android:focusableInTouchMode="false" />

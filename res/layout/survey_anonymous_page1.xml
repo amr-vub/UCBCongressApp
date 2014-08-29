@@ -26,10 +26,11 @@
         android:layout_alignRight="@+id/anony_survey_header_1"
         android:layout_below="@+id/anony_survey_header_1"
         android:layout_marginTop="10dp"
+        android:alpha="0.9"
         android:text="What is your profession?"
         android:textColor="@color/ucb_black"
         android:textSize="18sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold" />
 
     <GridLayout
         android:id="@+id/gridLayout1"

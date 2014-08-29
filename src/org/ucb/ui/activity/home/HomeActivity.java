@@ -195,7 +195,8 @@ public class HomeActivity extends FragmentActivity {
 			case R.id.action_register:
 				openRegister();
 				return true;
-			case R.id.action_settings:
+			case R.id.action_invitation:
+				openInviteOthers();
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);
@@ -208,7 +209,9 @@ public class HomeActivity extends FragmentActivity {
 		startActivity(intent);
 	}
 
-	public void createOverlay() {
+	public void openInviteOthers(){
+		Intent intent = new Intent(HomeActivity.this, InvitationActivity.class);
+		startActivity(intent);
 	}
 
 }
