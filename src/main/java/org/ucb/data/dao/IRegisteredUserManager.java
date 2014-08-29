@@ -3,6 +3,7 @@ package org.ucb.data.dao;
 import java.util.List;
 
 import org.ucb.data.domain.Category;
+import org.ucb.data.domain.Domain_of_Contact;
 import org.ucb.data.domain.Preferences;
 import org.ucb.data.domain.RegisteredHCP;
 import org.ucb.service.model.LoginInfo;
@@ -25,4 +26,8 @@ public interface IRegisteredUserManager {
 	public void deleteRegisteredsUser(RegisteredHCP registeredUser);
 	
 	public Preferences loadPref(Preferences PrefId);
+	
+	public List<Domain_of_Contact> loadDomain(Preferences Pref);
+	
+	public List<Category> loadCat(Preferences Pref);
 }

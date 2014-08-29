@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.ucb.data.domain.Category;
+import org.ucb.data.domain.Domain_of_Contact;
 import org.ucb.data.domain.HCP;
 import org.ucb.data.domain.Login;
 import org.ucb.data.domain.Preferences;
@@ -79,9 +80,23 @@ public class RegisteredUserManager implements IRegisteredUserManager{
 
 	public Preferences loadPref(Preferences PrefId){
 		Preferences pref = 
-				(Preferences) getSessionFactory().openSession().createQuery("SELECT u FROM Preferences u "
+				(Preferences) getSessionFactory().getCurrentSession().createQuery("SELECT u FROM Preferences u "
 		+ "WHERE u.PrefID = :PrefID").setParameter("PrefID", PrefId.getPrefID()).list().get(0);		
 		return pref;
+	}
+
+	public List<Domain_of_Contact> loadDomain(Preferences Pref){
+
+		return (List<Domain_of_Contact>) getSessionFactory().getCurrentSession().createQuery("SELECT u FROM Domain_of_Contact  u WHERE"
+				+ " u.domain_preferences = :prefID").setParameter("prefID", Pref).list();
+		// pref.getPref_domain();
+	}
+	
+	public List<Category> loadCat(Preferences Pref){
+
+		return (List<Category>) getSessionFactory().getCurrentSession().createQuery("SELECT u FROM Category u WHERE"
+				+ " u.cat_pref = :prefID").setParameter("prefID", Pref).list();
+		//return pref.getPref_cat();
 	}
 	
 	public SessionFactory getSessionFactory() {

@@ -70,10 +70,10 @@ public class Application {
 		//System.out.print(iServiceStub.storeAnonymousUser(user));
 		*/    	
     	
-        Tservice tservice = new Tservice();
-        Greeting g = tservice.doInd();
+       // Tservice tservice = new Tservice();
+       // Greeting g = tservice.doInd();
         
-        System.out.print(g.getContent());
+        //System.out.print(g.getContent());
     	
     	SpringApplication.run(Application.class, args);
    

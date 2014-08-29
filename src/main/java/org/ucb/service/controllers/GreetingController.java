@@ -34,6 +34,7 @@ import org.ucb.service.IAnonymousUserServiceStub;
 import org.ucb.service.model.Greeting;
 import org.ucb.service.model.InitialInterestModel;
 import org.ucb.service.survey.IInitialInterestService;
+import org.ucb.services.identification.IRegisteredUserService;
 import org.ucb.services.preferences.Preference;
 
 @RestController
@@ -46,7 +47,7 @@ public class GreetingController {
     private IAnonymousUserServiceStub iAnonymousUserServiceStub;
     
     @Autowired
-    private IRegisteredUserManager iRegisteredUserManager;
+    private IRegisteredUserService iRegisteredUserService;
     
     @Autowired
     private IInitialInterestService iMockInitialInterestService;
@@ -172,13 +173,13 @@ public class GreetingController {
 		user.setRegisteredHCP_preferences(pref);
 		
     	//iAnonymousUserServiceStub.storeAnonymousUser(user);
-		//iRegisteredUserManager.storeUser(user);
+		//iRegisteredUserService.storeUser(user);
 		
-		//iRegisteredUserManager.storeRegisteredUser(registeredHCP);
+		//iRegisteredUserService.storeRegisteredUser(registeredHCP);
     	/**/		
-    	//HCP u = getiAnonymousUserServiceStub().getHCPbyID(0);
+    	RegisteredHCP u = iRegisteredUserService.findUserById(0);
     	
-    	//iRegisteredUserManager.updateRegisteredUser(registeredHCP);
+    	//iRegisteredUserService.updateRegisteredUser(registeredHCP);
     	
     	//getiAnonymousUserServiceStub().update_invitationsSent(u.getHCPID(), 5);
     	
@@ -237,10 +238,10 @@ public class GreetingController {
 //		
 //		List<SubSpecialzation> subList = iMockInitialInterestService.getSubSpecial(initialInterestModel);
 	
-		
+		//String.valueOf(u.getHCP_hcpInitialInterests().get(0).getHCP_Initial_Interests_ID())
 		
     	return new Greeting(counter.incrementAndGet(),
-    			user.getHCP_hcpInitialInterests().toString());
+    			String.valueOf(u.getRegisteredHCP_preferences().getPref_cat().get(0).getCatID()));
     }
     
 //    @RequestMapping("/error")

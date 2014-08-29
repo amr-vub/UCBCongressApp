@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.ucb.data.dao.IRegisteredUserManager;
 import org.ucb.data.dao.RegisteredUserManager;
 import org.ucb.data.domain.Category;
+import org.ucb.data.domain.Domain_of_Contact;
 import org.ucb.data.domain.HCP;
 import org.ucb.data.domain.HCP_More_Interest;
 import org.ucb.data.domain.Login;
@@ -307,6 +308,20 @@ public class RegisteredUserService implements IRegisteredUserService {
 	@Transactional
 	public Preferences loadPref(Preferences PrefId){
 		return registeredUserManager.loadPref(PrefId);
+	}
+
+	@Override
+	@Transactional
+	public List<Domain_of_Contact> loadDomain(Preferences Pref) {
+		
+		return registeredUserManager.loadDomain(Pref);
+	}
+
+	@Override
+	@Transactional
+	public List<Category> loadCat(Preferences Pref) {
+		
+		return registeredUserManager.loadCat(Pref);
 	}
 
 }

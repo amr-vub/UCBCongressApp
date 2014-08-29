@@ -3,6 +3,7 @@ package org.ucb.services.identification;
 import java.util.List;
 
 import org.ucb.data.domain.Category;
+import org.ucb.data.domain.Domain_of_Contact;
 import org.ucb.data.domain.Preferences;
 import org.ucb.data.domain.RegisteredHCP;
 import org.ucb.service.model.LoginInfo;
@@ -20,5 +21,10 @@ public interface IRegisteredUserService {
 	
 	public RegisteredHCP findUserById(int HCPID);
 	
-	public Preferences loadPref(Preferences PrefId);
+	public Preferences loadPref(Preferences Pref);	
+	
+	public List<Domain_of_Contact> loadDomain(Preferences Pref);
+	
+	public List<Category> loadCat(Preferences Pref);
+	
 }

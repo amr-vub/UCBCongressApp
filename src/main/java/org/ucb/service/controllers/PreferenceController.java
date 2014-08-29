@@ -21,7 +21,7 @@ public class PreferenceController {
 	@Autowired
 	IRegisteredUserService iRegisteredUserService;
 	
-	@RequestMapping(value = "/updatePreferences", method = RequestMethod.POST)
+	@RequestMapping(value = "/updatePreferences", method = RequestMethod.POST)	
 	public void setRegisteredHCP_preferences(@RequestBody 
 							PreferenceModel preferenceModel){	
 		Preferences preferences = new Preferences();
@@ -63,10 +63,11 @@ public class PreferenceController {
 				Preferences pref = hcp.getRegisteredHCP_preferences();
 				preferenceModel.setHCPID(HCPID);			
 				preferenceModel.setOptIn_OptOut(pref.isOptIn_OptOut());				
-				pref = iRegisteredUserService.loadPref(pref);
+				//pref = iRegisteredUserService.loadPref(pref);				
 				preferenceModel.setCommunication_Channel(pref.getCommunication_Channel());
-				preferenceModel.setPref_cat(pref.getPref_cat());
-				preferenceModel.setPref_domain(pref.getPref_domain());
+				System.out.println(pref.getPref_domain().get(0));
+				preferenceModel.setPref_cat(iRegisteredUserService.loadCat(pref));
+				preferenceModel.setPref_domain(iRegisteredUserService.loadDomain(pref));
 				preferenceModel.setTimeRange(pref.getTimeRange());
 			}
 		}		
