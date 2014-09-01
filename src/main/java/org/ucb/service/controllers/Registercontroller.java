@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.ucb.data.domain.RegisteredHCP;
+import org.ucb.service.model.AccessCode;
+import org.ucb.service.model.ReghcpModel;
 import org.ucb.services.identification.IRegisteredUserService;
 
 @RestController
@@ -17,22 +19,45 @@ public class Registercontroller {
 	private IRegisteredUserService iRegisteredUserService;
 	
 	@RequestMapping(value="/register",  method = RequestMethod.POST)
-	public void register(@RequestBody RegisteredHCP hcp){
+	public RegisteredHCP register(@RequestBody RegisteredHCP hcp){
+		
+		System.out.print("33333333333333");
+//		
+//		RegisteredHCP hcp1 = new RegisteredHCP();
+//		
+//		hcp1.setAcademic_practitioner_value(hcp.getAcademic_practitioner_value());
+//		hcp1.setCountry(hcp.getCountry());
+//		hcp1.setEmail(hcp.getEmail());
+//		hcp1.setHcpName(hcp.getHcpName());
+//		hcp1.setRegisteredAt(new Date());
+		
+		RegisteredHCP hcpReturn ;
+		
+		hcpReturn = new RegisteredHCP();
+		
+		hcpReturn.setHcpID(iRegisteredUserService.registerUser(hcp).getHcpID());
+		
+		return hcpReturn;
+		
+	}
+	
+	@RequestMapping(value="/fake",  method = RequestMethod.POST)
+	public ReghcpModel registerfake(@RequestBody ReghcpModel hcp){
 		
 		System.out.print("33333333333333");
 		
-		RegisteredHCP hcp1 = new RegisteredHCP();
+//		RegisteredHCP hcp1 = new RegisteredHCP();
+//		
+//		hcp1.setAcademic_practitioner_value(hcp.getAcademic_practitioner_value());
+//		hcp1.setCountry(hcp.getCountry());
+//		hcp1.setEmail(hcp.getEmail());
+//		hcp1.setHCPName(hcp.getHCPName());
+//		hcp1.setRegisteredAt(new Date());
+//		
+//		RegisteredHCP hcpReturn = 
+//				iRegisteredUserService.registerUser(hcp);
 		
-		hcp1.setAcademic_practitioner_value(hcp.getAcademic_practitioner_value());
-		hcp1.setCountry(hcp.getCountry());
-		hcp1.setEmail(hcp.getEmail());
-		hcp1.setHCPName(hcp.getHCPName());
-		hcp1.setRegisteredAt(new Date());
-		
-		RegisteredHCP hcpReturn = 
-				iRegisteredUserService.registerUser(hcp);
-		
-		//return hcpReturn;
+		return new ReghcpModel();
 		
 	}
 }

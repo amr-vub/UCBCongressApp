@@ -53,7 +53,7 @@ public class RegisteredUserService implements IRegisteredUserService {
 				.findUserById(HCPID);
 
 		if (null != hcp) {
-			hcp.setHCPName(HCPName);
+			hcp.setHcpName(HCPName);
 
 			/* Update the DB */
 			registeredUserManager.updateRegisteredUser(hcp);
@@ -280,18 +280,23 @@ public class RegisteredUserService implements IRegisteredUserService {
 	@Transactional
 	public RegisteredHCP registerUser(RegisteredHCP hcp) {
 		RegisteredHCP hcp2 =
-				registeredUserManager.findUserById(hcp.getHCPID());
+				registeredUserManager.findUserById(hcp.getHcpID());
 		// updating the queried hcp
 		if(hcp2!=null){
 			loggedIn = true;
 			hcp2.setCountry(hcp.getCountry());
 			hcp2.setEmail(hcp.getEmail());
-			hcp2.setHCPName(hcp.getHCPName());
+			hcp2.setHcpName(hcp.getHcpName());
 			hcp2.setPhone(hcp.getPhone());
 			hcp2.setNo_Sent_Invitation(0);
 			hcp2.setRegesteredStatus(true);
 			hcp2.setRegisteredAt(new Date());
-			hcp2.setRegHCP_login(hcp.getRegHCP_login());
+			
+			Login login = hcp.getRegHCP_login();
+			
+			login.setLogin_regHCP(hcp2);
+			
+			hcp2.setRegHCP_login(login);
 			// ipdate the DB entry
 			registeredUserManager.updateRegisteredUser(hcp2);
 		}		
@@ -322,6 +327,12 @@ public class RegisteredUserService implements IRegisteredUserService {
 	public List<Category> loadCat(Preferences Pref) {
 		
 		return registeredUserManager.loadCat(Pref);
+	}
+
+	@Override
+	@Transactional
+	public void deleteUser(RegisteredHCP hcp) {
+		registeredUserManager.deleteRegisteredsUser(hcp);		
 	}
 
 }

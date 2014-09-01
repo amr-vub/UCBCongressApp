@@ -35,7 +35,7 @@ public class RegisteredHCP extends HCP{
 	//private int HCPID;
 	
 	@Column
-	private String HCPName;
+	private String hcpName;
 	
 	@Column
 	private String email;
@@ -50,7 +50,7 @@ public class RegisteredHCP extends HCP{
 	private Preferences registeredHCP_preferences;
 	
 	@Column  @Temporal(TemporalType.DATE)
-	private Date RegisteredAt;
+	private Date registeredAt;
 	
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="more_Interest_registeredHCP")
 	private List<HCP_More_Interest> more_Interest = new ArrayList<HCP_More_Interest>();
@@ -72,6 +72,7 @@ public class RegisteredHCP extends HCP{
 	
 	// each registered HCP have a login info
 	@OneToOne(cascade=CascadeType.ALL, mappedBy="Login_regHCP")
+	@Cascade(value={org.hibernate.annotations.CascadeType.ALL})
 	private Login regHCP_login;
 	
 	public RegisteredHCP(){
@@ -85,12 +86,12 @@ public class RegisteredHCP extends HCP{
 			List<MSLSession> registeredHCP_MSLSession,
 			List<RecommendedPapers> registeredHCP_RecPeper, Login regHCP_login) {
 		super();
-		HCPName = hCPName;
+		hcpName = hCPName;
 		this.email = email;
 		this.country = country;
 		this.phone = phone;
 		this.registeredHCP_preferences = registeredHCP_preferences;
-		RegisteredAt = registeredAt;
+		registeredAt = registeredAt;
 		this.more_Interest = more_Interest;
 		this.registeredHCP_Session = registeredHCP_Session;
 		this.registeredHCP_MSLSession = registeredHCP_MSLSession;
@@ -150,12 +151,13 @@ public class RegisteredHCP extends HCP{
 		this.more_Interest = more_Interest;
 	}
 
-	public String getHCPName() {
-		return HCPName;
+
+	public String getHcpName() {
+		return hcpName;
 	}
 
-	public void setHCPName(String hCPName) {
-		HCPName = hCPName;
+	public void setHcpName(String hcpName) {
+		this.hcpName = hcpName;
 	}
 
 	public String getEmail() {
@@ -183,12 +185,13 @@ public class RegisteredHCP extends HCP{
 	}
 
 	public Date getRegisteredAt() {
-		return RegisteredAt;
+		return registeredAt;
 	}
 
 	public void setRegisteredAt(Date registeredAt) {
-		RegisteredAt = registeredAt;
+		this.registeredAt = registeredAt;
 	}
+
 	
 	
 

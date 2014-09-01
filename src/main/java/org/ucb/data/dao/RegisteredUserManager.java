@@ -21,10 +21,8 @@ public class RegisteredUserManager implements IRegisteredUserManager{
 	SessionFactory sessionFactory;
 	
 	public RegisteredHCP findUserById(int RegisteredHCP) {
-		RegisteredHCP user = null;		
-		List<RegisteredHCP> list = sessionFactory.getCurrentSession().createQuery("SELECT u FROM RegisteredHCP u WHERE u.HCPID = :HCPID").setParameter("HCPID", RegisteredHCP).list();
-		if(!list.isEmpty())
-			user =  (RegisteredHCP) list.get(0);
+		RegisteredHCP user = 
+				(RegisteredHCP) sessionFactory.getCurrentSession().get(RegisteredHCP.class, RegisteredHCP);
 		
 		return user;
 	}
@@ -50,7 +48,7 @@ public class RegisteredUserManager implements IRegisteredUserManager{
 		List<Login> remp = sessionFactory.getCurrentSession().createQuery("SELECT u FROM Login u WHERE u.username LIKE :username AND u.password LIKE :password").setParameter("username", username).
 				setParameter("password", password).list();
 		if(remp != null){
-			return remp.get(0).getLogin_regHCP().getHCPID();
+			return remp.get(0).getLogin_regHCP().getHcpID();
 		}
 
 		return -1;
@@ -58,7 +56,7 @@ public class RegisteredUserManager implements IRegisteredUserManager{
 	
 	public boolean isRegistered(int registeredID) {
 		
-		List<RegisteredHCP> remp = sessionFactory.getCurrentSession().createQuery("SELECT u FROM RegisteredHCP u WHERE u.HCPID = :registeredID").setParameter("registeredID", registeredID).list();
+		List<RegisteredHCP> remp = sessionFactory.getCurrentSession().createQuery("SELECT u FROM RegisteredHCP u WHERE u.hcpID = :registeredID").setParameter("registeredID", registeredID).list();
 		if(!remp.isEmpty())
 			return remp.get(0).isRegesteredStatus();
 		

@@ -32,7 +32,7 @@ public class HCP {
 	 * which we can reuse it here nad link our App to UCB's
 	 */
 	@Id
-	protected int HCPID;
+	protected int hcpID;
 	
 	
 	@Column
@@ -60,12 +60,12 @@ public class HCP {
 	
 	// each HCP can have only one Agenda
 	@OneToOne(cascade = CascadeType.ALL, mappedBy="agenda_hcp") 
-	protected Agenda HCP_agenda;
+	protected Agenda hcp_agenda;
 	
 	// each HCP have one or many interests
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "HCPInitialInterests_hcp")
 	@Cascade({org.hibernate.annotations.CascadeType.ALL})
-	protected List<HCPInitialInterests> HCP_hcpInitialInterests = new ArrayList<HCPInitialInterests>();
+	protected List<HCPInitialInterests> hcp_hcpInitialInterests = new ArrayList<HCPInitialInterests>();
 	
 	/*
 	//each HCP will attend m to n sessions
@@ -103,29 +103,32 @@ public class HCP {
 		this.no_Sent_Invitation = no_Sent_Invitation;
 	}
 
-	public int getHCPID() {
-		return HCPID;
+
+	public int getHcpID() {
+		return hcpID;
 	}
 
-	public void setHCPID(int hCPID) {
-		HCPID = hCPID;
+	public void setHcpID(int hcpID) {
+		this.hcpID = hcpID;
 	}
 
-	public Agenda getHCP_agenda() {
-		return HCP_agenda;
+
+
+	public Agenda getHcp_agenda() {
+		return hcp_agenda;
 	}
 
-	public void setHCP_agenda(Agenda hCP_agenda) {
-		HCP_agenda = hCP_agenda;
+	public void setHcp_agenda(Agenda hcp_agenda) {
+		this.hcp_agenda = hcp_agenda;
 	}
 
-	public java.util.List<HCPInitialInterests> getHCP_hcpInitialInterests() {
-		return HCP_hcpInitialInterests;
+	public List<HCPInitialInterests> getHcp_hcpInitialInterests() {
+		return hcp_hcpInitialInterests;
 	}
 
-	public void setHCP_hcpInitialInterests(
-			java.util.List<HCPInitialInterests> hCP_hcpInitialInterests) {
-		HCP_hcpInitialInterests = hCP_hcpInitialInterests;
+	public void setHcp_hcpInitialInterests(
+			List<HCPInitialInterests> hcp_hcpInitialInterests) {
+		this.hcp_hcpInitialInterests = hcp_hcpInitialInterests;
 	}
 
 	public String getSpecialization() {

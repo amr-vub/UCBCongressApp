@@ -65,7 +65,7 @@ public class GreetingController {
     	user.setAcademic_practitioner_value("academic");
     	user.setCountry("Belgium");
     	user.setEmail("x@y.com");
-    	user.setHCPName("jim");
+    	user.setHcpName("jim");
     	user.setRegisteredAt(new Date());
     	//registeredHCP.setHCPID(0);
     	
@@ -162,20 +162,20 @@ public class GreetingController {
 		pref.setPref_domain(domain_of_ContactList);
 		pref.setPref_registeredHCP(user);
 		
-		user.setHCPID(0);
+		user.setHcpID(0);
 		user.setRegesteredStatus(true);
 		user.setSpecialization("Eplipsy1");
 		user.setSub_specialization("Eplipsy Surgury");
-		user.setHCP_agenda(hCP_agenda);
+		user.setHcp_agenda(hCP_agenda);
 		user.setAcademic_practitioner_value("Academic");
-		user.setHCP_hcpInitialInterests(hCP_hcpInitialInterests);
+		user.setHcp_hcpInitialInterests(hCP_hcpInitialInterests);
 		user.setProfession("doctor");
 		user.setRegisteredHCP_preferences(pref);
 		
     	//iAnonymousUserServiceStub.storeAnonymousUser(user);
-		//iRegisteredUserService.storeUser(user);
+		iRegisteredUserService.storeUser(user);
 		
-		//iRegisteredUserService.storeRegisteredUser(registeredHCP);
+		
     	/**/		
     	RegisteredHCP u = iRegisteredUserService.findUserById(0);
     	
@@ -188,7 +188,7 @@ public class GreetingController {
 		 
     	
     	
-		//iAnonymousUserServiceStub.deleteAnonymousUser(u);
+		//iRegisteredUserService.deleteUser(u);
 		
 		//return g;
 		
@@ -241,7 +241,7 @@ public class GreetingController {
 		//String.valueOf(u.getHCP_hcpInitialInterests().get(0).getHCP_Initial_Interests_ID())
 		
     	return new Greeting(counter.incrementAndGet(),
-    			String.valueOf(u.getRegisteredHCP_preferences().getPref_cat().get(0).getCatID()));
+    			String.valueOf(2));
     }
     
 //    @RequestMapping("/error")

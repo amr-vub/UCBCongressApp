@@ -51,7 +51,7 @@ public class AnonymousUser implements IAnonymousUser{
 	public AnonymousUser(int HCPID, String specialization,
 			String sub_specialization, String academic_practitioner_value,
 			boolean regesteredStatus, int no_Sent_Invitation) {
-		hcpUser.setHCPID(HCPID);
+		hcpUser.setHcpID(HCPID);
 		hcpUser.setSpecialization(specialization);
 		hcpUser.setSub_specialization(sub_specialization);
 		hcpUser.setAcademic_practitioner_value(academic_practitioner_value);
@@ -77,11 +77,11 @@ public class AnonymousUser implements IAnonymousUser{
 	public void setAgenda(Agenda hCP_agenda) {
 
 		HCP hcp = anonymousUserManager
-				.findAnonymousUserById(hcpUser.getHCPID());
+				.findAnonymousUserById(hcpUser.getHcpID());
 
 		if (hcp != null) {
 
-			hcp.setHCP_agenda(hCP_agenda);
+			hcp.setHcp_agenda(hCP_agenda);
 
 			/* Update the DB */
 			anonymousUserManager.updateAnonymousUser(hcp);
@@ -99,11 +99,11 @@ public class AnonymousUser implements IAnonymousUser{
 			List<HCPInitialInterests> hCP_hcpInitialInterests) {
 
 		HCP hcp = anonymousUserManager
-				.findAnonymousUserById(hcpUser.getHCPID());
+				.findAnonymousUserById(hcpUser.getHcpID());
 
 		if (hcp != null) {
 
-			hcp.setHCP_hcpInitialInterests(hCP_hcpInitialInterests);
+			hcp.setHcp_hcpInitialInterests(hCP_hcpInitialInterests);
 
 			/* Update the DB */
 			anonymousUserManager.updateAnonymousUser(hcp);
@@ -151,7 +151,7 @@ public class AnonymousUser implements IAnonymousUser{
 		invitationCode = generateUniqueCode();
 
 		HCP hcp = anonymousUserManager
-				.findAnonymousUserById(hcpUser.getHCPID());
+				.findAnonymousUserById(hcpUser.getHcpID());
 
 		if (hcp != null) {
 
@@ -181,7 +181,7 @@ public class AnonymousUser implements IAnonymousUser{
 	public void setSpecialization(String specialization) {
 
 		HCP hcp = anonymousUserManager
-				.findAnonymousUserById(hcpUser.getHCPID());
+				.findAnonymousUserById(hcpUser.getHcpID());
 
 		if (hcp != null) {
 			hcp.setSpecialization(specialization);
@@ -201,7 +201,7 @@ public class AnonymousUser implements IAnonymousUser{
 	public void setSubSpecialization(String subSpecialization) {
 
 		HCP hcp = anonymousUserManager
-				.findAnonymousUserById(hcpUser.getHCPID());
+				.findAnonymousUserById(hcpUser.getHcpID());
 
 		if (hcp != null) {
 			hcp.setSub_specialization(subSpecialization);
@@ -221,7 +221,7 @@ public class AnonymousUser implements IAnonymousUser{
 	public void setRegesteredStatus(boolean regesteredStatus) {
 
 		HCP hcp = anonymousUserManager
-				.findAnonymousUserById(hcpUser.getHCPID());
+				.findAnonymousUserById(hcpUser.getHcpID());
 
 		if (hcp != null) {
 			hcp.setRegesteredStatus(regesteredStatus);
@@ -239,7 +239,7 @@ public class AnonymousUser implements IAnonymousUser{
 	public void setNo_Sent_invitation(int no_Sent_Invitation) {
 		
 		HCP hcp = anonymousUserManager
-				.findAnonymousUserById(hcpUser.getHCPID());
+				.findAnonymousUserById(hcpUser.getHcpID());
 		
 		if(hcp != null)
 		{

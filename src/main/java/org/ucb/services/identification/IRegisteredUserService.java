@@ -19,6 +19,8 @@ public interface IRegisteredUserService {
 	public void setRegisteredHCP_preferences(
 			Preferences registeredHCP_preferences, int HCPID);
 	
+	public void deleteUser(RegisteredHCP hcp);
+	
 	public RegisteredHCP findUserById(int HCPID);
 	
 	public Preferences loadPref(Preferences Pref);	

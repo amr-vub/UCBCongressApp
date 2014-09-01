@@ -22,7 +22,7 @@ public class AnonymousUserManager implements IAnonymousUserManager {
 	
 	public HCP findAnonymousUserById(int anonymousID) {
 		HCP user = null ;		
-		List<HCP> list = sessionFactory.getCurrentSession().createQuery("SELECT u FROM HCP u WHERE u.HCPID = :anonymousID").setParameter("anonymousID", anonymousID).list();
+		List<HCP> list = sessionFactory.getCurrentSession().createQuery("SELECT u FROM HCP u WHERE u.hcpID = :anonymousID").setParameter("anonymousID", anonymousID).list();
 				//em.createQuery("SELECT u FROM HCP u WHERE u.HCPID = :anonymousID").setParameter("anonymousID", anonymousID).getResultList();
 		if(!list.isEmpty())
 			user =  (HCP) list.get(0);		
@@ -39,7 +39,7 @@ public class AnonymousUserManager implements IAnonymousUserManager {
 
 	public boolean anonymousUserExists(int anonymousID) {
 		boolean isUser ;
-		List remp = sessionFactory.getCurrentSession().createQuery("SELECT u FROM HCP u WHERE u.HCPID = :anonymousID").setParameter("anonymousID", anonymousID).list();
+		List remp = sessionFactory.getCurrentSession().createQuery("SELECT u FROM HCP u WHERE u.hcpID = :anonymousID").setParameter("anonymousID", anonymousID).list();
 		isUser = remp.isEmpty() ? false:true ;
 		return isUser;
 	}
@@ -76,7 +76,7 @@ public class AnonymousUserManager implements IAnonymousUserManager {
 		
 		Session s = getSessionFactory().getCurrentSession();
 		
-		List<HCP> list = s.createQuery("SELECT u FROM HCP u WHERE u.HCPID = :anonymousID")
+		List<HCP> list = s.createQuery("SELECT u FROM HCP u WHERE u.hcpID = :anonymousID")
 		.setParameter("anonymousID", anonymousUserID).list();
 		
 		if(!list.isEmpty())
