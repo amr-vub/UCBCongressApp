@@ -1,8 +1,8 @@
 package org.ucb.ui.activity.adapter;
 
 import java.util.ArrayList;
-import org.ucb.model.InterestItem;
 import org.ucb.ui.activity.survey.AnonySurveyActivity3.ViewHolder;
+import org.ucb.ui.model.InterestItem;
 import org.ucb.ui.R;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -75,5 +75,18 @@ public class SurveyInterestItemAdapter extends BaseAdapter {
 	@Override
 	public long getItemId(int position) {
 		return position;
+	}
+	
+	public ArrayList<String> getCheckedItems(){
+		ArrayList<String> checkedItemNames = new ArrayList<String>();
+		for(InterestItem o: interestItems){
+			if(o.isChecked()){
+				String itemName = o.getTitle();
+				checkedItemNames.add(itemName);
+			}
+		}
+		
+		return checkedItemNames;
+		
 	}
 }

@@ -61,7 +61,7 @@ public class UserProfileActivity extends Fragment {
 		 * SERVICE: need to get the following information first name, last name,
 		 * profession, specialization, interests
 		 */
-		name.setText("Gym Holders");
+		name.setText("Philipp Goodluck");
 		profession.setText("General practitioner");
 		specialization.setText("Parkinson");
 		connectFacebook.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +70,7 @@ public class UserProfileActivity extends Fragment {
 			public void onClick(View v) {
 				Toast.makeText(getActivity(),
 						"Your profile has been linked to Facebook.",
-						Toast.LENGTH_SHORT);
+						Toast.LENGTH_SHORT).show();
 			}
 
 		});
@@ -80,7 +80,7 @@ public class UserProfileActivity extends Fragment {
 			public void onClick(View v) {
 				Toast.makeText(getActivity(),
 						"Your profile has been linked to LinkedIn.",
-						Toast.LENGTH_SHORT);
+						Toast.LENGTH_SHORT).show();
 			}
 
 		});
@@ -90,7 +90,7 @@ public class UserProfileActivity extends Fragment {
 			public void onClick(View v) {
 				Toast.makeText(getActivity(),
 						"Your changes have been saved.",
-						Toast.LENGTH_SHORT);
+						Toast.LENGTH_SHORT).show();
 			}
 		});
 

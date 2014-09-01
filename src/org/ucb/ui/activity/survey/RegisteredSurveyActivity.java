@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.ucb.ui.activity.*;
 import org.ucb.ui.activity.adapter.SurveyInterestItemAdapter;
 import org.ucb.ui.activity.home.HomeActivity;
-import org.ucb.model.InterestItem;
+import org.ucb.ui.model.InterestItem;
 
 import org.ucb.ui.R;
 

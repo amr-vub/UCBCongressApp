@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 public class AnonySurveyActivity1 extends Activity{
 
+	SessionManager session;
 	Button anonySurveyDoctor;
 	Button anonySurveyNurse;
 	Button anonySurveyPharma;
@@ -23,6 +24,7 @@ public class AnonySurveyActivity1 extends Activity{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		session = new SessionManager(this.getApplicationContext());
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.survey_anonymous_page1);
 
@@ -42,6 +44,7 @@ public class AnonySurveyActivity1 extends Activity{
 				/** SERVICE here requires the logic to connect to the service part*/
 				Intent intent = new Intent(AnonySurveyActivity1.this, 
 						AnonySurveyActivity2.class);
+				session.putAnonymousUserProfession("doctor");
 				startActivity(intent);
 			}
 		});
@@ -52,6 +55,7 @@ public class AnonySurveyActivity1 extends Activity{
 				/** SERVICE here requires the logic to connect to the service part*/
 				Intent intent = new Intent(AnonySurveyActivity1.this, 
 						AnonySurveyActivity2.class);
+				session.putAnonymousUserProfession("nurse");
 				startActivity(intent);
 			}
 		});
@@ -62,6 +66,7 @@ public class AnonySurveyActivity1 extends Activity{
 				/** SERVICE here requires the logic to connect to the service part*/
 				Intent intent = new Intent(AnonySurveyActivity1.this, 
 						AnonySurveyActivity2.class);
+				session.putAnonymousUserProfession("pharmacist");
 				startActivity(intent);
 			}
 		});
@@ -72,6 +77,7 @@ public class AnonySurveyActivity1 extends Activity{
 				/** SERVICE here requires the logic to connect to the service part*/
 				Intent intent = new Intent(AnonySurveyActivity1.this, 
 						AnonySurveyActivity2.class);
+				session.putAnonymousUserProfession("phd student");
 				startActivity(intent);
 			}
 		});

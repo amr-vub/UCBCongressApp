@@ -1,4 +1,4 @@
-package org.ucb.model;
+package org.ucb.ui.model;
 
 public class Session {
 

@@ -42,19 +42,7 @@ public class StartActivity extends Activity {
 		Animation myFadeInAnimation = AnimationUtils.loadAnimation(this,
 				R.anim.fadein);
 		layout.startAnimation(myFadeInAnimation);
-		/**
-		 * myImageView.startAnimation(myFadeInAnimation);
-		myImageView = (ImageView) findViewById(R.id.start_imageView2);
-		myImageView.startAnimation(myFadeInAnimation);
-		myImageView = (ImageView) findViewById(R.id.start_imageView3);
-		myImageView.startAnimation(myFadeInAnimation);
-		myImageView = (ImageView) findViewById(R.id.start_imageView4);
-		myImageView.startAnimation(myFadeInAnimation);
-		myImageView = (ImageView) findViewById(R.id.start_imageView5);
-		myImageView.startAnimation(myFadeInAnimation);
-		myImageView = (ImageView) findViewById(R.id.start_imageView6);
-		myImageView.startAnimation(myFadeInAnimation);
-*/
+
 		// Set OnClick listener on anonymous button for anonymous user to enter
 		// access code
 		buttonAnonymous.setOnClickListener(new View.OnClickListener() {
@@ -131,6 +119,7 @@ public class StartActivity extends Activity {
 				if (codeValue.equals("1234")) {
 					Intent intent = new Intent(StartActivity.this,
 							AnonySurveyActivity1.class);
+					intent.putExtra("userid", 1234);
 					startActivity(intent);
 				} else {
 					/** SERVICE to validate the access code */

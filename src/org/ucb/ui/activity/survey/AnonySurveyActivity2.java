@@ -11,12 +11,14 @@ import android.widget.Button;
 
 public class AnonySurveyActivity2 extends Activity {
 
+	SessionManager session;
 	Button anonySurveyArth;
 	Button anonySurveyEpil;
 	Button anonySurveyPark;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		session = new SessionManager(this.getApplicationContext());
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.survey_anonymous_page2);
 
@@ -35,6 +37,7 @@ public class AnonySurveyActivity2 extends Activity {
 				 */
 				Intent intent = new Intent(AnonySurveyActivity2.this,
 						AnonySurveyActivity3.class);
+				session.putAnonymousUserSpecialization("Arthritis");
 				startActivity(intent);
 			}
 		});
@@ -48,6 +51,7 @@ public class AnonySurveyActivity2 extends Activity {
 				 */
 				Intent intent = new Intent(AnonySurveyActivity2.this,
 						AnonySurveyActivity3.class);
+				session.putAnonymousUserSpecialization("Epilepsy");
 				startActivity(intent);
 			}
 		});
@@ -61,6 +65,7 @@ public class AnonySurveyActivity2 extends Activity {
 				 */
 				Intent intent = new Intent(AnonySurveyActivity2.this,
 						AnonySurveyActivity3.class);
+				session.putAnonymousUserSpecialization("Parkinson");
 				startActivity(intent);
 			}
 		});

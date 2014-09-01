@@ -17,6 +17,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 public class RegisterActivity extends Activity implements OnItemSelectedListener{
+	SessionManager session;
 	String[] countries = new String[] { "Austria", "Belgium", "China",
 			"Denmark", "Finland", "France", "Germany", "Greece", "Italy",
 			"Luxembourg", "Netherlands", "Portugal", "Romania", "Spain",
@@ -29,6 +30,7 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		session = new SessionManager(this.getApplicationContext());
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.register);
 
@@ -74,7 +76,7 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
 					return;
 				}
 				// check if both password matches
-				if (!password.equals(confirmPassword)) {
+				if (!pwd.equals(cpwd)) {
 					Toast.makeText(getApplicationContext(),
 							"Password does not match", Toast.LENGTH_LONG)
 							.show();
@@ -88,6 +90,7 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
 							"Account Successfully Created ", Toast.LENGTH_LONG)
 							.show();
 					finish();
+					session.createRegisteredUserSession(eml, pwd);
 					Intent intent = new Intent(RegisterActivity.this, RegisteredSurveyActivity.class);
 					startActivity(intent);
 				}

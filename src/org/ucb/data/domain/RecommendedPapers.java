@@ -23,6 +23,10 @@ public class RecommendedPapers {
 	
 	// each paper can be recommended by one or more reg hcp
 	private List<RegisteredHCP> RecommendedPapers_RegHCP;
+	
+	public RecommendedPapers(){
+		
+	}
 
 	public List<RegisteredHCP> getRecommendedPapers_RegHCP() {
 		return RecommendedPapers_RegHCP;

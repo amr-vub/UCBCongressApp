@@ -9,12 +9,35 @@
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <permission
+        android:name="org.ucb.ui.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="org.ucb.ui.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    
+    <!-- Network State Permissions to detect Internet status -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <receiver
+            android:name="com.google.android.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <!-- This should equal your application's package name! -->
+                <category android:name="org.ucb.ui" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".gcmservice.GCMIntentService" />
+
         <activity
             android:name=".activity.LoadingActivity"
             android:label="@string/app_name" >
@@ -24,21 +47,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.RegisterActivity" 
-            android:label="Register"/>
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:label="Register" />
         <activity android:name=".activity.StartActivity" />
-        <activity android:name=".activity.InvitationActivity"
-            android:label="Invitation"/>
-        <activity android:name=".activity.home.AgendaActivity" 
-            android:label="Agenda"/>
-        <activity android:name=".activity.home.HomeActivity" 
-            android:label="Agenda"/>
-        <activity android:name=".activity.home.SpeakersActivity" 
-            android:label="Speakers"/>
+        <activity
+            android:name=".activity.InvitationActivity"
+            android:label="Invitation" />
+        <activity
+            android:name=".activity.home.AgendaActivity"
+            android:label="Agenda" />
+        <activity
+            android:name=".activity.home.HomeActivity"
+            android:label="Agenda" />
+        <activity
+            android:name=".activity.home.SpeakersActivity"
+            android:label="Speakers" />
         <activity android:name=".activity.session.SessionActivity" />
         <activity android:name=".activity.session.ViewDocumentActivity" />
-        <activity android:name=".activity.home.PreferenceActivity" 
-            android:label="Preferences"/>
+        <activity
+            android:name=".activity.home.PreferenceActivity"
+            android:label="Preferences" />
         <activity
             android:name=".activity.home.UserProfileActivity"
             android:label="Profile" />
@@ -46,6 +75,10 @@
         <activity android:name=".activity.survey.AnonySurveyActivity2" />
         <activity android:name=".activity.survey.AnonySurveyActivity3" />
         <activity android:name=".activity.learnmore.LearnMoreActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

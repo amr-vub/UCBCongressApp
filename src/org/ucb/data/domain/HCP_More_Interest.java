@@ -16,6 +16,10 @@ public class HCP_More_Interest {
 	
 	private RegisteredHCP more_Interest_registeredHCP;
 
+	public HCP_More_Interest(){
+		
+	}
+	
 	public RegisteredHCP getMore_Interest_registeredHCP() {
 		return more_Interest_registeredHCP;
 	}

@@ -17,6 +17,8 @@ public class SessionManager {
 	// TRUE for logged in; FALSE for anonymous
 	final String USER_MODE = "usermode";
 	final String KEY_ACCESS_CODE = "accesscode";
+	final String KEY_SPECIALIZATION = "specialization";
+	final String KEY_PROFESSION = "profession";
 	final String KEY_USERNAME = "username";
 	final String KEY_PASSWORD = "password";
 	final String FIRST_TIME = "firsttime";
@@ -29,7 +31,7 @@ public class SessionManager {
 	}
 
 	/**
-	 * Create login session
+	 * Create login session for registered user
 	 * */
 	public void createRegisteredUserSession(String username, String password) {
 		// Storing login value as TRUE
@@ -46,7 +48,7 @@ public class SessionManager {
 	}
 	
 	/**
-	 * Create login session
+	 * Create login session for anonymous user
 	 * */
 	public void createAnonymousSession(String accessCode) {
 		// Storing login value as TRUE
@@ -85,6 +87,28 @@ public class SessionManager {
 		// return user
 		return user;
 	}
+	
+	
+	public void putAnonymousUserProfession(String profession){
+		editor.putString(KEY_PROFESSION, profession);
+	}
+	
+	public HashMap<String, String> getAnonymousUserProfession(){
+		HashMap<String, String> userProfession = new HashMap<String, String>();
+		userProfession.put(KEY_PROFESSION, pref.getString(KEY_PROFESSION, null));
+		return userProfession;
+	}
+	
+	public void putAnonymousUserSpecialization(String specialization){
+		editor.putString(KEY_SPECIALIZATION, specialization);
+	}
+	
+	public HashMap<String, String> getAnonymousUserSpecialization(){
+		HashMap<String, String> userSpecialization = new HashMap<String, String>();
+		userSpecialization.put(KEY_SPECIALIZATION, pref.getString(KEY_SPECIALIZATION, null));
+		return userSpecialization;
+	}
+	
 	/**
 	 * Clear session details
 	 * */

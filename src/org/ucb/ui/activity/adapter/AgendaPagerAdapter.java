@@ -3,7 +3,7 @@ package org.ucb.ui.activity.adapter;
 import java.util.ArrayList;
 
 import org.ucb.ui.R;
-import org.ucb.model.Session;
+import org.ucb.ui.model.Session;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -78,13 +78,13 @@ public class AgendaPagerAdapter extends BaseAdapter {
 				if (isSelected) {
 					v.setBackgroundResource(R.drawable.ic_action_event);
 					Toast.makeText(mContext, "The session has been deleted.",
-							Toast.LENGTH_LONG).show();
+							Toast.LENGTH_SHORT).show();
 					isSelected = false;
 				}
 				else{
 					v.setBackgroundResource(R.drawable.ic_action_event_selected);
 					Toast.makeText(mContext, "The session has been added.",
-							Toast.LENGTH_LONG).show();
+							Toast.LENGTH_SHORT).show();
 					isSelected = true;
 				}
 			}

@@ -19,8 +19,8 @@ public class RegisteredHCP extends HCP{
 	 */
 	//@Id
 	//private int HCPID;
-	
-	private String HCPName;
+
+	private String hcpName;
 	
 	private String email;
 	
@@ -30,7 +30,9 @@ public class RegisteredHCP extends HCP{
 	
 	private Preferences registeredHCP_preferences;
 	
-	private Date RegisteredAt;
+	private Date registeredAt;
+	
+
 	
 	private List<HCP_More_Interest> more_Interest = new ArrayList<HCP_More_Interest>();
 
@@ -46,6 +48,30 @@ public class RegisteredHCP extends HCP{
 	// each registered HCP have a login info
 	private Login regHCP_login;
 	
+	public RegisteredHCP(){
+		
+	}
+	
+	public RegisteredHCP(String hCPName, String email, String country,
+			int phone, Preferences registeredHCP_preferences,
+			Date registeredAt, List<HCP_More_Interest> more_Interest,
+			List<Session> registeredHCP_Session,
+			List<MSLSession> registeredHCP_MSLSession,
+			List<RecommendedPapers> registeredHCP_RecPeper, Login regHCP_login) {
+		super();
+		hcpName = hCPName;
+		this.email = email;
+		this.country = country;
+		this.phone = phone;
+		this.registeredHCP_preferences = registeredHCP_preferences;
+		registeredAt = registeredAt;
+		this.more_Interest = more_Interest;
+		this.registeredHCP_Session = registeredHCP_Session;
+		this.registeredHCP_MSLSession = registeredHCP_MSLSession;
+		this.registeredHCP_RecPeper = registeredHCP_RecPeper;
+		this.regHCP_login = regHCP_login;
+	}
+
 	public List<Session> getRegisteredHCP_Session() {
 		return registeredHCP_Session;
 	}
@@ -88,12 +114,14 @@ public class RegisteredHCP extends HCP{
 		this.more_Interest = more_Interest;
 	}
 
-	public String getHCPName() {
-		return HCPName;
+
+
+	public String getHcpName() {
+		return hcpName;
 	}
 
-	public void setHCPName(String hCPName) {
-		HCPName = hCPName;
+	public void setHcpName(String hcpName) {
+		this.hcpName = hcpName;
 	}
 
 	public String getEmail() {
@@ -120,12 +148,22 @@ public class RegisteredHCP extends HCP{
 		this.phone = phone;
 	}
 
+
+
 	public Date getRegisteredAt() {
-		return RegisteredAt;
+		return registeredAt;
 	}
 
 	public void setRegisteredAt(Date registeredAt) {
-		RegisteredAt = registeredAt;
+		this.registeredAt = registeredAt;
+	}
+
+	public Login getRegHCP_login() {
+		return regHCP_login;
+	}
+
+	public void setRegHCP_login(Login regHCP_login) {
+		this.regHCP_login = regHCP_login;
 	}
 	
 	

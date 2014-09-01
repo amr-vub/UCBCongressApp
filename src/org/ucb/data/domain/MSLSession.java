@@ -25,6 +25,10 @@ public class MSLSession {
 	// each MSL session is given by one o many MSL
 	private List<MSL> MSLSession_MSL;
 
+	public MSLSession(){
+		
+	}
+	
 	public List<RegisteredHCP> getMSLSession_registeredHCP() {
 		return MSLSession_registeredHCP;
 	}

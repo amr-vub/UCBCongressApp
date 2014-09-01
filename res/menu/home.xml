@@ -12,6 +12,4 @@
         android:title="Invite others"
         android:icon="@drawable/ic_action_add_person"/>
     
-
-
 </menu>

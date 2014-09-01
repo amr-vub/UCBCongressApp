@@ -30,6 +30,10 @@ public class Session {
 	private List<HCP> sessionHCP;
 	*/
 	
+	public Session(){
+		
+	}
+	
 	//each session can be given by one or many speakers
 	private List<RegisteredHCP> session_RegisteredHCP;
 	
