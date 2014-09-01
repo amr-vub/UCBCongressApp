@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.loader.plan.exec.spi.LockModeResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.ucb.data.dao.ILearnMoreManager;
 import org.ucb.data.dao.ISessionManager;
 import org.ucb.data.domain.LMRelatedWebinars;
@@ -19,235 +20,314 @@ public class LearnMoreService implements ILearnMoreService {
 
 	@Autowired
 	private ILearnMoreManager learnMoreManager;
-	
+
 	@Autowired
 	private ISessionManager sessionManager;
-	
-	public void addLearnMorePaper(LearnMoreObject lmPaper)
-	{
-		LMRelatedpapers lmRelatedPaper = (LMRelatedpapers) lmPaper.getLearnMore();
+
+	@Transactional
+	public void addLearnMorePaper(LearnMoreObject lmPaper) {
+		LMRelatedpapers lmRelatedPaper = (LMRelatedpapers) lmPaper
+				.getLearnMore();
 		int sessionID = 0;
-		
+
 		sessionID = lmPaper.getSessionID();
 		Session session = sessionManager.getSessionById(sessionID);
-		
+
 		List<LMRelatedpapers> listPapers;
-		
-		if(null != session)
-		{
+
+		if (null != session) {
 			listPapers = session.getSession_Relatedpapers();
-			
-			if(!listPapers.contains(lmRelatedPaper))
-			{
+
+			if (!listPapers.contains(lmRelatedPaper)) {
 				listPapers.add(lmRelatedPaper);
-							
+
 				session.setSession_Relatedpapers(listPapers);
-				
-				learnMoreManager.storeLMRelatedpapers(lmRelatedPaper);
+
+				// learnMoreManager.storeLMRelatedpapers(lmRelatedPaper);
 			}
-			else
-			{
-				learnMoreManager.updateLMRelatedpapers(lmRelatedPaper);
-			}
+			sessionManager.updateSession(session);
 		}
 	}
-	
-	public void addLearnMoreWebinar(LearnMoreObject lmWebinar)
-	{
-		LMRelatedWebinars lmRelatedWebinar = (LMRelatedWebinars) lmWebinar.getLearnMore();
+
+	@Transactional
+	public void addLearnMoreWebinar(LearnMoreObject lmWebinar) {
+		LMRelatedWebinars lmRelatedWebinar = (LMRelatedWebinars) lmWebinar
+				.getLearnMore();
 		int sessionID = 0;
-		
+
 		sessionID = lmWebinar.getSessionID();
 		Session session = sessionManager.getSessionById(sessionID);
-		
+
 		List<LMRelatedWebinars> listWebinars;
-		
-		if(null != session)
-		{
+
+		if (null != session) {
 			listWebinars = session.getSession_RelatedWebinars();
-			
-			if(!listWebinars.contains(lmRelatedWebinar))
-			{
+
+			if (!listWebinars.contains(lmRelatedWebinar)) {
 				listWebinars.add(lmRelatedWebinar);
-							
+
 				session.setSession_RelatedWebinars(listWebinars);
-				
-				learnMoreManager.storeLMRelatedWebinars(lmRelatedWebinar);
+
+				// learnMoreManager.storeLMRelatedWebinars(lmRelatedWebinar);
 			}
-			else
-			{
-				learnMoreManager.updateLMRelatedWebinars(lmRelatedWebinar);
-			}
+			sessionManager.updateSession(session);
 		}
 	}
-	
-	public void addLearnMoreWebsite(LearnMoreObject lmWebsite)
-	{
-		LMRelatedWebsites lmRelatedWebsite = (LMRelatedWebsites) lmWebsite.getLearnMore();
+
+	@Transactional
+	public void addLearnMoreWebsite(LearnMoreObject lmWebsite) {
+		LMRelatedWebsites lmRelatedWebsite = (LMRelatedWebsites) lmWebsite
+				.getLearnMore();
 		int sessionID = 0;
-		
+
 		sessionID = lmWebsite.getSessionID();
 		Session session = sessionManager.getSessionById(sessionID);
+
+		List<LMRelatedWebsites> listWebsites;
+
+		if (null != session) {
+			listWebsites = session.getSession_RelatedWebsites();
+
+			if (!listWebsites.contains(lmRelatedWebsite)) {
+				listWebsites.add(lmRelatedWebsite);
+
+				session.setSession_RelatedWebsites(listWebsites);
+
+				// learnMoreManager.storeLMRelatedWebsites(lmRelatedWebsite);
+			}
+			sessionManager.updateSession(session);
+		}
+	}
+
+	@Transactional
+	public LearnMoreObject getLearnMorePaper(LearnMoreObject lmObject) {
+		LearnMoreObject learnMoreObject = new LearnMoreObject();
+
+		LMRelatedpapers learnMorePaper = null;
+
+		int lmID = ((LMRelatedpapers) lmObject.getLearnMore())
+				.getLMRelatedpapersID();
+
+		String lmName = ((LMRelatedpapers) lmObject.getLearnMore())
+				.getLMRelatedpapersName();
+
+		String lmAuthor = ((LMRelatedpapers) lmObject.getLearnMore())
+				.getLMRelatedpapersAuthors();
+
+		int sessionID = lmObject.getSessionID();
+		Session session = sessionManager.getSessionById(sessionID);
+		List<LMRelatedpapers> listPapers;
+
+		if (null != session) {
+			
+			listPapers = session.getSession_Relatedpapers();
+			
+				for(LMRelatedpapers lmPaper : listPapers)
+				{
+					if(lmPaper.getLMRelatedpapersID() == lmID)
+					{
+						learnMorePaper = lmPaper;
+						break;
+					}
+					else
+					{
+						if(lmPaper.getLMRelatedpapersName() == lmName)
+						{
+							learnMorePaper = lmPaper;
+							break;
+						}
+						else
+						{
+							if(lmPaper.getLMRelatedpapersAuthors() == lmAuthor)
+							{
+								learnMorePaper = lmPaper;
+								break;
+							}
+						}
+					}
+				}			
+			}
+
+		learnMoreObject.setLearnMore(learnMorePaper);		
+		return learnMoreObject;
+	}
+
+	@Transactional
+	public LearnMoreObject getLearnMoreWebsite(LearnMoreObject lmObject) {
+		LearnMoreObject learnMoreObject = new LearnMoreObject();
+
+		LMRelatedWebsites learnMoreWebsite = null;
+
+		int lmID = ((LMRelatedWebsites) lmObject.getLearnMore())
+				.getLMRelatedWebsitesID();
+
+		String lmName = ((LMRelatedWebsites) lmObject.getLearnMore())
+				.getLMRelatedWebsitesName();
 		
+		int sessionID = lmObject.getSessionID();
+		Session session = sessionManager.getSessionById(sessionID);
 		List<LMRelatedWebsites> listWebsites;
 		
 		if(null != session)
 		{
 			listWebsites = session.getSession_RelatedWebsites();
 			
-			if(!listWebsites.contains(lmRelatedWebsite))
+			for(LMRelatedWebsites lmWebsite : listWebsites)
 			{
-				listWebsites.add(lmRelatedWebsite);
-							
-				session.setSession_RelatedWebsites(listWebsites);
-				
-				learnMoreManager.storeLMRelatedWebsites(lmRelatedWebsite);
-			}
-			else
-			{
-				learnMoreManager.updateLMRelatedWebsites(lmRelatedWebsite);
-			}
-		}
-	}
-	
-	public LearnMoreObject getLearnMorePaper(LearnMoreObject lmObject)
-	{
-		LearnMoreObject learnMoreObject = new LearnMoreObject();
-		
-		LMRelatedpapers learnMorePaper = null;
-		
-		int lmID = ((LMRelatedpapers)lmObject.getLearnMore()).getLMRelatedpapersID();
-		
-		String lmName = ((LMRelatedpapers)lmObject.getLearnMore()).getLMRelatedpapersName();
-		
-		String lmAuthor = ((LMRelatedpapers)lmObject.getLearnMore()).getLMRelatedpapersAuthors();
-		
-		if(0 != lmID)
-		{
-			learnMorePaper = learnMoreManager.getLMRelatedpapersByID(lmID);
-		}
-		else
-		{
-			if(null != lmName)
-			{
-				learnMorePaper = learnMoreManager.getLMRelatedpapersByName(lmName);
-			}
-			else
-			{
-				if(null != lmAuthor)
+				if(lmWebsite.getLMRelatedWebsitesID() == lmID)
 				{
-					learnMorePaper = learnMoreManager.getLMRelatedpapersByAuthor(lmAuthor);
+					learnMoreWebsite = lmWebsite;
+					break;
+				}
+				else
+				{
+					if(lmWebsite.getLMRelatedWebsitesName() == lmName)
+					{
+						learnMoreWebsite = lmWebsite;
+						break;
+					}
+				}
+			}
+			
+		}
+
+		learnMoreObject.setLearnMore(learnMoreWebsite);
+
+		return learnMoreObject;
+	}
+
+	@Transactional
+	public LearnMoreObject getLearnMoreWebinar(LearnMoreObject lmObject) {
+		LearnMoreObject learnMoreObject = new LearnMoreObject();
+
+		LMRelatedWebinars learnMoreWebinar = null;
+
+		int lmID = ((LMRelatedWebinars) lmObject.getLearnMore())
+				.getLMRelatedWebinarsID();
+
+		String lmTopic = ((LMRelatedWebinars) lmObject.getLearnMore())
+				.getLMRelatedWebinarsTopic();
+		
+		int sessionID = lmObject.getSessionID();
+		Session session = sessionManager.getSessionById(sessionID);
+		List<LMRelatedWebinars> listWebinars;
+		
+		if(null != session)
+		{
+			listWebinars = session.getSession_RelatedWebinars();
+			
+			for(LMRelatedWebinars lmWebinar:listWebinars)
+			{
+				if(lmWebinar.getLMRelatedWebinarsID() == lmID)
+				{
+					learnMoreWebinar = lmWebinar;
+					break;
+				}
+				else
+				{
+					if(lmWebinar.getLMRelatedWebinarsTopic() == lmTopic)
+					{
+						learnMoreWebinar = lmWebinar;
+						break;
+					}
 				}
 			}
 		}
-		
-		learnMoreObject.setLearnMore(learnMorePaper);
-		
-		return learnMoreObject;
-	}
-	
-	public LearnMoreObject getLearnMoreWebsite(LearnMoreObject lmObject)
-	{
-		LearnMoreObject learnMoreObject = new LearnMoreObject();
-		
-		LMRelatedWebsites learnMoreWebsite = null;
-		
-		int lmID = ((LMRelatedWebsites)lmObject.getLearnMore()).getLMRelatedWebsitesID();
-		
-		String lmName = ((LMRelatedWebsites)lmObject.getLearnMore()).getLMRelatedWebsitesName();
-		
-		if(0 != lmID)
-		{
-			learnMoreWebsite = learnMoreManager.getLMRelatedWebsitesById(lmID);
-		}
-		else
-		{
-			if(null != lmName)
-			{
-				learnMoreWebsite = learnMoreManager.getLMRelatedWebsitesByName(lmName);
-			}			
-		}
-		
-		learnMoreObject.setLearnMore(learnMoreWebsite);
-		
-		return learnMoreObject;
-	}
-	
-	public LearnMoreObject getLearnMoreWebinar(LearnMoreObject lmObject)
-	{
-		LearnMoreObject learnMoreObject = new LearnMoreObject();
-		
-		LMRelatedWebinars learnMoreWebinar = null;
-		
-		int lmID = ((LMRelatedWebinars)lmObject.getLearnMore()).getLMRelatedWebinarsID();
-		
-		String lmTopic = ((LMRelatedWebinars)lmObject.getLearnMore()).getLMRelatedWebinarsTopic();
-		
-		if(0 != lmID)
-		{
-			learnMoreWebinar = learnMoreManager.getLMRelatedWebinarsById(lmID);
-		}
-		else
-		{
-			if(null != lmTopic)
-			{
-				learnMoreWebinar = learnMoreManager.getLMRelatedWebinarsByTopic(lmTopic);
-			}			
-		}
-		
 		learnMoreObject.setLearnMore(learnMoreWebinar);
-		
+
 		return learnMoreObject;
 	}
-	
-	public int deleteLearnMorePaper(LearnMoreObject lmPaper)
-	{
-		int returnValue = -1;
-		
+
+	@Transactional
+	public boolean deleteLearnMorePaper(LearnMoreObject lmPaper) {
+		boolean returnValue = false;
+
 		LMRelatedpapers learnMorePaper = null;
+
+		learnMorePaper = (LMRelatedpapers) lmPaper.getLearnMore();
 		
-		learnMorePaper = (LMRelatedpapers)lmPaper.getLearnMore();
+		int sessionID = lmPaper.getSessionID();
+		Session session = sessionManager.getSessionById(sessionID);
+		List<LMRelatedpapers> listPapers;
 		
-		if(null != learnMorePaper)
+		if(null != session)
 		{
-			learnMoreManager.deleteLMRelatedpapers(learnMorePaper);
-			returnValue = 0;
+			listPapers = session.getSession_Relatedpapers();
+			
+			for(LMRelatedpapers paper : listPapers)
+			{
+				if(paper == learnMorePaper)
+				{
+					returnValue = listPapers.remove(paper);
+					break;
+				}
+			}
+			
+			session.setSession_Relatedpapers(listPapers);
+			sessionManager.updateSession(session);
 		}
-		
+
 		return returnValue;
 	}
-	
-	public int deleteLearnMoreWebsite(LearnMoreObject lmWebsite)
-	{
-		int returnValue = -1;
-		
+
+	@Transactional
+	public boolean deleteLearnMoreWebsite(LearnMoreObject lmWebsite) {
+		boolean returnValue = false;
+
 		LMRelatedWebsites learnMoreWebsite = null;
+
+		learnMoreWebsite = (LMRelatedWebsites) lmWebsite.getLearnMore();
 		
-		learnMoreWebsite = (LMRelatedWebsites)lmWebsite.getLearnMore();
+		int sessionID = lmWebsite.getSessionID();
+		Session session = sessionManager.getSessionById(sessionID);
+		List<LMRelatedWebsites> listWebsites;
 		
-		if(null != learnMoreWebsite)
+		if(null != session)
 		{
-			learnMoreManager.deleteLMRelatedWebsites(learnMoreWebsite);
-			returnValue = 0;
+			listWebsites = session.getSession_RelatedWebsites();
+			
+			for(LMRelatedWebsites website : listWebsites)
+			{
+				if(website == learnMoreWebsite)
+				{
+					returnValue = listWebsites.remove(website);
+					break;
+				}
+			}
+			session.setSession_RelatedWebsites(listWebsites);
+			sessionManager.updateSession(session);
 		}
 		
 		return returnValue;
 	}
-	
-	public int deleteLearnMoreWebinar(LearnMoreObject lmWebinar)
-	{
-		int returnValue = -1;
-		
+
+	@Transactional
+	public boolean deleteLearnMoreWebinar(LearnMoreObject lmWebinar) {
+		boolean returnValue = false;
+
 		LMRelatedWebinars learnMoreWebinar = null;
+
+		learnMoreWebinar = (LMRelatedWebinars) lmWebinar.getLearnMore();
 		
-		learnMoreWebinar = (LMRelatedWebinars)lmWebinar.getLearnMore();
+		int sessionID = lmWebinar.getSessionID();
+		Session session = sessionManager.getSessionById(sessionID);
+		List<LMRelatedWebinars> listWebinars;
 		
-		if(null != learnMoreWebinar)
+		if(null != session)
 		{
-			learnMoreManager.deleteLMRelatedWebinars(learnMoreWebinar);
-			returnValue = 0;
+			listWebinars = session.getSession_RelatedWebinars();
+			
+			for(LMRelatedWebinars webinar:listWebinars)
+			{
+				if(webinar == learnMoreWebinar)
+				{
+					returnValue = listWebinars.remove(webinar);
+					break;
+				}
+			}
+			session.setSession_RelatedWebinars(listWebinars);
+			sessionManager.updateSession(session);
 		}
-		
 		return returnValue;
 	}
 }

@@ -61,9 +61,9 @@ public class LearnMoreController {
 	}
 	
 	@RequestMapping(value="/deleteLearnMorePaper" , method = RequestMethod.POST)
-	public int deleteLearnMorePaper(@RequestBody LearnMoreObject lmPaper)
+	public boolean deleteLearnMorePaper(@RequestBody LearnMoreObject lmPaper)
 	{			
-		int returnValue;
+		boolean returnValue;
 		
 		returnValue = iLearnMoreService.deleteLearnMorePaper(lmPaper);
 		
@@ -71,9 +71,9 @@ public class LearnMoreController {
 	}
 	
 	@RequestMapping(value="/deleteLearnMoreWebsite" , method = RequestMethod.POST)
-	public int deleteLearnMoreWebsite(@RequestBody LearnMoreObject lmWebsite)
+	public boolean deleteLearnMoreWebsite(@RequestBody LearnMoreObject lmWebsite)
 	{			
-		int returnValue;
+		boolean returnValue;
 		
 		returnValue = iLearnMoreService.deleteLearnMoreWebsite(lmWebsite);
 		
@@ -81,9 +81,9 @@ public class LearnMoreController {
 	}
 	
 	@RequestMapping(value="/deleteLearnMoreWebinar" , method = RequestMethod.POST)
-	public int deleteLearnMoreWebinar(@RequestBody LearnMoreObject lmWebinar)
+	public boolean deleteLearnMoreWebinar(@RequestBody LearnMoreObject lmWebinar)
 	{			
-		int returnValue;
+		boolean returnValue;
 		
 		returnValue = iLearnMoreService.deleteLearnMoreWebinar(lmWebinar);
 		

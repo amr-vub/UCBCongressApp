@@ -20,24 +20,24 @@ public interface ILearnMoreService{
 	/**
 	 * Deletes a related paper.
 	 * @param lmPaper - a LearnMoreObject instance
-	 * @return 0 - if the object has been successfully deleted.
-	 * @return -1 - if deleting the object failed.
+	 * @return true - if the object has been successfully deleted.
+	 * @return false - if deleting the object failed.
 	 */
-	public int deleteLearnMorePaper(LearnMoreObject lmPaper);
+	public boolean deleteLearnMorePaper(LearnMoreObject lmPaper);
 	
 	/**
 	 * Deletes a related website.
 	 * @param lmPaper - a LearnMoreObject instance
-	 * @return 0 - if the object has been successfully deleted.
-	 * @return -1 - if deleting the object failed.
+	 * @return true - if the object has been successfully deleted.
+	 * @return false - if deleting the object failed.
 	 */
-	public int deleteLearnMoreWebsite(LearnMoreObject lmWebsite);
+	public boolean deleteLearnMoreWebsite(LearnMoreObject lmWebsite);
 	
 	/**
 	 * Deletes a related webinar.
 	 * @param lmPaper - a LearnMoreObject instance
-	 * @return 0 - if the object has been successfully deleted.
-	 * @return -1 - if deleting the object failed.
+	 * @return true - if the object has been successfully deleted.
+	 * @return false- if deleting the object failed.
 	 */
-	public int deleteLearnMoreWebinar(LearnMoreObject lmWebinar);
+	public boolean deleteLearnMoreWebinar(LearnMoreObject lmWebinar);
 }
