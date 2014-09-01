@@ -21,7 +21,7 @@ public class Agenda {
 	private int agendaID;
 	
 	// each Agenda is associated with only one HCP
-	@OneToOne @JoinColumn(nullable=false)
+	@OneToOne @JoinColumn(nullable=false, unique=true)
 	private HCP agenda_hcp;
 
 	@ManyToMany(cascade=CascadeType.ALL)

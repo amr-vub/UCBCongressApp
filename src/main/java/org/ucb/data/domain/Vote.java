@@ -38,6 +38,22 @@ public class Vote {
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="Vote_value_Vote")
 	private List<Vote_value> vote_vValue;
 
+	public List<VoteChoices> getVoteChoices() {
+		return voteChoices;
+	}
+
+	public void setVoteChoices(List<VoteChoices> voteChoices) {
+		this.voteChoices = voteChoices;
+	}
+
+	public List<Vote_value> getVote_vValue() {
+		return vote_vValue;
+	}
+
+	public void setVote_vValue(List<Vote_value> vote_vValue) {
+		this.vote_vValue = vote_vValue;
+	}
+
 	public int getChosenVoteChoice() {
 		return chosenVoteChoice;
 	}

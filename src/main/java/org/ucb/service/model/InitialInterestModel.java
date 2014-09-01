@@ -7,14 +7,18 @@ import org.ucb.data.domain.out.SubSpecialzation;
 
 public class InitialInterestModel {
 
+	// input para
 	private String profType;
 	
+	// input para
 	private String SpecialType;
 	
+	// input para
 	private String subspecialType;
 	
+	// output para
 	private List<SubSpecialzation> subSpecList;
-	
+	// output para
 	private List<InitialInterests> initIntList;
 
 	public InitialInterestModel(){

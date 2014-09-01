@@ -30,5 +30,11 @@ public class SessionManager implements ISessionManager{
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
+
+	@Override
+	public Session getSessionById(int sessID) {
+		
+		return (Session) getSessionFactory().getCurrentSession().get(Session.class, sessID);
+	}
 	
 }
