@@ -63,7 +63,7 @@ public class HCP {
 	protected Agenda hcp_agenda;
 	
 	// each HCP have one or many interests
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "HCPInitialInterests_hcp")
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "hcpInitialInterests_hcp")
 	@Cascade({org.hibernate.annotations.CascadeType.ALL})
 	protected List<HCPInitialInterests> hcp_hcpInitialInterests = new ArrayList<HCPInitialInterests>();
 	

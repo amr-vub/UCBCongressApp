@@ -135,8 +135,8 @@ public class GreetingController {
 		
 		//setting initial interests
 
-		hcpInitialInterests.setHCP_Initial_Interest("eplipsy");
-		hcpInitialInterests.setHCPInitialInterests_hcp(user);
+		hcpInitialInterests.setHcp_Initial_Interest("eplipsy");
+		hcpInitialInterests.setHcpInitialInterests_hcp(user);
 		hCP_hcpInitialInterests.add(hcpInitialInterests);
 
 		

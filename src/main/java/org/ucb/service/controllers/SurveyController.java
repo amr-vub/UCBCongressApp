@@ -1,5 +1,6 @@
 package org.ucb.service.controllers;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.ucb.data.domain.HCPInitialInterests;
 import org.ucb.data.domain.RegisteredHCP;
 import org.ucb.data.domain.out.InitialInterests;
 import org.ucb.data.domain.out.SubSpecialzation;
@@ -47,8 +49,16 @@ public class SurveyController {
 	}
 	
 	@RequestMapping(value="/survey/saveNewAnonynousUser", method= RequestMethod.POST)
-	public void saveNewAnonynousUser(@RequestBody RegisteredHCP hcp){
-		
+	public RegisteredHCP saveNewAnonynousUser(@RequestBody RegisteredHCP hcp){
+		// loop through the initial interests to set it's hcp fields
+		List<HCPInitialInterests> hcpInitialInterests = hcp.getHcp_hcpInitialInterests();
+		for(HCPInitialInterests hi : hcpInitialInterests){
+			hi.setHcpInitialInterests_hcp(hcp);
+		}
 		iRegisteredUserService.storeUser(hcp);
+		
+		System.out.println("DONE DONE DONE");
+		
+		return hcp;
 	}
 }
