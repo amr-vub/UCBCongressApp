@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.ucb.data.domain.LMRelatedWebinars;
 import org.ucb.data.domain.LMRelatedWebsites;
 import org.ucb.data.domain.LMRelatedpapers;
 
+@Repository
 public class LearnMoreManager implements ILearnMoreManager{
 
 	@Autowired

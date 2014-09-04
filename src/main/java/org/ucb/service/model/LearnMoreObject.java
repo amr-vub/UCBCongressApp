@@ -2,6 +2,7 @@ package org.ucb.service.model;
 
 import java.util.List;
 
+import org.ucb.data.domain.LMRelatedWebsites;
 import org.ucb.data.domain.LearmMore;
 import org.ucb.data.domain.Session;
 
@@ -11,7 +12,11 @@ public class LearnMoreObject {
 	//private Session session;
 	private int sessionID;
 	private int learnMoreID;
-	private List<LearmMore> learnMoreOutput;	
+	private List<LMRelatedWebsites> learnMoreOutput;	
+	
+	public LearnMoreObject(){
+		
+	}
 	
 	public LearmMore getLearnMore() {
 		return learnMore;
@@ -32,4 +37,10 @@ public class LearnMoreObject {
 		this.learnMoreID = learnMoreID;
 	}
 	
+	public List<LMRelatedWebsites> getLearnMoreOutput() {
+		return learnMoreOutput;
+	}
+	public void setLearnMoreOutput(List<LMRelatedWebsites> learnMoreOutput) {
+		this.learnMoreOutput = learnMoreOutput;
+	}
 }

@@ -1,8 +1,11 @@
 package org.ucb.data.dao;
 
+import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.ucb.data.domain.LMRelatedWebsites;
 import org.ucb.data.domain.Session;
 
 @Repository
@@ -35,6 +38,16 @@ public class SessionManager implements ISessionManager{
 	public Session getSessionById(int sessID) {
 		
 		return (Session) getSessionFactory().getCurrentSession().get(Session.class, sessID);
+	}
+
+	@Override
+	public List<LMRelatedWebsites> loadLMRelatedWebsites(Session ses) {
+		
+		List<LMRelatedWebsites> list = getSessionFactory().getCurrentSession().
+			createQuery("SELECT u FROM LMRelatedWebsites u join u.relatedWebsites_session pl where pl = :ses")
+			.setParameter("ses", ses).list();		
+		
+		return list;
 	}
 	
 }

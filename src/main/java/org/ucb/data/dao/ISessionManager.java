@@ -1,5 +1,8 @@
 package org.ucb.data.dao;
 
+import java.util.List;
+
+import org.ucb.data.domain.LMRelatedWebsites;
 import org.ucb.data.domain.Session;
 
 public interface ISessionManager {
@@ -11,4 +14,6 @@ public interface ISessionManager {
 	public void updateSession(Session sess);
 	
 	public void deleteSession(Session sess);
+	
+	public List<LMRelatedWebsites> loadLMRelatedWebsites(Session ses);
 }
