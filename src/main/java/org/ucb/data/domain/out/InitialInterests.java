@@ -13,29 +13,29 @@ import javax.persistence.ManyToOne;
 public class InitialInterests {
 
 	@Id @GeneratedValue
-	private int InitialInterestsID;
+	private int initialInterestsID;
 	
 	@Column
-	private String InitialInterests;
+	private String initialInterests;
 	
 	@ManyToOne
 	@JoinColumn(nullable=false)
 	private SubSpecialzation inital_Subspecial;
 
 	public int getInitialInterestsID() {
-		return InitialInterestsID;
+		return initialInterestsID;
 	}
 
 	public void setInitialInterestsID(int initialInterestsID) {
-		InitialInterestsID = initialInterestsID;
+		this.initialInterestsID = initialInterestsID;
 	}
 
 	public String getInitialInterests() {
-		return InitialInterests;
+		return initialInterests;
 	}
 
 	public void setInitialInterests(String initialInterests) {
-		InitialInterests = initialInterests;
+		this.initialInterests = initialInterests;
 	}
 
 	public SubSpecialzation getInital_Subspecial() {
@@ -45,6 +45,8 @@ public class InitialInterests {
 	public void setInital_Subspecial(SubSpecialzation inital_Subspecial) {
 		this.inital_Subspecial = inital_Subspecial;
 	}
+
+
 	
 	
 }

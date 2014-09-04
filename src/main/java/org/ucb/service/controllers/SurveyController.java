@@ -1,9 +1,11 @@
 package org.ucb.service.controllers;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,7 +34,16 @@ public class SurveyController {
 		
 		List<InitialInterests> intiList =  iInitialInterestService.getInitailInterest(initM);
 		
-		initialInterestModel.setInitIntList(intiList);
+		// this part is a workaround for JSON mapping
+		List<InitialInterests> intiListReturn = new ArrayList<InitialInterests>();
+		
+		for(InitialInterests initLs : intiList){
+			InitialInterests initObj = new InitialInterests();
+			initObj.setInitialInterests(initLs.getInitialInterests());
+			intiListReturn.add(initObj);
+		}
+		
+		initialInterestModel.setInitIntList(intiListReturn);
 		
 		return initialInterestModel;		
 	}

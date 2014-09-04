@@ -11,7 +11,7 @@ public class InitialInterestModel {
 	private String profType;
 	
 	// input para
-	private String SpecialType;
+	private String specialType;
 	
 	// input para
 	private String subspecialType;
@@ -50,11 +50,11 @@ public class InitialInterestModel {
 	}
 
 	public String getSpecialType() {
-		return SpecialType;
+		return specialType;
 	}
 
 	public void setSpecialType(String specialType) {
-		SpecialType = specialType;
+		this.specialType = specialType;
 	}
 
 	public String getSubspecialType() {

@@ -18,7 +18,7 @@ public class Specialization {
 	private int specializationID;
 	
 	@Column
-	private String SpecializationType;
+	private String specializationType;
 	
 	@OneToMany(cascade= CascadeType.ALL, mappedBy="prof_special")
 	private List<profession> special_prof;
@@ -34,12 +34,14 @@ public class Specialization {
 		this.specializationID = specializationID;
 	}
 
+
+
 	public String getSpecializationType() {
-		return SpecializationType;
+		return specializationType;
 	}
 
 	public void setSpecializationType(String specializationType) {
-		SpecializationType = specializationType;
+		this.specializationType = specializationType;
 	}
 
 	public List<profession> getSpecial_prof() {

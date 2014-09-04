@@ -230,8 +230,9 @@ public class GreetingController {
 		profList.add(prof);
 		spec.setSpecial_prof(profList);
 		
+		
 		//iMockInitialInterestService.storeProf(prof);
-		//iMockInitialInterestService.storeSpecial(spec);
+		iMockInitialInterestService.storeSpecial(spec);
 		
 //		InitialInterestModel initialInterestModel = new InitialInterestModel();
 //		initialInterestModel.setSpecialType("Epilepsy");
