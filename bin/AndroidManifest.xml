@@ -63,8 +63,11 @@
         <activity
             android:name=".activity.home.SpeakersActivity"
             android:label="Speakers" />
-        <activity android:name=".activity.session.SessionActivity" />
-        <activity android:name=".activity.session.ViewDocumentActivity" />
+        <activity
+            android:name=".activity.session.SessionActivity"
+            android:label="Session" />
+        <activity android:name=".activity.session.ViewDocumentActivity" 
+            android:label="Document"/>
         <activity
             android:name=".activity.home.PreferenceActivity"
             android:label="Preferences" />
@@ -75,7 +78,8 @@
         <activity android:name=".activity.survey.AnonySurveyActivity2" />
         <activity android:name=".activity.survey.AnonySurveyActivity3" />
         <activity android:name=".activity.learnmore.LearnMoreActivity" />
-
+		<activity android:name=".activity.session.FeedbackActivity" 
+		    android:label="Feedback"/>
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

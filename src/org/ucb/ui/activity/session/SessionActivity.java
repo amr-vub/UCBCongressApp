@@ -25,6 +25,7 @@ public class SessionActivity extends Activity {
 	RatingBar ratingBar;
 	Button detailSessionLearnMore;
 	Button detailSessionRate;
+	Button detailSessionFeedback;
 	Button detailViewDocument;
 	Dialog dialogbox;
 	SessionAdapter sessionAdapter;
@@ -52,6 +53,7 @@ public class SessionActivity extends Activity {
 		detailSessionAbstract = (TextView) findViewById(R.id.text_abstract);
 		detailSessionLearnMore = (Button) findViewById(R.id.button_learn_more);
 		detailSessionRate = (Button) findViewById(R.id.detail_session_rate);
+		detailSessionFeedback = (Button) findViewById(R.id.detail_session_feedback);
 		detailViewDocument = (Button) findViewById(R.id.button_download_doc);
 
 		detailSessionTime.setText("2014-08-01 09:00");
@@ -91,6 +93,15 @@ public class SessionActivity extends Activity {
 			public void onClick(View v) {
 				showRatingForm();
 			}
+		});
+		detailSessionFeedback.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(SessionActivity.this, FeedbackActivity.class);
+				startActivity(intent);
+			}
+			
 		});
 		detailViewDocument.setOnClickListener(new View.OnClickListener() {
 			

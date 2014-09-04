@@ -91,6 +91,7 @@ public class SessionManager {
 	
 	public void putAnonymousUserProfession(String profession){
 		editor.putString(KEY_PROFESSION, profession);
+		editor.commit();
 	}
 	
 	public HashMap<String, String> getAnonymousUserProfession(){
@@ -101,6 +102,7 @@ public class SessionManager {
 	
 	public void putAnonymousUserSpecialization(String specialization){
 		editor.putString(KEY_SPECIALIZATION, specialization);
+		editor.commit();
 	}
 	
 	public HashMap<String, String> getAnonymousUserSpecialization(){
@@ -142,7 +144,7 @@ public class SessionManager {
 	}
 	public boolean setFirstTime(){
 		SharedPreferences.Editor editor = pref.edit();
-        editor.putBoolean("RanBefore", true);
+        editor.putBoolean("FirstTimeLogin", true);
         return editor.commit();
 	}
 }

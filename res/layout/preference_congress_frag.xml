@@ -21,8 +21,8 @@
         android:layout_alignLeft="@id/learn_more_text1"
         android:layout_below="@id/learn_more_text1"
         android:layout_margin="10dp"
-        android:max="3"
-        android:progress="0"
+        android:max="4"
+        android:progress="1"
         android:secondaryProgress="0" />
 
     <LinearLayout
@@ -33,7 +33,15 @@
         android:layout_below="@id/cong_frequency_bar"
         android:orientation="horizontal"
         android:visibility="visible"
-        android:weightSum="8" >
+        android:weightSum="10" >
+        
+        <TextView  
+            android:id="@+id/cong_frequency_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:text="Never"/>
 
         <TextView
             android:id="@+id/cong_frequency_1"
@@ -41,9 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="center_horizontal"
-            android:text="daily"
-            android:textColor="@color/ucb_blue2"
-            android:textStyle="bold" />
+            android:text="daily" />
 
         <TextView
             android:id="@+id/cong_frequency_2"
@@ -51,9 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="center_horizontal"
-            android:text="weekly"
-            android:textColor="@color/ucb_blue2"
-            android:textStyle="bold" />
+            android:text="weekly" />
 
         <TextView
             android:id="@+id/cong_frequency_3"
@@ -61,9 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="center_horizontal"
-            android:text="biweekly"
-            android:textColor="@color/ucb_blue2"
-            android:textStyle="bold" />
+            android:text="biweekly" />
 
         <TextView
             android:id="@+id/cong_frequency_4"
@@ -71,9 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="center_horizontal"
-            android:text="monthly"
-            android:textColor="@color/ucb_blue2"
-            android:textStyle="bold" />
+            android:text="monthly" />
     </LinearLayout>
 
     <TextView

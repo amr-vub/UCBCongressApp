@@ -24,20 +24,36 @@
         android:layout_below="@+id/anony_survey2_textView1"
         android:layout_marginTop="15dp"
         android:numStars="5"
-        android:stepSize="1.0" />
+        android:stepSize="0.5" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignRight="@+id/ratingBar1"
+        android:layout_below="@+id/ratingBar1"
+        android:src="@drawable/ic_rating_satisfied" />
 
     <Button
         android:id="@+id/submit_rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ratingBar1"
-        android:layout_alignRight="@+id/ratingBar1"
-        android:layout_below="@+id/ratingBar1"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
         android:alpha="0.9"
         android:background="@color/ucb_blue1"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
         android:text="Submit"
         android:textColor="@color/ucb_grey1" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/ratingBar1"
+        android:layout_below="@+id/ratingBar1"
+        android:src="@drawable/ic_rating_unsatisfied" />
 
 </RelativeLayout>

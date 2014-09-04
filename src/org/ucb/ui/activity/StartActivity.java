@@ -1,15 +1,35 @@
 package org.ucb.ui.activity;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.BasicHttpContext;
+import org.apache.http.protocol.HttpContext;
+import org.apache.http.util.EntityUtils;
+import org.ucb.ui.model.AccessCode;
+import org.ucb.ui.model.IP;
+import org.ucb.ui.model.LoginInfo;
 import org.ucb.ui.activity.adapter.LoginAdapter;
 import org.ucb.ui.activity.home.HomeActivity;
 import org.ucb.ui.activity.survey.AnonySurveyActivity1;
 
 import org.ucb.ui.R;
 
+import com.google.gson.Gson;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -78,21 +98,35 @@ public class StartActivity extends Activity {
 				/**
 				 * SERVICE: need to validate the user name and password
 				 */
-				session.createRegisteredUserSession("ucb", "ucb");
-				if (username.equals("ucb") && psw.equals("ucb")) {
+				if(username.equals("ucb") && psw.equals("ucb")){
+					session.createRegisteredUserSession(username, psw);
+					Intent intent = new Intent(StartActivity.this, HomeActivity.class);
+					startActivity(intent);
+				}
+				
+/*				LoginInfo loginInfo = new LoginInfo();
+				try {
+					loginInfo = new HttpRequestTaskLogin().execute().get(10000, TimeUnit.MILLISECONDS);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} catch (ExecutionException e) {
+					e.printStackTrace();
+				} catch (TimeoutException e) {				
+					e.printStackTrace();
+				}
+				if (loginInfo.isUserExists()) {
 					// Create Intent for SignUpActivity and start the activity
 					Intent intent = new Intent(getApplicationContext(),
 							HomeActivity.class);
 					startActivity(intent);
 					finish();
 				} else {
-					/**
-					 * the user name or password is not valid
-					 */
+					//the user name or password is not valid
 					Toast.makeText(getApplicationContext(), "log in failed",
 							1000);
-				}
+				}*/
 			}
+			
 		});
 
 	}
@@ -113,16 +147,31 @@ public class StartActivity extends Activity {
 			public void onClick(View view) {
 
 				String codeValue = accessCode.getText().toString();
-				session.createAnonymousSession(codeValue);
+/*				if(codeValue.equals("1234")){
+					session.createAnonymousSession(codeValue);
+					Intent intent = new Intent(StartActivity.this, HomeActivity.class);
+					startActivity(intent);
+				}
+*/
+				AccessCode access = new AccessCode();
+				
+				try {
+					access = new HttpRequestTask().execute().get(10000, TimeUnit.MILLISECONDS);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} catch (ExecutionException e) {
+					e.printStackTrace();
+				} catch (TimeoutException e) {
+					e.printStackTrace();
+				}
 
-				/** SERVICE to validate the access code */
-				if (codeValue.equals("1234")) {
+				// SERVICE to validate the access code
+				if (access.getCheckin() == 1) {
 					Intent intent = new Intent(StartActivity.this,
 							AnonySurveyActivity1.class);
-					intent.putExtra("userid", 1234);
 					startActivity(intent);
 				} else {
-					/** SERVICE to validate the access code */
+					// SERVICE to validate the access code
 					Toast.makeText(getApplicationContext(),
 							"Your access code is wrong", Toast.LENGTH_LONG)
 							.show();
@@ -136,4 +185,91 @@ public class StartActivity extends Activity {
 	protected void onDestroy() {
 		super.onDestroy();
 	}
+	/************************************ Back end part **************************************************/
+	/**
+	 * Async calss for check in validation
+	*/
+	 private class HttpRequestTask extends AsyncTask<Void, Void, AccessCode> {
+
+		Gson gson=new Gson();
+		@Override
+		protected AccessCode doInBackground(Void... params) {
+			AccessCode access_Code = new AccessCode(accessCode.getText().toString(), -1);
+									
+			 try {
+				  // greeting the connection with the restful API
+	                final String url = "http://" + IP.ip + ":8080/checkIn"; //"http://" + IP.getIP() + ":8080/checkIn";
+	                HttpClient httpClient = new DefaultHttpClient();
+	                HttpContext localContext = new BasicHttpContext();
+	                //HttpGet httpGet = new HttpGet(url);
+	                
+	                HttpPost httppost = new HttpPost(url);	           
+	                httppost.setHeader("Content-type", "application/json");
+	                httppost.setEntity(new StringEntity(gson.toJson(access_Code, AccessCode.class)));
+	                HttpResponse response = httpClient.execute(httppost, localContext);
+	                
+	                HttpEntity entity = response.getEntity();
+	                String text = EntityUtils.toString(entity);
+	                
+	                // parsing the JSON response using GSON google API
+	                access_Code = gson.fromJson(text, AccessCode.class);
+	                
+	                return access_Code;
+	                
+	            } catch (Exception e) {
+	                Log.e("AccessCodeActivity", e.getMessage(), e);
+	            }
+
+           return null;
+		}
+
+		protected void onPostExecute(AccessCode results) {
+			//System.out.print(results);
+//			if(results != null)
+//				accessCode.setText("XIn");
+//			else
+//				accessCode.setText("");
+			}
+	     
+	    }
+
+		/**
+		 * Async calss for log in validation
+		 */
+		 private class HttpRequestTaskLogin extends AsyncTask<Void, Void, LoginInfo> {
+
+			  Gson gson=new Gson();
+			@Override
+			protected LoginInfo doInBackground(Void... params) {
+				LoginInfo loginInfo = new LoginInfo(userName.getText().toString(), password.getText().toString()
+						, false);
+										
+				 try {
+					  // greeting the connection with the restful API
+		                final String url = "http://" + IP.ip + ":8080/logIn"; //"http://" + IP.getIP() + ":8080/checkIn";
+		                HttpClient httpClient = new DefaultHttpClient();
+		                HttpContext localContext = new BasicHttpContext();
+		                //HttpGet httpGet = new HttpGet(url);
+		                
+		                HttpPost httppost = new HttpPost(url);	           
+		                httppost.setHeader("Content-type", "application/json");
+		                httppost.setEntity(new StringEntity(gson.toJson(loginInfo, LoginInfo.class)));
+		                HttpResponse response = httpClient.execute(httppost, localContext);
+		                
+		                HttpEntity entity = response.getEntity();
+		                String text = EntityUtils.toString(entity);
+		                
+		                // parsing the JSON response using GSON google API
+		                loginInfo = gson.fromJson(text, LoginInfo.class);
+		                
+		                return loginInfo;		                
+		            } catch (Exception e) {
+		                Log.e("AccessCodeActivity", e.getMessage(), e);
+		            }
+
+	           return null;
+			}
+		     
+		    }
+		 
 }

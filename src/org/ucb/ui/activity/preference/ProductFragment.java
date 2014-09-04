@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class ProductFragment extends Fragment{
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.product_frag, container, false);
+        View v = inflater.inflate(R.layout.preference_product_frag, container, false);
 
         SeekBar sb = (SeekBar) v.findViewById(R.id.prod_frequency_bar);
         sb.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {       

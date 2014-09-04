@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class CongressFragment extends Fragment{
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.congress_frag, container, false);
+        View v = inflater.inflate(R.layout.preference_congress_frag, container, false);
 
         SeekBar sb = (SeekBar) v.findViewById(R.id.cong_frequency_bar);
         sb.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {       

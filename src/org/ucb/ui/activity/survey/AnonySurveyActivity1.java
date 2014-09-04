@@ -15,10 +15,10 @@ import android.widget.Toast;
 public class AnonySurveyActivity1 extends Activity{
 
 	SessionManager session;
+	Button anonySurveyPhd;
 	Button anonySurveyDoctor;
 	Button anonySurveyNurse;
 	Button anonySurveyPharma;
-	Button anonySurveyPhd;
 	
 	AnonySurveyAdapter1 surveyAdapter;
 
@@ -32,11 +32,22 @@ public class AnonySurveyActivity1 extends Activity{
 		surveyAdapter = new AnonySurveyAdapter1();
 
 		// Get references of views
+		anonySurveyPhd = (Button) findViewById(R.id.anony_survey_phd);
 		anonySurveyDoctor = (Button) findViewById(R.id.anony_survey_doctor);
 		anonySurveyNurse = (Button) findViewById(R.id.anony_survey_nurse);
 		anonySurveyPharma = (Button) findViewById(R.id.anony_survey_pharma);
-		anonySurveyPhd = (Button) findViewById(R.id.anony_survey_phd);
 		
+		anonySurveyPhd.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View view) {
+				
+				/** SERVICE here requires the logic to connect to the service part*/
+				Intent intent = new Intent(AnonySurveyActivity1.this, 
+						AnonySurveyActivity2.class);
+				session.putAnonymousUserProfession("phd student");
+				startActivity(intent);
+			}
+		});
 		anonySurveyDoctor.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View view) {
@@ -67,17 +78,6 @@ public class AnonySurveyActivity1 extends Activity{
 				Intent intent = new Intent(AnonySurveyActivity1.this, 
 						AnonySurveyActivity2.class);
 				session.putAnonymousUserProfession("pharmacist");
-				startActivity(intent);
-			}
-		});
-		anonySurveyPhd.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View view) {
-				
-				/** SERVICE here requires the logic to connect to the service part*/
-				Intent intent = new Intent(AnonySurveyActivity1.this, 
-						AnonySurveyActivity2.class);
-				session.putAnonymousUserProfession("phd student");
 				startActivity(intent);
 			}
 		});

@@ -93,6 +93,7 @@ public class AnonySurveyActivity3 extends Activity {
 	protected RegisteredHCP generateRegsiteredHCP() {
 		RegisteredHCP hcp = new RegisteredHCP();
 		ArrayList<HCPInitialInterests> initialInterestList = new ArrayList<HCPInitialInterests>();
+		hcp.setHcpID(Integer.valueOf(session.getAnonymousUserDetails().get("accesscode")));
 		hcp.setProfession(session.getAnonymousUserProfession().get("profession"));
 		hcp.setSpecialization(session.getAnonymousUserSpecialization().get("specialization"));
 		
