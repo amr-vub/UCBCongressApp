@@ -1,5 +1,6 @@
 package org.ucb.data.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -41,9 +42,9 @@ public class SessionManager implements ISessionManager{
 	}
 
 	@Override
-	public List<LMRelatedWebsites> loadLMRelatedWebsites(Session ses) {
+	public ArrayList<LMRelatedWebsites> loadLMRelatedWebsites(Session ses) {
 		
-		List<LMRelatedWebsites> list = getSessionFactory().getCurrentSession().
+		ArrayList<LMRelatedWebsites> list = (ArrayList<LMRelatedWebsites>) getSessionFactory().getCurrentSession().
 			createQuery("SELECT u FROM LMRelatedWebsites u join u.relatedWebsites_session pl where pl = :ses")
 			.setParameter("ses", ses).list();		
 		

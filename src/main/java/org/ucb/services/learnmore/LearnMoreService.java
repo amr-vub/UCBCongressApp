@@ -1,5 +1,6 @@
 package org.ucb.services.learnmore;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.loader.plan.exec.spi.LockModeResolver;
@@ -166,7 +167,7 @@ public class LearnMoreService implements ILearnMoreService {
 		
 		int sessionID = lmObject.getSessionID();
 		Session session = sessionManager.getSessionById(sessionID);
-		List<LMRelatedWebsites> listWebsites;
+		ArrayList<LMRelatedWebsites> listWebsites;
 		
 		if(null != session)
 		{

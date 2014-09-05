@@ -1,5 +1,6 @@
 package org.ucb.service.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.ucb.data.domain.LMRelatedWebsites;
@@ -12,12 +13,21 @@ public class LearnMoreObject {
 	//private Session session;
 	private int sessionID;
 	private int learnMoreID;
-	private List<LMRelatedWebsites> learnMoreOutput;	
+	private ArrayList<LMRelatedWebsites> learnMoreOutput;	
 	
 	public LearnMoreObject(){
 		
 	}
 	
+	public LearnMoreObject(LearmMore learnMore, int sessionID, int learnMoreID,
+			ArrayList<LMRelatedWebsites> learnMoreOutput) {
+		super();
+		this.learnMore = learnMore;
+		this.sessionID = sessionID;
+		this.learnMoreID = learnMoreID;
+		this.learnMoreOutput = learnMoreOutput;
+	}
+
 	public LearmMore getLearnMore() {
 		return learnMore;
 	}
@@ -36,11 +46,14 @@ public class LearnMoreObject {
 	public void setLearnMoreID(int learnMoreID) {
 		this.learnMoreID = learnMoreID;
 	}
-	
-	public List<LMRelatedWebsites> getLearnMoreOutput() {
+
+	public ArrayList<LMRelatedWebsites> getLearnMoreOutput() {
 		return learnMoreOutput;
 	}
-	public void setLearnMoreOutput(List<LMRelatedWebsites> learnMoreOutput) {
+
+	public void setLearnMoreOutput(ArrayList<LMRelatedWebsites> learnMoreOutput) {
 		this.learnMoreOutput = learnMoreOutput;
 	}
+	
+
 }

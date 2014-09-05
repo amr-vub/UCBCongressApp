@@ -49,22 +49,22 @@ public class LearnMoreController {
 	@RequestMapping(value="/getLearnMoreWebsite" , method = RequestMethod.POST)
 	public LearnMoreObject getLearnMoreWebsite(@RequestBody LearnMoreObject learnMoreObject)
 	{			
-		//LearnMoreObject returnValue ;
-		
-		
+		LearnMoreObject returnValue  = new LearnMoreObject();
+
 		List<LMRelatedWebsites> tempValue = 
 				iLearnMoreService.getLearnMoreWebsite(learnMoreObject).getLearnMoreOutput();
 		
 		// workAround for JSON mapping
-		List<LMRelatedWebsites> lMRelatedWebsites = new ArrayList<LMRelatedWebsites>();
+		ArrayList<LMRelatedWebsites> lMRelatedWebsites = new ArrayList<LMRelatedWebsites>();
 		
 		for(LMRelatedWebsites l : tempValue){
 			l.setRelatedWebsites_session(null);
 			lMRelatedWebsites.add(l);
 		}
 		// end of workaround
-		learnMoreObject.setLearnMoreOutput(lMRelatedWebsites);
-		return learnMoreObject;		
+		returnValue.setLearnMoreOutput(lMRelatedWebsites);
+		
+		return returnValue;		
 	}
 	
 	@RequestMapping(value="/getLearnMoreWebinar" , method = RequestMethod.POST)

@@ -48,6 +48,7 @@ public class VotingService implements IVotingService {
 			vote = voteManager.getVoteById(voteID);
 			voteValue = votingSession.getVoteValue();
 			
+			voteValue.setVote_value_Vote(vote);
 			// Add the vote value to the list of choices within the vote
 			vote.getVote_vValue().add(voteValue);
 			
