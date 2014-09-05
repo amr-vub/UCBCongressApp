@@ -6,8 +6,10 @@ import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.ucb.data.domain.Feedback;
 import org.ucb.data.domain.LMRelatedWebsites;
 import org.ucb.data.domain.Session;
+import org.ucb.data.domain.Vote;
 
 @Repository
 public class SessionManager implements ISessionManager{
@@ -38,14 +40,42 @@ public class SessionManager implements ISessionManager{
 	@Override
 	public Session getSessionById(int sessID) {
 		
-		return (Session) getSessionFactory().getCurrentSession().get(Session.class, sessID);
+		Session ses = (Session) getSessionFactory().getCurrentSession().get(Session.class, sessID);
+		
+		// loading session field list, cause of lazy fetching problems
+		List<Feedback> listFB = loadFB(ses);
+		
+		ses.setSession_FB(listFB);
+		
+		List<Vote> listVote = loadVote(ses);
+		ses.setSession_vote(listVote);
+		
+		return ses;
 	}
 
 	@Override
-	public ArrayList<LMRelatedWebsites> loadLMRelatedWebsites(Session ses) {
+	public List<LMRelatedWebsites> loadLMRelatedWebsites(Session ses) {
 		
-		ArrayList<LMRelatedWebsites> list = (ArrayList<LMRelatedWebsites>) getSessionFactory().getCurrentSession().
+		List<LMRelatedWebsites> list = getSessionFactory().getCurrentSession().
 			createQuery("SELECT u FROM LMRelatedWebsites u join u.relatedWebsites_session pl where pl = :ses")
+			.setParameter("ses", ses).list();		
+		
+		return list;
+	}
+	
+	private List<Feedback> loadFB(Session ses) {
+		
+		List<Feedback> list =  getSessionFactory().getCurrentSession().
+			createQuery("SELECT u FROM Feedback u join u.fB_session pl where pl = :ses")
+			.setParameter("ses", ses).list();		
+		
+		return list;
+	}
+	
+	private List<Vote> loadVote(Session ses) {
+		
+		List<Vote> list =  getSessionFactory().getCurrentSession().
+			createQuery("SELECT u FROM Vote u join u.vote_session pl where pl = :ses")
 			.setParameter("ses", ses).list();		
 		
 		return list;

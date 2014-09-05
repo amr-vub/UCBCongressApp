@@ -16,5 +16,5 @@ public interface ISessionManager {
 	
 	public void deleteSession(Session sess);
 	
-	public ArrayList<LMRelatedWebsites> loadLMRelatedWebsites(Session ses);
+	public List<LMRelatedWebsites> loadLMRelatedWebsites(Session ses);
 }

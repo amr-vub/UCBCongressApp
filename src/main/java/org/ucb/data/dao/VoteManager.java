@@ -1,9 +1,13 @@
 package org.ucb.data.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.ucb.data.domain.Vote;
+import org.ucb.data.domain.VoteChoices;
 
 @Repository
 public class VoteManager implements IVoteManager{
@@ -14,7 +18,11 @@ public class VoteManager implements IVoteManager{
 	@Override
 	public Vote getVoteById(int voteId) {
 		
-		return (Vote) getSessionFactory().getCurrentSession().get(Vote.class, voteId);
+		Vote vote =  (Vote) getSessionFactory().getCurrentSession().get(Vote.class, voteId);
+		
+		vote.setVoteChoices(loadVote(vote));
+		
+		return vote;
 	}
 
 	@Override
@@ -43,4 +51,12 @@ public class VoteManager implements IVoteManager{
 		this.sessionFactory = sessionFactory;
 	}
 
+	private List<VoteChoices> loadVote(Vote vote) {
+		
+		List<VoteChoices> list = getSessionFactory().getCurrentSession().
+			createQuery("SELECT u FROM VoteChoices u join u.choiceVote pl where pl = :vote")
+			.setParameter("vote", vote).list();		
+		
+		return list;
+	}
 }

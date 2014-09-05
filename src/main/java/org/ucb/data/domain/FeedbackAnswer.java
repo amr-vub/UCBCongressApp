@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 /** 
@@ -25,6 +26,10 @@ public class FeedbackAnswer {
 	@Column
 	private String fbTextAnswer;
 	
+	@ManyToOne
+	@JoinColumn(nullable=false)
+	private Feedback fbAnswer_fb;
+	
 	/*
 	@OneToOne
 	@JoinColumn(nullable=false)
@@ -34,6 +39,14 @@ public class FeedbackAnswer {
 
 	public int getFbAnswerID() {
 		return fbAnswerID;
+	}
+
+	public Feedback getFbAnswer_fb() {
+		return fbAnswer_fb;
+	}
+
+	public void setFbAnswer_fb(Feedback fbAnswer_fb) {
+		this.fbAnswer_fb = fbAnswer_fb;
 	}
 
 	public void setFbAnswerID(int fbAnswerID) {

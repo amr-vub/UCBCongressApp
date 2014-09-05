@@ -171,7 +171,8 @@ public class LearnMoreService implements ILearnMoreService {
 		
 		if(null != session)
 		{
-			listWebsites = sessionManager.loadLMRelatedWebsites(session);//session.getSession_RelatedWebsites();
+			listWebsites = (ArrayList<LMRelatedWebsites>)
+					sessionManager.loadLMRelatedWebsites(session);//session.getSession_RelatedWebsites();
 			
 //			for(LMRelatedWebsites lmWebsite : listWebsites)
 //			{
