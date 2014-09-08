@@ -42,7 +42,7 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
 			"Denmark", "Finland", "France", "Germany", "Greece", "Italy",
 			"Luxembourg", "Netherlands", "Portugal", "Romania", "Spain",
 			"Sweden", "United Kingdom", "United States" };
-	EditText firstName, lastName, email, phoneNumber, password, confirmPassword;
+	EditText firstName, lastName, userName, email, phoneNumber, password, confirmPassword;
 	Spinner country;
 	Button signupCreateAccount;
 
@@ -61,6 +61,7 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
 		// Get references of views
 		firstName = (EditText) findViewById(R.id.first_name);
 		lastName = (EditText) findViewById(R.id.last_name);
+		userName = (EditText) findViewById(R.id.user_name);
 		email = (EditText) findViewById(R.id.email);
 		phoneNumber = (EditText) findViewById(R.id.phone);
 		password = (EditText) findViewById(R.id.password);
@@ -79,6 +80,7 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
 
 				String first = firstName.getText().toString();
 				String last = lastName.getText().toString();
+				String user = userName.getText().toString();
 				String eml = email.getText().toString();
 				String phone = phoneNumber.getText().toString();
 				String pwd = password.getText().toString();
@@ -91,7 +93,7 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
 				// check if any of the fields are empty
 				if (first.equals("") || last.equals("") || password.equals("")
 						|| confirmPassword.equals("")) {
-					Toast.makeText(getApplicationContext(), "Field Vaccant",
+					Toast.makeText(getApplicationContext(), "Field vaccant",
 							Toast.LENGTH_LONG).show();
 					return;
 				}
@@ -108,15 +110,14 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
 					try {
 						new HttpRequestTask().execute().get();		
 						Toast.makeText(getApplicationContext(),
-								"Account Successfully Created ", Toast.LENGTH_LONG)
+								"Account Successfully Created", Toast.LENGTH_LONG)
 								.show();
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					loginAdapter.insertEntry(first, pwd);
 					finish();
-					session.createRegisteredUserSession(eml, pwd);
+					session.createRegisteredUserSession(user, pwd);
 					session.setFirstTime();
 					Intent intent = new Intent(RegisterActivity.this, RegisteredSurveyActivity.class);
 					startActivity(intent);
@@ -155,8 +156,10 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
 		 Gson gson=new Gson();
 		
 		protected RegisteredHCP doInBackground(Void... params) {
+			
 			RegisteredHCP hcp = new RegisteredHCP();
-			hcp.setHcpID(0);
+			//hcp.setHcpID(0);
+			hcp.setHcpID(Integer.parseInt(session.getAnonymousUserDetails().get("accesscode")));
 			// building the User object based on the the registration form data
 			hcp.setHcpName(firstName.getText().toString() + lastName.getText().toString());
 			hcp.setCountry(country.getSelectedItem().toString());

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/access_code_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/access_code"
+        android:layout_alignRight="@+id/access_code"
+        android:layout_below="@+id/access_code"
+        android:layout_marginTop="5dp"
+        android:text="Continue" />
+
+    <EditText
+        android:id="@+id/access_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="192dp"
+        android:ems="10"
+        android:hint="Access code" >
+
+        <requestFocus />
+    </EditText>
+
+</RelativeLayout>

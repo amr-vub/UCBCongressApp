@@ -98,13 +98,8 @@ public class StartActivity extends Activity {
 				/**
 				 * SERVICE: need to validate the user name and password
 				 */
-				if(username.equals("ucb") && psw.equals("ucb")){
-					session.createRegisteredUserSession(username, psw);
-					Intent intent = new Intent(StartActivity.this, HomeActivity.class);
-					startActivity(intent);
-				}
-				
-/*				LoginInfo loginInfo = new LoginInfo();
+				session.createRegisteredUserSession(username, psw);
+				LoginInfo loginInfo = new LoginInfo();				
 				try {
 					loginInfo = new HttpRequestTaskLogin().execute().get(10000, TimeUnit.MILLISECONDS);
 				} catch (InterruptedException e) {
@@ -121,12 +116,13 @@ public class StartActivity extends Activity {
 					startActivity(intent);
 					finish();
 				} else {
-					//the user name or password is not valid
+					/**
+					 * the user name or password is not valid
+					 */
 					Toast.makeText(getApplicationContext(), "log in failed",
 							1000);
-				}*/
+				}
 			}
-			
 		});
 
 	}
@@ -147,12 +143,8 @@ public class StartActivity extends Activity {
 			public void onClick(View view) {
 
 				String codeValue = accessCode.getText().toString();
-/*				if(codeValue.equals("1234")){
-					session.createAnonymousSession(codeValue);
-					Intent intent = new Intent(StartActivity.this, HomeActivity.class);
-					startActivity(intent);
-				}
-*/
+				session.createAnonymousSession(codeValue);
+
 				AccessCode access = new AccessCode();
 				
 				try {
@@ -171,7 +163,7 @@ public class StartActivity extends Activity {
 							AnonySurveyActivity1.class);
 					startActivity(intent);
 				} else {
-					// SERVICE to validate the access code
+					 //SERVICE to validate the access code
 					Toast.makeText(getApplicationContext(),
 							"Your access code is wrong", Toast.LENGTH_LONG)
 							.show();

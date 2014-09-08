@@ -24,6 +24,8 @@ public class SessionActivity extends Activity {
 	TextView detailSessionAbstract;
 	RatingBar ratingBar;
 	Button detailSessionLearnMore;
+	Button detailSessionVote;
+	Button detailSessionQuestion;
 	Button detailSessionRate;
 	Button detailSessionFeedback;
 	Button detailViewDocument;
@@ -86,6 +88,24 @@ public class SessionActivity extends Activity {
 
 			}
 
+		});
+		detailSessionQuestion.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(SessionActivity.this, QuestionsActivity.class);
+				startActivity(intent);
+			}
+			
+		});
+		detailSessionVote.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(SessionActivity.this, VotingActivity.class);
+				startActivity(intent);
+			}
+			
 		});
 		detailSessionRate.setOnClickListener(new OnClickListener() {
 

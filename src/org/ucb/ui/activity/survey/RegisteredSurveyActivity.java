@@ -2,9 +2,8 @@ package org.ucb.ui.activity.survey;
 
 import java.util.ArrayList;
 
-import org.ucb.ui.activity.*;
 import org.ucb.ui.activity.adapter.SurveyInterestItemAdapter;
-import org.ucb.ui.activity.home.HomeActivity;
+import org.ucb.ui.activity.home.UserProfileActivity;
 import org.ucb.ui.model.InterestItem;
 
 import org.ucb.ui.R;
@@ -77,9 +76,9 @@ public class RegisteredSurveyActivity extends Activity {
 				 * database
 				 */
 
-				// Jump to home screen
+				// Jump to user profile screen
 				Intent intent = new Intent(RegisteredSurveyActivity.this,
-						HomeActivity.class);
+						UserProfileActivity.class);
 				startActivity(intent);
 				finish();
 			}

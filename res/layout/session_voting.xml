@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ucb_grey1" >
+
+    <RelativeLayout
+        android:id="@+id/voting_relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:paddingBottom="10dp" >
+
+        <TextView
+            android:id="@+id/voting_textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Which type of the following Epilepsy do you see most from patients?"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/voting_relativeLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/voting_relativeLayout1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:paddingBottom="10dp">
+
+        <RadioGroup
+            android:id="@+id/voting_radioGroup1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp" >
+
+            <RadioButton
+                android:id="@+id/voting_radio0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="RadioButton" />
+
+            <RadioButton
+                android:id="@+id/voting_radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RadioButton" />
+
+            <RadioButton
+                android:id="@+id/voting_radio2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RadioButton" />
+            
+            <RadioButton 
+                android:id="@+id/voting_radio3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RadioButton"/>
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/voting_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:alpha="0.9"
+        android:background="@color/ucb_blue1"
+        android:text="Submit"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+</RelativeLayout>

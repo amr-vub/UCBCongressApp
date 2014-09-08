@@ -9,7 +9,7 @@ import java.util.List;
  * This class contains those webinars's info 
  */
 
-public class LMRelatedWebinars {
+public class LMRelatedWebinars extends LearmMore {
 
 	private int LMRelatedWebinarsID;
 	

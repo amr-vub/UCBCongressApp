@@ -68,6 +68,10 @@
             android:label="Session" />
         <activity android:name=".activity.session.ViewDocumentActivity" 
             android:label="Document"/>
+        <activity android:name=".activity.session.VotingActivity"
+            android:label="Voting" />
+        <activity android:name=".activity.session.QuestionsActivity"
+            android:label="Questions" />
         <activity
             android:name=".activity.home.PreferenceActivity"
             android:label="Preferences" />
@@ -84,5 +88,12 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
     </application>
+    
+    <supports-screens android:resizeable="true"
+                  android:smallScreens="true"
+                  android:normalScreens="true"
+                  android:largeScreens="true"
+                  android:xlargeScreens="true"
+                  android:anyDensity="true"/>
 
 </manifest>

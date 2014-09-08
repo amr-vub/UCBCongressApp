@@ -36,13 +36,11 @@ public class SessionManager {
 	public void createRegisteredUserSession(String username, String password) {
 		// Storing login value as TRUE
 		editor.putBoolean(USER_MODE, true);
-
+		editor.putBoolean(FIRST_TIME, true);
 		// Storing name in pref
 		editor.putString(KEY_USERNAME, username);
-
 		// Storing password in pref
 		editor.putString(KEY_PASSWORD, password);
-
 		// commit changes
 		editor.commit();
 	}
