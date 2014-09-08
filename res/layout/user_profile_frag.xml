@@ -27,6 +27,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
+                android:alpha="0.9"
                 android:src="@drawable/ic_user_avatar" />
 
             <TextView

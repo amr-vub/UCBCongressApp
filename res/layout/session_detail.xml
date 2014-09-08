@@ -61,7 +61,6 @@
                 android:layout_marginRight="1dp"
                 android:layout_weight="1"
                 android:background="@color/ucb_blue1"
-                android:drawableTop="@drawable/ic_questions_btn"
                 android:text="Questions"
                 android:textColor="@color/white"
                 android:textSize="12sp"
