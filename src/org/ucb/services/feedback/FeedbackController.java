@@ -17,11 +17,11 @@ public class FeedbackController {
 	IFeedbackService iFeedbackService;
 	
 	@RequestMapping(value="/getFeedbackQuestion" , method = RequestMethod.POST)
-	public FeedbackObject getFeedbackQuestion(@RequestBody FeedbackObject feedback)
+	public FeedbackObject getFeedbackQuestions(@RequestBody FeedbackObject feedback)
 	{		
 		FeedbackObject returnValue;
 		
-		returnValue = iFeedbackService.getFeedbackQuestion(feedback);
+		returnValue = iFeedbackService.getFeedbackQuestions(feedback);
 		
 		// Workaround for JSON mapping
 		List<FeedbackAnswer> tempValue = returnValue.getFeedbackResults();
