@@ -24,7 +24,10 @@ public class SessionActivity extends Activity {
 	TextView detailSessionAbstract;
 	RatingBar ratingBar;
 	Button detailSessionLearnMore;
+	Button detailSessionVote;
+	Button detailSessionQuestion;
 	Button detailSessionRate;
+	Button detailSessionFeedback;
 	Button detailViewDocument;
 	Dialog dialogbox;
 	SessionAdapter sessionAdapter;
@@ -52,7 +55,10 @@ public class SessionActivity extends Activity {
 		detailSessionAbstract = (TextView) findViewById(R.id.text_abstract);
 		detailSessionLearnMore = (Button) findViewById(R.id.button_learn_more);
 		detailSessionRate = (Button) findViewById(R.id.detail_session_rate);
+		detailSessionFeedback = (Button) findViewById(R.id.detail_session_feedback);
 		detailViewDocument = (Button) findViewById(R.id.button_download_doc);
+		detailSessionQuestion = (Button) findViewById(R.id.detail_session_questions);
+		detailSessionVote = (Button) findViewById(R.id.detail_session_vote);
 
 		detailSessionTime.setText("2014-08-01 09:00");
 		detailSessionPlace.setText("Room 501");
@@ -85,12 +91,39 @@ public class SessionActivity extends Activity {
 			}
 
 		});
+		detailSessionQuestion.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(SessionActivity.this, QuestionsActivity.class);
+				startActivity(intent);
+			}
+			
+		});
+		detailSessionVote.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(SessionActivity.this, VotingActivity.class);
+				startActivity(intent);
+			}
+			
+		});
 		detailSessionRate.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				showRatingForm();
 			}
+		});
+		detailSessionFeedback.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(SessionActivity.this, FeedbackActivity.class);
+				startActivity(intent);
+			}
+			
 		});
 		detailViewDocument.setOnClickListener(new View.OnClickListener() {
 			

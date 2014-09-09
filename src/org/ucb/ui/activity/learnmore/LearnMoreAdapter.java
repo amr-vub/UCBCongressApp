@@ -2,7 +2,8 @@ package org.ucb.ui.activity.learnmore;
 
 import java.util.ArrayList;
 
-import org.ucb.data.domain.LearnMoreItem;
+import org.ucb.data.domain.LMRelatedWebsites;
+import org.ucb.data.domain.LearmMore;
 import org.ucb.ui.R;
 
 import android.content.Context;
@@ -12,13 +13,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class LearnMoreAdapter extends ArrayAdapter<LearnMoreItem> {
+public class LearnMoreAdapter extends ArrayAdapter<LMRelatedWebsites> {
 
 	private final Context context;
-	private final ArrayList<LearnMoreItem> itemsArrayList;
+	private final ArrayList<LMRelatedWebsites> itemsArrayList;
 
 	public LearnMoreAdapter(Context context,
-			ArrayList<LearnMoreItem> itemsArrayList) {
+			ArrayList<LMRelatedWebsites> itemsArrayList) {
 
 		super(context, R.layout.session_learn_more, itemsArrayList);
 
@@ -41,8 +42,8 @@ public class LearnMoreAdapter extends ArrayAdapter<LearnMoreItem> {
 				.findViewById(R.id.session_title);
 		TextView timeView = (TextView) rowView.findViewById(R.id.session_time);
 		// 4. Set the text for textView
-		titleView.setText(itemsArrayList.get(position).getTitle());
-		timeView.setText(itemsArrayList.get(position).getTime());
+		titleView.setText(itemsArrayList.get(position).getLMRelatedWebsitesName());
+		timeView.setText(itemsArrayList.get(position).getLMRelatedWebsitesAbstract());
 
 		// 5. retrn rowView
 		return rowView;

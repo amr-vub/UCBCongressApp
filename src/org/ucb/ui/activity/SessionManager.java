@@ -91,6 +91,7 @@ public class SessionManager {
 	
 	public void putAnonymousUserProfession(String profession){
 		editor.putString(KEY_PROFESSION, profession);
+		editor.commit();
 	}
 	
 	public HashMap<String, String> getAnonymousUserProfession(){
@@ -101,6 +102,7 @@ public class SessionManager {
 	
 	public void putAnonymousUserSpecialization(String specialization){
 		editor.putString(KEY_SPECIALIZATION, specialization);
+		editor.commit();
 	}
 	
 	public HashMap<String, String> getAnonymousUserSpecialization(){

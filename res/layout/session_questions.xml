@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0.9"
+    android:background="@color/ucb_grey1"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/questions_relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:paddingBottom="20dp" >
+
+        <TextView
+            android:id="@+id/questions_textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Have questions? Someone is waiting to answer!"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/questions_textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/questions_textView1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="My question:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/questions_editText1"
+            android:inputType="textMultiLine"
+    		android:lines="8"
+    		android:minLines="6"
+    		android:gravity="top|left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/questions_textView2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:scrollbars="vertical"
+            android:hint="Write your question here..." />
+
+    </RelativeLayout>
+
+        <Button
+            android:id="@+id/questions_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@color/ucb_blue1"
+            android:text="Submit"
+            android:textColor="@color/white" />
+
+</RelativeLayout>

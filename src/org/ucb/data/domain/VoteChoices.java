@@ -1,31 +1,29 @@
 package org.ucb.data.domain;
 
 
+
 /** 
  * This class reflects a session's vote choices
  */
 
+
 public class VoteChoices {
 
+	
 	private int choiceID;
 	
-	private String choices;
 	
-	private int voteValue;
+	private String choices;
+
+	
+	
+	private Vote choiceVote;
+	
 	/*
-	@OneToOne
-	@JoinColumn(nullable=false)
+	
+	
 	private HCP VChoice_HCP;
 	*/
-
-
-	public int getVoteValue() {
-		return voteValue;
-	}
-
-	public void setVoteValue(int voteValue) {
-		this.voteValue = voteValue;
-	}
 
 	public int getChoiceID() {
 		return choiceID;

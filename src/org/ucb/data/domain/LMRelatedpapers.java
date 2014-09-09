@@ -8,7 +8,7 @@ import java.util.List;
  * This class contains those paper's info 
  */
 
-public class LMRelatedpapers {
+public class LMRelatedpapers extends LearmMore {
 
 	private int LMRelatedpapersID;
 	

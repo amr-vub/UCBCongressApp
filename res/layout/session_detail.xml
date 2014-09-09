@@ -24,24 +24,79 @@
             android:paddingLeft="16dp"
             android:paddingRight="6dp"
             android:paddingTop="16dp"
-            android:text="TextView"
+            android:text="Patients as a teacher: case oriented teaching"
             android:textAllCaps="false"
             android:textColor="@color/ucb_grey1"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/detail_session_rate"
-            android:layout_width="60dp"
+        <LinearLayout
+            android:id="@+id/detail_session_buttons"
+            android:weightSum="4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:background="@color/ucb_blue1"
-            android:text="Rate and review"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="normal" />
+            android:layout_alignParentBottom="true" >
+            
+            <Button
+                android:id="@+id/detail_session_vote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/ucb_blue1"
+                android:text="Vote"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+            
+            <Button
+                android:id="@+id/detail_session_questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/ucb_blue1"
+                android:text="Questions"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/detail_session_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/ucb_blue1"
+                android:text="Rate"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/detail_session_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="1dp"
+                android:layout_toRightOf="@+id/detail_session_rate"
+                android:layout_weight="1"
+                android:background="@color/ucb_blue1"
+                android:text="Feedback"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/button_learn_more"
@@ -137,7 +192,6 @@
             android:layout_alignRight="@+id/title_abstract"
             android:layout_below="@+id/title_abstract"
             android:layout_marginTop="10dp"
-            android:paddingLeft="10dp"
             android:text="@string/sample_abstract" />
 
         <ImageView
@@ -193,7 +247,5 @@
             android:paddingTop="25dp"
             android:scaleType="center"
             android:src="@drawable/ic_arrow" />
-
     </RelativeLayout>
-
 </FrameLayout>

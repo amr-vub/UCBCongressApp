@@ -10,7 +10,7 @@ import java.util.List;
  * This class contains those website's info 
  */
 
-public class LMRelatedWebsites {
+public class LMRelatedWebsites extends LearmMore{
 
 	private int LMRelatedWebsitesID;
 	

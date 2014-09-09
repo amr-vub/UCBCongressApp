@@ -5,9 +5,6 @@ import java.util.ArrayList;
 import org.ucb.ui.R;
 import org.ucb.ui.activity.*;
 
-import com.github.amlcurran.showcaseview.ShowcaseView;
-import com.github.amlcurran.showcaseview.targets.ViewTarget;
-
 import android.os.Bundle;
 import android.content.Intent;
 import android.content.res.Configuration;

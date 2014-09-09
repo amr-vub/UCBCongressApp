@@ -1,20 +1,49 @@
 package org.ucb.data.domain;
 
+import java.util.List;
 
 /** 
  * This class reflects a session's vote info
  */
 
 
+ 
 public class Vote {
 
+	 
 	private int voteID;
 	
+	 
 	private String voteQuestion;
 	
+	 
 	private int chosenVoteChoice;
 	
+	 
+	 
 	private Session vote_session;
+	
+	 
+	private List<VoteChoices> voteChoices;
+	
+	 
+	private List<Vote_value> vote_vValue;
+
+	public List<VoteChoices> getVoteChoices() {
+		return voteChoices;
+	}
+
+	public void setVoteChoices(List<VoteChoices> voteChoices) {
+		this.voteChoices = voteChoices;
+	}
+
+	public List<Vote_value> getVote_vValue() {
+		return vote_vValue;
+	}
+
+	public void setVote_vValue(List<Vote_value> vote_vValue) {
+		this.vote_vValue = vote_vValue;
+	}
 
 	public int getChosenVoteChoice() {
 		return chosenVoteChoice;
