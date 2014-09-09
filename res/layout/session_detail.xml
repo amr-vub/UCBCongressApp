@@ -24,7 +24,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="6dp"
             android:paddingTop="16dp"
-            android:text="TextView"
+            android:text="Patients as a teacher: case oriented teaching"
             android:textAllCaps="false"
             android:textColor="@color/ucb_grey1"
             android:textSize="20sp"
@@ -215,7 +215,7 @@
             android:layout_marginTop="10dp"
             android:text="View the presentation" />
     </RelativeLayout>
-
+<!-- 
     <RelativeLayout
         android:id="@+id/top_layout"
         android:layout_width="match_parent"
@@ -249,5 +249,5 @@
             android:scaleType="center"
             android:src="@drawable/ic_arrow" />
     </RelativeLayout>
-
+ -->
 </FrameLayout>

@@ -90,6 +90,7 @@
         android:layout_alignParentRight="true"
         android:alpha="0.9"
         android:background="@color/ucb_blue1"
+        android:gravity="center"
         android:text="Submit"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
