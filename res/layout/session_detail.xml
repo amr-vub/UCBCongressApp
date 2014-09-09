@@ -215,7 +215,7 @@
             android:layout_marginTop="10dp"
             android:text="View the presentation" />
     </RelativeLayout>
-<!-- 
+
     <RelativeLayout
         android:id="@+id/top_layout"
         android:layout_width="match_parent"
@@ -249,5 +249,5 @@
             android:scaleType="center"
             android:src="@drawable/ic_arrow" />
     </RelativeLayout>
- -->
+ 
 </FrameLayout>
