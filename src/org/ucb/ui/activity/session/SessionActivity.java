@@ -54,8 +54,8 @@ public class SessionActivity extends Activity {
 		detailSessionSpeaker = (TextView) findViewById(R.id.learn_more_text3);
 		detailSessionAbstract = (TextView) findViewById(R.id.text_abstract);
 		detailSessionLearnMore = (Button) findViewById(R.id.button_learn_more);
-		detailSessionRate = (Button) findViewById(R.id.detail_session_rate);
-		detailSessionFeedback = (Button) findViewById(R.id.detail_session_feedback);
+		detailSessionRate = (Button) findViewById(R.id.session_detail_rate);
+		detailSessionFeedback = (Button) findViewById(R.id.session_detail_feedback);
 		detailViewDocument = (Button) findViewById(R.id.button_download_doc);
 
 		detailSessionTime.setText("2014-08-01 09:00");

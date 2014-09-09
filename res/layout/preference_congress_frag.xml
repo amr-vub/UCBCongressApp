@@ -148,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@id/cong_checkBox1"
                 android:layout_below="@id/cong_checkBox1"
-                android:text="Face to face contact" />
+                android:text="Face to face contacts" />
 
             <CheckBox
                 android:id="@+id/cong_checkBox3"
@@ -172,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@id/cong_checkBox4"
                 android:layout_below="@id/cong_checkBox4"
-                android:text="Mail" />
+                android:text="Mails" />
         </RelativeLayout>
 
         <RelativeLayout

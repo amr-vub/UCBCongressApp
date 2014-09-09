@@ -31,14 +31,14 @@
             android:textStyle="bold" />
 
         <LinearLayout
-            android:id="@+id/detail_session_buttons"
+            android:id="@+id/session_detail_buttons"
             android:weightSum="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true" >
             
             <Button
-                android:id="@+id/detail_session_vote"
+                android:id="@+id/session_detail_vote"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -52,7 +52,7 @@
                 android:textStyle="normal" />
             
             <Button
-                android:id="@+id/detail_session_questions"
+                android:id="@+id/session_detail_questions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -67,7 +67,7 @@
                 android:textStyle="normal" />
 
             <Button
-                android:id="@+id/detail_session_rate"
+                android:id="@+id/session_detail_rate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -82,7 +82,7 @@
                 android:textStyle="normal" />
 
             <Button
-                android:id="@+id/detail_session_feedback"
+                android:id="@+id/session_detail_feedback"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
