@@ -25,9 +25,5 @@ public interface IRegisteredUserManager {
 	
 	public void deleteRegisteredsUser(RegisteredHCP registeredUser);
 	
-	public Preferences loadPref(Preferences PrefId);
-	
-	public List<Domain_of_Contact> loadDomain(Preferences Pref);
-	
-	public List<Category> loadCat(Preferences Pref);
+	public Preferences loadPref(Preferences PrefId);	
 }

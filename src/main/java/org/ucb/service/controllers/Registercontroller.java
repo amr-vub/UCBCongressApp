@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.ucb.data.domain.RegisteredHCP;
 import org.ucb.service.model.AccessCode;
-import org.ucb.service.model.ReghcpModel;
 import org.ucb.services.identification.IRegisteredUserService;
 
 @RestController
@@ -21,7 +20,7 @@ public class Registercontroller {
 	@RequestMapping(value="/register",  method = RequestMethod.POST)
 	public RegisteredHCP register(@RequestBody RegisteredHCP hcp){
 		
-		System.out.print("33333333333333");
+		//System.out.print("33333333333333");
 //		
 //		RegisteredHCP hcp1 = new RegisteredHCP();
 //		
@@ -38,26 +37,6 @@ public class Registercontroller {
 		hcpReturn.setHcpID(iRegisteredUserService.registerUser(hcp).getHcpID());
 		
 		return hcpReturn;
-		
-	}
-	
-	@RequestMapping(value="/fake",  method = RequestMethod.POST)
-	public ReghcpModel registerfake(@RequestBody ReghcpModel hcp){
-		
-		System.out.print("33333333333333");
-		
-//		RegisteredHCP hcp1 = new RegisteredHCP();
-//		
-//		hcp1.setAcademic_practitioner_value(hcp.getAcademic_practitioner_value());
-//		hcp1.setCountry(hcp.getCountry());
-//		hcp1.setEmail(hcp.getEmail());
-//		hcp1.setHCPName(hcp.getHCPName());
-//		hcp1.setRegisteredAt(new Date());
-//		
-//		RegisteredHCP hcpReturn = 
-//				iRegisteredUserService.registerUser(hcp);
-		
-		return new ReghcpModel();
 		
 	}
 }

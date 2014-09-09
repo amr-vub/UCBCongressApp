@@ -23,10 +23,4 @@ public interface IRegisteredUserService {
 	
 	public RegisteredHCP findUserById(int HCPID);
 	
-	public Preferences loadPref(Preferences Pref);	
-	
-	public List<Domain_of_Contact> loadDomain(Preferences Pref);
-	
-	public List<Category> loadCat(Preferences Pref);
-	
 }

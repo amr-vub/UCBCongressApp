@@ -28,7 +28,7 @@ public class Login {
 	@Temporal(TemporalType.DATE)
 	private Date lastLogIn;
 	
-	@OneToOne @JoinColumn(nullable=false, unique=true)
+	@OneToOne @JoinColumn(nullable=false)
 	private RegisteredHCP Login_regHCP;
 
 	public int getLoginID() {

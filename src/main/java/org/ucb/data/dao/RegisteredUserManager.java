@@ -82,20 +82,6 @@ public class RegisteredUserManager implements IRegisteredUserManager{
 		+ "WHERE u.PrefID = :PrefID").setParameter("PrefID", PrefId.getPrefID()).list().get(0);		
 		return pref;
 	}
-
-	public List<Domain_of_Contact> loadDomain(Preferences Pref){
-
-		return (List<Domain_of_Contact>) getSessionFactory().getCurrentSession().createQuery("SELECT u FROM Domain_of_Contact  u WHERE"
-				+ " u.domain_preferences = :prefID").setParameter("prefID", Pref).list();
-		// pref.getPref_domain();
-	}
-	
-	public List<Category> loadCat(Preferences Pref){
-
-		return (List<Category>) getSessionFactory().getCurrentSession().createQuery("SELECT u FROM Category u WHERE"
-				+ " u.cat_pref = :prefID").setParameter("prefID", Pref).list();
-		//return pref.getPref_cat();
-	}
 	
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;

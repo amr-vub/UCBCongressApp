@@ -317,20 +317,6 @@ public class RegisteredUserService implements IRegisteredUserService {
 
 	@Override
 	@Transactional
-	public List<Domain_of_Contact> loadDomain(Preferences Pref) {
-		
-		return registeredUserManager.loadDomain(Pref);
-	}
-
-	@Override
-	@Transactional
-	public List<Category> loadCat(Preferences Pref) {
-		
-		return registeredUserManager.loadCat(Pref);
-	}
-
-	@Override
-	@Transactional
 	public void deleteUser(RegisteredHCP hcp) {
 		registeredUserManager.deleteRegisteredsUser(hcp);		
 	}

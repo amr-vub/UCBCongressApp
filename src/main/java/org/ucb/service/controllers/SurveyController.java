@@ -68,6 +68,10 @@ public class SurveyController {
 		}
 		iRegisteredUserService.storeUser(hcp);
 		
+		for(HCPInitialInterests hi : hcpInitialInterests){
+			hi.setHcpInitialInterests_hcp(null);
+		}
+		
 		System.out.println("DONE DONE DONE");
 		
 		return hcp;

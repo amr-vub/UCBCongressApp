@@ -64,11 +64,11 @@ public class PreferenceController {
 				preferenceModel.setHCPID(HCPID);			
 				preferenceModel.setOptIn_OptOut(pref.isOptIn_OptOut());				
 				//pref = iRegisteredUserService.loadPref(pref);				
-				preferenceModel.setCommunication_Channel(pref.getCommunication_Channel());
-				System.out.println(pref.getPref_domain().get(0));
-				preferenceModel.setPref_cat(iRegisteredUserService.loadCat(pref));
-				preferenceModel.setPref_domain(iRegisteredUserService.loadDomain(pref));
-				preferenceModel.setTimeRange(pref.getTimeRange());
+//				preferenceModel.setCommunication_Channel(pref.getCommunication_Channel());
+//				System.out.println(pref.getPref_domain().get(0));
+//				preferenceModel.setPref_cat(iRegisteredUserService.loadCat(pref));
+//				preferenceModel.setPref_domain(iRegisteredUserService.loadDomain(pref));
+//				preferenceModel.setTimeRange(pref.getTimeRange());
 			}
 		}		
 		return preferenceModel;
