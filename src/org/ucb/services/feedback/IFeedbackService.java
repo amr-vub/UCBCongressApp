@@ -11,7 +11,7 @@ public interface IFeedbackService {
 	 * @return an object of type FeedbackObject. The retrieved question can be found in the 
 	 *         'feedbackQuestion' attribute.
 	 */
-	public FeedbackObject getFeedbackQuestion(FeedbackObject feedback);
+	public FeedbackObject getFeedbackQuestions(FeedbackObject feedback);
 	
 	/**
 	 * [Back-end] Inserts a question within a session's feedback list.

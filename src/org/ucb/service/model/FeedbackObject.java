@@ -15,10 +15,11 @@ public class FeedbackObject {
 	//private Feedback feedbackOutput;
 	private String fbQuestion;
 	
+	private List<String> questions;
+	
 	private FeedbackAnswer feedbackAnswer;
 	
-	private List<FeedbackAnswer> feedbackResults;
-	
+	private List<FeedbackAnswer> feedbackResults;	
 
 	public List<FeedbackAnswer> getFeedbackResults() {
 		return feedbackResults;
@@ -58,6 +59,14 @@ public class FeedbackObject {
 
 	public void setFeedbackIndex(int feedbackIndex) {
 		this.feedbackIndex = feedbackIndex;
+	}
+
+	public List<String> getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(List<String> questions) {
+		this.questions = questions;
 	}
 	
 	

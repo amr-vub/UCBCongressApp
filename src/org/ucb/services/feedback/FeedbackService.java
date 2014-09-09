@@ -1,5 +1,6 @@
 package org.ucb.services.feedback;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.hql.internal.ast.tree.ResultVariableRefNode;
@@ -23,7 +24,7 @@ public class FeedbackService implements IFeedbackService{
 	private IFeedbackManager feedbackManager;
 	
 	@Transactional
-	public FeedbackObject getFeedbackQuestion(FeedbackObject feedbackObject)
+	public FeedbackObject getFeedbackQuestions(FeedbackObject feedbackObject)
 	{		
 		FeedbackObject returnObject = feedbackObject;
 		
@@ -32,28 +33,25 @@ public class FeedbackService implements IFeedbackService{
 			return null;
 		}
 		
-		Feedback feedback =  new Feedback();
-		String feedbackQuestion = null;
-		
 		int sessionID = feedbackObject.getSessionID();	
-		int feedbackIndex = feedbackObject.getFeedbackIndex();
 		
 		Session session = sessionManager.getSessionById(sessionID);
 		List<Feedback> listFB;
+		List<String> listQuestions = new ArrayList<String>();
+		String feedbackQuestion = null;
 		
 		if(null != session)
 		{		
 			//Retrieve the session's list of Feedbacks
 			listFB = session.getSession_FB();
-			
-			//Check whether the index is a valid number
-			if((feedbackIndex >= 0) && (feedbackIndex <= listFB.size()))
+						
+			for(Feedback f : listFB)
 			{
-				feedback = listFB.get(feedbackIndex);
-				feedbackQuestion = feedback.getFbQuestion();
-				
-				returnObject.setFbQuestion(feedbackQuestion);				
-			}			
+				f.setfB_session(null);
+				feedbackQuestion = f.getFbQuestion();
+				listQuestions.add(feedbackQuestion);
+			}
+			returnObject.setQuestions(listQuestions);
 		}		
 		return returnObject;
 	}
@@ -91,7 +89,6 @@ public class FeedbackService implements IFeedbackService{
 			
 			sessionManager.updateSession(session);
 			
-			//For the lazy fetch
 			feedbackManager.storeFeedback(feedback);
 			
 			returnValue = true;
