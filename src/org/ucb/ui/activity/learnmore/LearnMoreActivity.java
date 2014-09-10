@@ -105,7 +105,7 @@ public class LearnMoreActivity extends ListActivity {
 	                httppost.setHeader("Content-type", "application/json");
 	                
 	                // preparing the model obj TODO static id for now
-	                learnMoreObj.setSessionID(1);
+	                learnMoreObj.setSessionID(2);
 	                
 	                httppost.setEntity(new StringEntity(gson.toJson(learnMoreObj, LearnMoreObject.class)));
 	                HttpResponse response = httpClient.execute(httppost, localContext);

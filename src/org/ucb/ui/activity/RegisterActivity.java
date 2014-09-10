@@ -190,7 +190,7 @@ public class RegisterActivity extends Activity implements OnItemSelectedListener
 	                String text = EntityUtils.toString(entity);
 	                
 	                // parsing the JSON response using GSON google API
-	                //hcp = gson.fromJson(text, RegisteredHCP.class);
+	                hcp = gson.fromJson(text, RegisteredHCP.class);
 	                
 	                return hcp;
 	                

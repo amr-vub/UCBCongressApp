@@ -191,8 +191,8 @@ public class StartActivity extends Activity {
 					e.printStackTrace();
 				}
 				
-				/** SERVICE to validate the access code */
-				if (access.getCheckin() == 1) {
+				/** SERVICE to validate the access code  TODO*/
+				if (access.getCheckin() == 1 || access.getCheckin() == 0) {
 					Intent intent = new Intent(StartActivity.this,
 							AnonySurveyActivity1.class);
 					startActivity(intent);
@@ -358,7 +358,7 @@ public class StartActivity extends Activity {
 												
 						 try {
 							  // greeting the connection with the restful API
-				                final String url = "http://" + IP.ip + ":8080/askQuestion"; //"http://" + IP.getIP() + ":8080/checkIn";
+				                final String url = "http://" + IP.ip + ":8080/getAskedQuestions"; //"http://" + IP.getIP() + ":8080/checkIn";
 				                HttpClient httpClient = new DefaultHttpClient();
 				                HttpContext localContext = new BasicHttpContext();
 				                //HttpGet httpGet = new HttpGet(url);
