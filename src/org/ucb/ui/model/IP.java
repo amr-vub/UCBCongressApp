@@ -1,5 +1,5 @@
 package org.ucb.ui.model;
 
 public class IP {
-	public static String ip = "192.168.43.79";
+	public static String ip = "192.168.1.164";
 }

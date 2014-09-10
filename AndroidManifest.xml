@@ -81,6 +81,7 @@
         <activity android:name=".activity.survey.AnonySurveyActivity1" />
         <activity android:name=".activity.survey.AnonySurveyActivity2" />
         <activity android:name=".activity.survey.AnonySurveyActivity3" />
+        <activity android:name=".activity.survey.RegisteredSurveyActivity" />
         <activity android:name=".activity.learnmore.LearnMoreActivity" />
 		<activity android:name=".activity.session.FeedbackActivity" 
 		    android:label="Feedback"/>

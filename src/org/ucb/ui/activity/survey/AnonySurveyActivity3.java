@@ -135,7 +135,7 @@ public class AnonySurveyActivity3 extends Activity {
 				 * SERVICE: here we need to save the user's interest list to database
 				 */
 				//generateRegsiteredHCP();
-				//new HttpRequestTask().execute();
+				new HttpRequestTask().execute();
 				// Jump to home screen
 				Intent intent = new Intent(AnonySurveyActivity3.this,
 						HomeActivity.class);
