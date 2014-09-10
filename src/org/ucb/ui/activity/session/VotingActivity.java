@@ -87,7 +87,7 @@ public class VotingActivity extends Activity {
 			protected Boolean doInBackground(Void... params) {
 				VotingSession votingSession = new VotingSession();
 				Session session = new  Session();
-				session.setSessionID(1);
+				session.setSessionID(2);
 				votingSession.setVotingSession(session);
 				Vote_value value = new Vote_value();
 				// get rating value

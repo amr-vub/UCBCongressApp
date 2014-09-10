@@ -69,7 +69,7 @@ public class QuestionsActivity extends Activity{
 			@Override
 			protected Boolean doInBackground(Void... params) {
 				QuestionObject qs = new QuestionObject();
-				qs.setSessionID(1);
+				qs.setSessionID(2);
 				qs.setAskedQuestion(question.getText().toString());
 										
 				 try {
