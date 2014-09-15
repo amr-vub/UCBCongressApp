@@ -1,3 +1,4 @@
+
 package org.ucb.service.controllers;
 
 import java.util.Date;
@@ -35,6 +36,9 @@ public class Registercontroller {
 		hcpReturn = new RegisteredHCP();
 		
 		hcpReturn.setHcpID(iRegisteredUserService.registerUser(hcp).getHcpID());
+		
+		hcpReturn.setHcp_hcpInitialInterests(null);
+		hcpReturn.setMore_Interest(null);
 		
 		return hcpReturn;
 		

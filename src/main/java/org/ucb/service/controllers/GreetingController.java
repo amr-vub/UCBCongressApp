@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.ucb.data.dao.AccessCodeManager;
 import org.ucb.data.dao.IRegisteredUserManager;
 import org.ucb.data.domain.Agenda;
 import org.ucb.data.domain.Category;
@@ -26,6 +27,9 @@ import org.ucb.data.domain.LMRelatedpapers;
 import org.ucb.data.domain.Login;
 import org.ucb.data.domain.Preferences;
 import org.ucb.data.domain.RegisteredHCP;
+import org.ucb.data.domain.Vote;
+import org.ucb.data.domain.VoteChoices;
+import org.ucb.data.domain.Vote_value;
 import org.ucb.data.domain.out.InitialInterests;
 import org.ucb.data.domain.out.Specialization;
 import org.ucb.data.domain.out.SubSpecialzation;
@@ -51,6 +55,9 @@ public class GreetingController {
     
     @Autowired
     private IInitialInterestService iMockInitialInterestService;
+    
+    @Autowired
+    AccessCodeManager accessCodeManager;
 
     @RequestMapping("/greeting")
     @Transactional
@@ -116,10 +123,23 @@ public class GreetingController {
 		ses.setSession_RelatedWebsites(lmRelatedWebsitesList);
 		ses.setSession_Relatedpapers(lmRelatedpapersList);
 		
+		Vote vote = new Vote();
+		vote.setVote_session(ses);
+		vote.setVoteQuestion("What you ?!!!");
+		List<Vote> votesList = new ArrayList<Vote>();
+		votesList.add(vote);
+		//vote
+		//VoteChoices voteChoices = new VoteChoices();
+		//voteChoices.setChoices("");
+		
+		ses.setSession_vote(votesList);
+		
 		List<org.ucb.data.domain.Session> sesArr = new ArrayList<org.ucb.data.domain.Session>();
 		sesArr.add(ses);
 		lmRelatedpapers.setRelatedpapers_session(sesArr);
 		lmRelatedWebsites.setRelatedWebsites_session(sesArr);
+		
+
 		
 		// login info
 		Login login = new Login();
@@ -173,11 +193,11 @@ public class GreetingController {
 		user.setRegisteredHCP_preferences(pref);
 		
     	//iAnonymousUserServiceStub.storeAnonymousUser(user);
-		iRegisteredUserService.storeUser(user);
+		//iRegisteredUserService.storeUser(user);
 		
 		
     	/**/		
-    	RegisteredHCP u = iRegisteredUserService.findUserById(0);
+    	//RegisteredHCP u = iRegisteredUserService.findUserById(0);
     	
     	//iRegisteredUserService.updateRegisteredUser(registeredHCP);
     	
@@ -232,7 +252,7 @@ public class GreetingController {
 		
 		
 		//iMockInitialInterestService.storeProf(prof);
-		iMockInitialInterestService.storeSpecial(spec);
+		//iMockInitialInterestService.storeSpecial(spec);
 		
 //		InitialInterestModel initialInterestModel = new InitialInterestModel();
 //		initialInterestModel.setSpecialType("Epilepsy");
@@ -240,6 +260,12 @@ public class GreetingController {
 //		List<SubSpecialzation> subList = iMockInitialInterestService.getSubSpecial(initialInterestModel);
 	
 		//String.valueOf(u.getHCP_hcpInitialInterests().get(0).getHCP_Initial_Interests_ID())
+		
+		for (int j = 0; j < 2000; j++) {
+		
+			accessCodeManager.insertAccessCode(j);
+		}
+		
 		
     	return new Greeting(counter.incrementAndGet(),
     			String.valueOf(2));

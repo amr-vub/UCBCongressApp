@@ -321,4 +321,10 @@ public class RegisteredUserService implements IRegisteredUserService {
 		registeredUserManager.deleteRegisteredsUser(hcp);		
 	}
 
+	@Override
+	public void updateRefisteredUser(RegisteredHCP hcp) {
+		registeredUserManager.updateRegisteredUser(hcp);
+		
+	}
+
 }

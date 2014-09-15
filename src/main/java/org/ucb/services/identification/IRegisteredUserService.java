@@ -23,4 +23,6 @@ public interface IRegisteredUserService {
 	
 	public RegisteredHCP findUserById(int HCPID);
 	
+	public void updateRefisteredUser(RegisteredHCP hcp);
+	
 }
