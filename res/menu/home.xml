@@ -11,5 +11,10 @@
         android:showAsAction="always"
         android:title="Invite others"
         android:icon="@drawable/ic_action_add_person"/>
+    <item
+        android:id="@+id/action_logout"
+        android:showAsAction="never"
+        android:title="Log out"
+        android:icon="@drawable/ic_logout"/>
     
 </menu>

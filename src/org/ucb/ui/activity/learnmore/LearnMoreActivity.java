@@ -51,22 +51,22 @@ public class LearnMoreActivity extends ListActivity {
         setListAdapter(adapter);
     }
  
-    private ArrayList<LMRelatedWebsites> generateData(){
-    	LearnMoreObject learnMoreObj;
-    	try 
-    	{
-    		learnMoreObj = new HttpRequestTask().execute().get();
-    		if(learnMoreObj != null)
-    			return (ArrayList<LMRelatedWebsites>) learnMoreObj.getLearnMoreOutput();
-    			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    private ArrayList<LearmMore> generateData(){
+//    	LearnMoreObject learnMoreObj;
+//    	try 
+//    	{
+//    		learnMoreObj = new HttpRequestTask().execute().get();
+//    		if(learnMoreObj != null)
+//    			return (ArrayList<LMRelatedWebsites>) learnMoreObj.getLearnMoreOutput();
+//    			
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//    	
+//    	return null;
     	
-    	return null;
     	
-    	/*
     	ArrayList<LearmMore> items = new ArrayList<LearmMore>();
         LearmMore lmi = new LearmMore();
         lmi.setPerson("Michael Jackson");
@@ -78,7 +78,7 @@ public class LearnMoreActivity extends ListActivity {
         lmi.setTitle("A medical practice: lessons learned from patients");
         items.add(lmi);
         return items;
-        */
+        
     }
 
     /**

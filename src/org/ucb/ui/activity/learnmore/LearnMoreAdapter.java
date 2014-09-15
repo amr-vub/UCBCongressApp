@@ -13,13 +13,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class LearnMoreAdapter extends ArrayAdapter<LMRelatedWebsites> {
+public class LearnMoreAdapter extends ArrayAdapter<LearmMore> {
 
 	private final Context context;
-	private final ArrayList<LMRelatedWebsites> itemsArrayList;
+	private final ArrayList<LearmMore> itemsArrayList;
 
 	public LearnMoreAdapter(Context context,
-			ArrayList<LMRelatedWebsites> itemsArrayList) {
+			ArrayList<LearmMore> itemsArrayList) {
 
 		super(context, R.layout.session_learn_more, itemsArrayList);
 
@@ -42,8 +42,8 @@ public class LearnMoreAdapter extends ArrayAdapter<LMRelatedWebsites> {
 				.findViewById(R.id.session_title);
 		TextView timeView = (TextView) rowView.findViewById(R.id.session_time);
 		// 4. Set the text for textView
-		titleView.setText(itemsArrayList.get(position).getLMRelatedWebsitesName());
-		timeView.setText(itemsArrayList.get(position).getLMRelatedWebsitesAbstract());
+		titleView.setText(itemsArrayList.get(position).getTitle());
+		timeView.setText(itemsArrayList.get(position).getOverview());
 
 		// 5. retrn rowView
 		return rowView;

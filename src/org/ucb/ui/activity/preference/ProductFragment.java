@@ -31,7 +31,7 @@ public class ProductFragment extends Fragment{
             @Override       
             public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {     
                 // TODO Auto-generated method stub      
-            	Toast.makeText(getActivity(), String.valueOf(progress),Toast.LENGTH_LONG).show();
+            	Toast.makeText(getActivity(), "Your preferences have been saved.",Toast.LENGTH_LONG).show();
 
             }
             });

@@ -45,7 +45,7 @@ public class RegisteredSurveyActivity extends Activity {
 		 */
 		interestItems = new ArrayList<InterestItem>();
 		for (String s : numbers) {
-			interestItems.add(new InterestItem(s, true));
+			interestItems.add(new InterestItem(s, false));
 		}
 
 		gridView = (GridView) findViewById(R.id.register_survey_gridView1);

@@ -161,7 +161,7 @@ public class AnonySurveyActivity3 extends Activity {
 			h.setHcp_Initial_Interest(s);
 			//h.setHcpInitialInterests_hcp(hcp);
 			initialInterestList.add(h);
-			Toast.makeText(getApplicationContext(), s, 500).show();
+			//Toast.makeText(getApplicationContext(), s, 500).show();
 		}
 		hcp.setHcp_hcpInitialInterests(initialInterestList);
 		return hcp;

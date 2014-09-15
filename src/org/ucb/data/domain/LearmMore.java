@@ -1,7 +1,7 @@
 package org.ucb.data.domain;
 
 public class LearmMore {
-	/*
+	
 	String title;
 	String person;
 	String time;
@@ -38,5 +38,5 @@ public class LearmMore {
 	public void setOverview(String overview) {
 		this.overview = overview;
 	}
-	*/
+	
 }

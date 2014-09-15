@@ -52,7 +52,7 @@
             android:layout_marginTop="20dp"
             android:layout_row="1"
             android:background="@color/ucb_blue1"
-            android:text="Doctor"
+            android:text="Pharmacist"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -79,7 +79,7 @@
             android:layout_marginTop="20dp"
             android:layout_row="1"
             android:background="@color/ucb_blue1"
-            android:text="Pharmacist"
+            android:text="Nurse"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -92,7 +92,7 @@
             android:layout_row="0"
             android:background="@color/ucb_blue1"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Nurse"
+            android:text="Doctor"
             android:textColor="@color/white"
             android:textSize="20sp" />
 

@@ -24,7 +24,7 @@
         android:layout_alignRight="@+id/anony_survey_arith"
         android:layout_below="@id/anony_survey_arith"
         android:layout_marginTop="10dp"
-        android:background="@color/ucb_sky_blue"
+        android:background="@color/ucb_blue1"
         android:text="Epilepsy"
         android:textColor="@color/white" />
 
@@ -36,8 +36,7 @@
         android:layout_alignRight="@+id/anony_survey_epil"
         android:layout_below="@id/anony_survey_epil"
         android:layout_marginTop="10dp"
-        android:alpha="0.5"
-        android:background="@color/ucb_blue3"
+        android:background="@color/ucb_blue1"
         android:text="Parkinson"
         android:textColor="@color/white" />
 

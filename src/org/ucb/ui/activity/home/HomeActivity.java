@@ -195,6 +195,9 @@ public class HomeActivity extends FragmentActivity {
 			case R.id.action_invitation:
 				openInviteOthers();
 				return true;
+			case R.id.action_logout:
+				session.logoutUser();
+				return true;
 			default:
 				return super.onOptionsItemSelected(item);
 			}
